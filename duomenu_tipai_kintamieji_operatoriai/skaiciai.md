@@ -174,7 +174,6 @@ print(c, type(c))
 (2+3j) <class 'complex'>
 ```
 </details>
-<br>
 <details>
   <summary>Antra užduotis</summary>
   <hr>
@@ -206,7 +205,6 @@ print(result5)
 (-95.06424688018397+34.92320580341538j)
 ```
 </details>
-<br>
 <details>
   <summary>Trečia užduotis</summary>
   <hr>
