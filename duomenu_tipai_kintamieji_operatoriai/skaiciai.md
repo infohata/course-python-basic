@@ -149,8 +149,8 @@ print(d)  # 8
 - Atlikite šalutinę dalybos operaciją su kintamaisiais a ir b ir išsaugokite rezultatą kintamajame result1. 
 - Atlikite liekanos operaciją su kintamaisiais a ir b ir išsaugokite rezultatą kintamajame result2. Atspausdinkite abu rezultatus.
 
+# Atsakymai į užduotis
 <details><summary>❗Rodyti atsakymus</summary>
-<h1>Atsakymai į užduotis</h1>
 
 <details>
   <summary>Pirma užduotis</summary>
