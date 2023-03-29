@@ -151,7 +151,7 @@ print(d)  # 8
 
 # Atsakymai į užduotis
 <details><summary>❗Rodyti atsakymus</summary>
-
+<br>
 <details>
   <summary>Pirma užduotis</summary>
   <hr>
