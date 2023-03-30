@@ -14,11 +14,12 @@ elif <sąlyga3>:
 else:
     <komandos, jei nei viena sąlyga netenkinama>
 ```
-Kai `if` sąlyga yra netenkinama, Python patikrina kiekvieną `elif` sąlygą iš eilės, kol randama pirmoji tenkinama sąlyga. Jei nėra tenkinamos sąlygos, vykdomos komandos nurodytos else sakinio dalimi.
+
+Kai `if` sąlyga yra netenkinama, Python patikrina kiekvieną `elif` sąlygą iš eilės, kol randama pirmoji tenkinama sąlyga. Jei nėra tenkinamos sąlygos, vykdomos komandos nurodytos else sakinio dalyje.
 
 ## Palyginimo operatoriai
 
-1. Lygybės operatorius (==) - naudojamas patikrinti, ar du objektai yra lygūs:
+### Lygybės operatorius (==) - naudojamas patikrinti, ar du objektai yra lygūs
 
 ```Python
 a = 10
@@ -29,7 +30,7 @@ else:
     print("a ir b nėra lygūs")
 ```
 
-2. Nelygybės operatorius (!=) - naudojamas patikrinti, ar du objektai nelygūs:
+### Nelygybės operatorius (!=) - naudojamas patikrinti, ar du objektai nelygūs
 
 ```Python
 a = 10
@@ -40,7 +41,7 @@ else:
     print("a ir b yra lygūs")
 ```
 
-3. Daugiau operatorius (>) - naudojamas patikrinti, ar vienas skaičius didesnis už kitą:
+### Daugiau operatorius (>) - naudojamas patikrinti, ar vienas skaičius didesnis už kitą
 
 ```Python
 a = 10
@@ -51,7 +52,7 @@ else:
     print("a yra mažesnis arba lygus b")
 ```
 
-4. Mažiau operatorius (<) - naudojamas patikrinti, ar vienas skaičius mažesnis už kitą: 
+### Mažiau operatorius (<) - naudojamas patikrinti, ar vienas skaičius mažesnis už kitą
 
 ```Python
 a = 10
@@ -62,7 +63,7 @@ else:
     print("b yra didesnis arba lygus a")
 ```
 
-5. Daugiau arba lygu operatorius (>=) - naudojamas patikrinti, ar vienas skaičius didesnis arba lygus kitam:
+### Daugiau arba lygu operatorius (>=) - naudojamas patikrinti, ar vienas skaičius didesnis arba lygus kitam
 
 ```Python
 a = 10
@@ -73,7 +74,7 @@ else:
     print("a yra mažesnis nei b")
 ```
 
-6. Mažiau arba lygu operatorius (<=) - naudojamas patikrinti, ar vienas skaičius mažesnis arba lygus kitam:
+### Mažiau arba lygu operatorius (<=) - naudojamas patikrinti, ar vienas skaičius mažesnis arba lygus kitam
 
 ```Python
 a = 10
@@ -97,22 +98,28 @@ y = False
 print(x) # išvestų "True"
 print(y) # išvestų "False"
 ```
+
 Pavyzdys:
 
 ```Python
 a = 10
 b = 5
+teiginys = a > b
 
-if a > b:
+if teiginys:
     print("a yra didesnis už b")
 else:
     print("a yra mažesnis arba lygus b")
+
+# pasitikrinimui
+print(f"teiginys: {teiginys}")
 ```
+
 Šiame pavyzdyje if sąlyginis saknis naudoja boolean tipo kintamąjį, kad nustatytų, ar kintamasis a yra didesnis už kintamąjį b. Jei sąlyga yra tenkinama, išvedamas pranešimas "a yra didesnis už b". Jei sąlyga netenkinama, išvedamas pranešimas "a yra mažesnis arba lygus b".
 
 Boolean tipo kintamieji taip pat gali būti sujungti su loginiais operatoriais `and`, `or` ir `not`, kad būtų sudarytos sudėtingesnės sąlygos.
 
-Pavyzdys: 
+Pavyzdys:
 
 ```Python
 x = True
@@ -122,8 +129,8 @@ print(x and y) # išvestų "False"
 print(x or y) # išvestų "True"
 print(not x) # išvestų "False"
 ```
-Šiame pavyzdyje and operatorius tikrina, ar abu boolean tipo kintamieji yra `True`, ir grąžina `True`, jei abu yra `True`. or operatorius tikrina, ar bent vienas boolean tipo kintamasis yra `True`, ir grąžina `True`, jei bent vienas yra `True`. not operatorius grąžina priešingą boolean tipo kintamojo reikšmę.
 
+Šiame pavyzdyje and operatorius tikrina, ar abu boolean tipo kintamieji yra `True`, ir grąžina `True`, jei abu yra `True`. or operatorius tikrina, ar bent vienas boolean tipo kintamasis yra `True`, ir grąžina `True`, jei bent vienas yra `True`. not operatorius grąžina priešingą boolean tipo kintamojo reikšmę.
 
 ## Loginiai operatoriai
 
@@ -135,6 +142,7 @@ b = False
 c = a and b
 print(c) # spausdina False
 ```
+
 ```Python
 a = 10
 b = 5
