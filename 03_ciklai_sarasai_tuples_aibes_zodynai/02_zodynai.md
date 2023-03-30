@@ -2,8 +2,6 @@
 
 Žodynai yra viena iš pagrindinių Python duomenų struktūrų, kurias galima naudoti kaip raktų ir reikšmių porų kolekcijas. Kiekvienas raktas turi priskirtą reikšmę, kurią galima pasiekti naudojant šio rakto pavadinimą.
 
-<br>
-
 ## Žodynų kūrimas
 
 Žodynus galima sukurti naudojant laužtinius skliaustus `{}` ir atskyrus juos kableliais. Kiekvienas raktas ir reikšmė yra atskirti dvitaškiais. Pvz.:
@@ -13,8 +11,6 @@ zodynas = {'raktas1': 'reiksme1', 'raktas2': 'reiksme2'}
 print(zodynas) # {'raktas1': 'reiksme1', 'raktas2': 'reiksme2'}
 ```
 
-<br>
-
 ## Pridėti žodyno įrašą
 
 Žodyno įrašo pridėjimui galima naudoti paprastą priskyrimo operatorių `=`. Pvz.:
@@ -23,10 +19,7 @@ print(zodynas) # {'raktas1': 'reiksme1', 'raktas2': 'reiksme2'}
 zmones = {'Jonas': 24, 'Petras': 32}
 zmones['Ona'] = 28
 print(zmones) # {'Jonas': 24, 'Petras': 32, 'Ona': 28}
-
 ```
-
-<br>
 
 ## Pasiekti konkretų žodyno įrašą
 
@@ -38,8 +31,6 @@ print(zmones['Petras']) # 32
 print(zmones['Ona']) # 28
 ```
 
-<br>
-
 ## Pakeisti konkretų žodyno įrašą
 
 Norint pakeisti žodyno įrašą, reikia nurodyti jau esamą raktą ir priskirti naują reikšmę, kuri bus priskirta tam pačiam raktui:
@@ -48,10 +39,7 @@ Norint pakeisti žodyno įrašą, reikia nurodyti jau esamą raktą ir priskirti
 zmones = {'Jonas': 24, 'Petras': 32, 'Ona': 28}
 zmones['Petras'] = 33
 print(zmones) # {'Jonas': 24, 'Petras': 33, 'Ona': 28}
-
 ```
-
-<br>
 
 ## Ištrinti konkretų žodyno įrašą
 
@@ -62,8 +50,6 @@ zmones = {'Jonas': 24, 'Petras': 32, 'Ona': 28}
 del zmones['Ona']
 print(zmones) # {'Jonas': 24, 'Petras': 32}
 ```
-
-<br>
 
 ## Žodynų metodai
 
@@ -117,7 +103,5 @@ zodynas = {'Jonas': 24, 'Petras': 32, 'Ona': 28}
 zodynas.clear()
 print(zodynas) # {}
 ```
-
-<br>
 
 # Užduotys

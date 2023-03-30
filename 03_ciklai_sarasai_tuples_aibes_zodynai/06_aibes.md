@@ -2,8 +2,6 @@
 
 Aibės (`sets`) yra kolekcijos tipo objektai, kurie saugo unikalius elementus be tvarkos. Tai reiškia, kad kiekvienas elementas aibėje yra unikalus ir nėra jokios tvarkos, kaip jie yra saugomi.
 
-<br>
-
 ## Aibių kūrimas
 
 Norint sukurti aibę, galima tiesiog užrašyti elementus tarp skliaustų `{}`, atskirtus kableliais. Pvz.:
@@ -17,8 +15,6 @@ Jei norite sukurti tuščią aibę, galite naudoti funkciją `set()`:
 ```Python
 tuscia_aibe = set()
 ```
-
-<br>
 
 ## Aibių metodai
 
@@ -121,8 +117,6 @@ aibe5 = aibe1.difference(aibe2)
 print(aibe5) # {1, 2}
 ```
 
-<br>
-
 ## Sąrašo pavertimas aibe
 
 Jeigu turite sąrašą su pasikartojančiais elementais ir norite sukurti aibę be pasikartojančių elementų, galite naudoti `set()` funkciją. Ši funkcija sukuria aibę iš sąrašo ir automatiškai pašalina pasikartojančius elementus:
@@ -132,8 +126,6 @@ sarasas = [1, 2, 3, 2, 1, 4, 5, 4]
 aibe = set(sarasas)
 print(aibe) # {1, 2, 3, 4, 5}
 ```
-
-<br>
 
 ## Aibių iteravimas
 
@@ -145,14 +137,12 @@ for elementas in aibe:
     print(elementas)
 ```
 
-Šis kodas atspausdins:
+Rezultatas:
 
-```
+```Text
 1
 2
 3
 ```
-
-<br>
 
 # Užduotys

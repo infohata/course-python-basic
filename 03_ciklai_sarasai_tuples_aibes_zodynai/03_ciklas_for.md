@@ -6,8 +6,6 @@
 
 `for` cikle yra nurodomas kintamasis, kuriame bus saugomi kiekvieno iteracijos metu pasirinkto rinkinio elementai. Ciklo blokas rašomas su atitraukimu nuo kairės pusės ir yra vykdomas kiekvienai rinkinio elementų iteracijai.
 
-<br>
-
 ## `for` ciklas su sąrašu
 
 Pavyzdžiui, jei turime sąrašą skaičių ir norime atspausdinti kiekvieną skaičių, galime naudoti `for` ciklą kaip parodyta žemiau:
@@ -19,9 +17,9 @@ for skaicius in skaiciai:
     print(skaicius)
 ```
 
-Šis kodas atspausdins:
+Rezultatas:
 
-```
+```Text
 1
 2
 3
@@ -42,8 +40,6 @@ for skaicius in skaiciai:
 print(skaiciu_suma) # 904
 ```
 
-<br>
-
 ## `for` ciklas su žodynu
 
 Taip pat galime naudoti `for` ciklą su žodynu, yra keli variantai kaip tai galima padaryti.
@@ -57,9 +53,9 @@ for irasas in amzius:
     print(irasas)
 ```
 
-Šis kodas atspausdins:
+Rezultatas:
 
-```
+```Text
 Rokas
 Andrius
 Laura
@@ -74,9 +70,9 @@ for irasas in amzius.values():
     print(irasas)
 ```
 
-Šis kodas atspausdins:
+Rezultatas:
 
-```
+```Text
 20
 34
 25
@@ -91,15 +87,13 @@ for raktas, reiksme in amzius.items():
     print(raktas, reiksme)
 ```
 
-Šis kodas atspausdins:
+Rezultatas:
 
-```
+```Text
 Rokas 20
 Andrius 34
 Laura 25
 ```
-
-<br>
 
 ## `for` ciklas su `range` funkcija
 
@@ -110,17 +104,15 @@ for skaicius in range(1, 6):
     print(skaicius)
  ```
 
-Šis kodas atspausdins:
+Rezultatas:
 
-```
+```Text
 1
 2
 3
 4
 5
 ```
-
-<br>
 
 ## `for` ciklas su `break` komanda
 
@@ -135,16 +127,14 @@ for skaicius in skaiciai:
     print(skaicius)
 ```
 
-Šis kodas atspausdins:
+Rezultatas:
 
-```
+```Text
 1
 2
 ```
 
 Kaip matote, programa nutraukė ciklą, kai buvo pasiektas skaičius "3", ir neatspausdino kitų skaičių, kurie buvo sąraše po jo.
-
-<br>
 
 ## `for` ciklas su `continue` komanda
 
@@ -159,9 +149,9 @@ for skaicius in skaiciai:
     print(skaicius)
 ```
 
-Šis kodas atspausdins:
+Rezultatas:
 
-```
+```Text
 1
 2
 4
@@ -169,8 +159,6 @@ for skaicius in skaiciai:
 ```
 
 Kaip matote, programa praleido skaičių "3" ir tęsė su likusiais skaičiais sąraše.
-
-<br>
 
 ## `for` ciklas su `else` bloku
 
@@ -185,9 +173,9 @@ else:
     print('Ciklo vykdymas baigtas.')
 ```
 
-Šis kodas atspausdins:
+Rezultatas:
 
-```
+```Text
 1
 2
 3
@@ -195,7 +183,5 @@ else:
 5
 Ciklo vykdymas baigtas
 ```
-
-<br>
 
 # Užduotys

@@ -2,8 +2,6 @@
 
 Sąrašai (`lists`) yra objektų rinkiniai, kurie gali būti priskirti kintamiesiems ir manipuliuojami programos metu. Jie yra dinaminiai ir gali būti atnaujinami arba praplėsti, kai programa vykdoma.
 
-<br>
-
 ## Sąrašų kūrimas
 
 Python leidžia sukurti sąrašus naudojant laužtinius skliaustus `[ ]`. Sąrašo elementus atskiriame kableliais `,`. Pvz.:
@@ -21,8 +19,6 @@ Sąrašą taip pat galima sukurti naudojant `list()` funkciją ir perduodant jai
 ```Python
 sarasas = list(('obuolys', 'kriaušė', 'bananas'))
 ```
-
-<br>
 
 ## Sąrašų indeksavimas
 
@@ -44,9 +40,7 @@ print(sarasas[-2])   # kriaušė
 print(sarasas[-3])   # obuolys
 ```
 
-❗Pastebėkite, kad naudojant neigiamus indeksus -1 yra paskutinis sąrašo elementas.
-
-<br>
+❗ Pastebėkite, kad naudojant neigiamus indeksus -1 yra paskutinis sąrašo elementas.
 
 ## Sąrašų dalijimas
 
@@ -67,8 +61,6 @@ Be to, galite nurodyti trečiąjį argumentą, kuris nurodo žingsnio dydį. Ži
 sarasas = ['obuolys', 'kriaušė', 'bananas', 'apelsinas', 'persimonas']
 print(sarasas[::2])   # ['obuolys', 'bananas', 'persimonas']
 ```
-
-<br>
 
 ## Sąrašų metodai
 
@@ -158,8 +150,6 @@ sarasas.reverse()
 print(sarasas)  # [5, 4, 7, 6, 3, 2, 1]
 ```
 
-<br>
-
 ## Sąrašų ilgio matavimas
 
 `len()` grąžina sąrašo elementų skaičių. Tai yra naudinga, kai norime sužinoti, kiek elementų yra sąraše.
@@ -168,8 +158,6 @@ print(sarasas)  # [5, 4, 7, 6, 3, 2, 1]
 sarasas = [1, 2, 3, 4, 5]
 print(len(sarasas)) # 5
 ```
-
-<br>
 
 ## Patikrinti ar elementas yra sąraše
 
@@ -181,11 +169,7 @@ print('obuolys' in sarasas) # True
 print('melionas' in sarasas) # False
 ```
 
-<br>
-
 # Užduotys
-
-### Pirma užduotis
 
 - Sukurkite sąrašą, kuriame yra keli jūsų mėgstamų maisto produktų pavadinimai.
 - Atspausdinkite visą sąrašą.
@@ -201,12 +185,10 @@ print('melionas' in sarasas) # False
 - Patikrinkite ar priduktas "makaronai" yra sąraše.
 - Išvalykite sąrašą.
 
-# Atsakymai į užduotis
-<details><summary>❗Rodyti atsakymus</summary>
-<br>
-<details>
-  <summary>Pirma užduotis</summary>
-  <hr>
+## Atsakymai į užduotis
+
+<details><summary>❗ Rodyti atsakymus</summary>
+<hr>
 
 ```Python
 maisto_produktai = ['Cepelinai', 'Sriuba', 'Koldūnai', 'Kebabai']
@@ -231,11 +213,11 @@ print("Sąrašo ilgis:", len(maisto_produktai))
 print("Sąraše yra makaronai:", 'makaronai' in maisto_produktai)
 maisto_produktai.clear()
 print("Išvalytas sąrašas:", maisto_produktai)
-
 ```
-<p>Rezultatas:</p>
 
-```Python
+Rezultatas:
+
+```Text
 Visas sąrašas: ['Cepelinai', 'Sriuba', 'Koldūnai', 'Kebabai']
 Sąrašo paskutinis elementas: Kebabai
 Sąrašas su pridėtu elementu: ['Cepelinai', 'Sriuba', 'Koldūnai', 'Kebabai', 'Pica']

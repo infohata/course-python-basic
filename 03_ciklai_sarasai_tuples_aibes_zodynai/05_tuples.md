@@ -3,9 +3,6 @@
 `tuple` yra nekeičiamas ir tvarkingas Python duomenų tipas, kuris gali saugoti bet kokio tipo elementus. Jis panašus į 
 sąrašą, tačiau yra nekeičiamas - tai reiškia, kad kai kartą sukuriamas, jo elementai negali būti pakeisti ar pašalinti.
 
-
-<br>
-
 ## `tuple` kūrimas
 
 `tuple` sukūrimas yra labai panašus į sąrašo sukūrimą, tik naudojama skliaustelių pora `()` vietoj laužtinių skliaustų `[]`:
@@ -31,8 +28,6 @@ misrus_tuple = (1, 'du', 3.0, [4, 5], True)
 print(misrus_tuple) # (1, 'du', 3.0, [4, 5], True)
 ```
 
-<br>
-
 ## `tuple` sujungimas
 
 Norint sujungti du ar daugiau `tuple`, galima naudoti `+` operatorių. Šis operatorius sujungia `tuple` reikšmes ir grąžina naują `tuple` su visais elementais. Pvz.:
@@ -47,8 +42,6 @@ naujas_tuple = pirmas_tuple + antras_tuple + trecias_tuple
 print(naujas_tuple)
 ```
 
-<br>
-
 ## Kaip pasiekti `tuple` elementus
 
 Tuple elementai yra pasiekiami naudojant indeksus, taip pat kaip ir sąrašuose. Indeksai prasideda nuo nulio, o paskutinis elementas yra pasiekiamas naudojant indeksą -1:
@@ -61,13 +54,11 @@ print(misrus_tuple[3]) # [4, 5]
 print(misrus_tuple[-1]) # True
 ```
 
-Šis kodas atspausdins:
+Rezultatas:
 
-```
+```Text
 (1, 2, 3, 'a', 'b', 'c', True, False)
 ```
-
-<br>
 
 ## `tuple` dalijimas
 
@@ -81,8 +72,6 @@ print(raidziu_tuple[:4])  # ('a', 'b', 'c', 'd')
 print(raidziu_tuple[2::2])  # ('c', 'e')
 print(raidziu_tuple[::-1])  # ('f', 'e', 'd', 'c', 'b', 'a')
 ```
-
-<br>
 
 ## `tuple` metodai
 
@@ -104,8 +93,6 @@ raidziu_tuple = ('a', 'b', 'c', 'a', 'd')
 print(raidziu_tuple.index('a'))  # 0
 ```
 
-<br>
-
 ## Patikrinti ar elementas yra `tuple`
 
 Galite patikrinti, ar `tuple` turi elementą naudodami `in` operatorių. Šis operatorius grąžins `True`, jei elemento reikšmė yra `tuple`, ir `False`, jei elemento reikšmės nėra `tuple`. Pvz.:
@@ -116,8 +103,6 @@ raidziu_tuple = ('a', 'b', 'c', 'a', 'd')
 print('a' in raidziu_tuple)  # True
 print('e' in raidziu_tuple)  # False
 ```
-
-<br>
 
 ## Iteravimas
 
@@ -132,9 +117,9 @@ for raide in raidziu_tuple:
     print(raide)
 ```
 
-Šis kodas atspausdins:
+Rezultatas:
 
-```
+```Text
 a
 b
 c
@@ -153,9 +138,9 @@ while i < len(raidziu_tuple):
     i += 1
 ```
 
-Šis kodas atspausdins:
+Rezultatas:
 
-```
+```Text
 a
 b
 c
@@ -164,7 +149,5 @@ d
 ```
 
 Kaip matote, `while` cikle naudojame `len()` funkciją, kad sužinotume, kiek `tuple` turi elementų. Tada, naudodami kintamąjį `i`, per kiekvieną iteraciją gautume reikšmę, kurią spausdintume, ir padidintume `i` reikšmę vienetu, kad galėtume per eiti per kitą `tuple` elementą.
-
-<br>
 
 # Užduotys

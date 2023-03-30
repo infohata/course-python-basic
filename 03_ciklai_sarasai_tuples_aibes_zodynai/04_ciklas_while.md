@@ -13,7 +13,7 @@ while skaičius <= 5:
 
 Rezultatas:
 
-```
+```Text
 1
 2
 3
@@ -22,8 +22,6 @@ Rezultatas:
 ```
 
 Šioje programoje `while` ciklas kartojasi, kol kintamasis skaičius yra mažesnis arba lygus 5. Kiekvieną kartą, kai ciklas kartojasi, spausdiname skaičių ir padidiname jį vienetu.
-
-<br>
 
 ## Begalinis ciklas (`infinite loop`)
 
@@ -47,8 +45,6 @@ while True:
 
 Tam, kad išvengtumėte begalinių ciklų, turite užtikrinti, kad ciklas turėtų galutinę sąlygą, kuri pasibaigs kai reikia. Pavyzdžiui, jei naudojate `while` ciklą, įsitikinkite, kad jis yra su tiksliomis pradinio ir galutinio kintamojo reikšmėmis arba kitomis galutinėmis sąlygomis.
 
-<br>
-
 ## Ciklo nutraukimas (`break`)
 
 Ciklo nutraukimas leidžianti nutraukti ciklą iki jo paprastai numatytos pabaigos. Tai yra naudinga, jeigu norite nutraukti ciklą, kai įvykdoma tam tikra sąlyga arba kai jūsų programa negali tinkamai veikti, jei ciklas vykdomas per ilgai.
@@ -66,7 +62,7 @@ while skaicius < 10:
 
 Rezultatas:
 
-```
+```Text
 1
 2
 3
@@ -92,7 +88,7 @@ while skaicius < 10:
 
 Rezultatas:
 
-```
+```Text
 1
 2
 3
@@ -103,8 +99,6 @@ Rezultatas:
 9
 10
 ```
-
-<br>
 
 ## `while` ciklas su `else` bloku
 
@@ -121,7 +115,7 @@ else:
 
 Rezultatas:
 
-```
+```Text
 0
 1
 2
@@ -131,7 +125,5 @@ Ciklas baigtas
 ```
 
 ❗ Svarbu prisiminti, kad `else` blokas su `while` ciklu gali būti naudojamas tik tada, kai ciklas baigiasi natūraliai, o ne kai jis yra nutraukiamas `break`.
-
-<br>
 
 # Užduotys
