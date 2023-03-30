@@ -146,3 +146,41 @@ Rezultatas:
 ```
 
 # Užduotys
+
+- Sukurkite dvi aibes su skaičiais.
+- Grąžinkite tuos elementus, kurie yra bendri abiejoms aibėms.
+- Grąžinkite tuos elementus, kurie yra pirmoje aibėje, bet ne antroje.
+- Sukurkite trečią aibę, kurioje yra unikalūs elementai tik iš antrosios aibės.
+- Pakelkite trečiosios aibės elementus kvadratu.
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<hr>
+
+```Python
+aibe1 = {1, 2, 3, 4, 5}
+aibe2 = {4, 5, 6, 7, 8}
+
+bendra_aibe = aibe1.intersection(aibe2)
+print('Bendra aibė:', bendra_aibe)
+
+unikalios_aibe1 = aibe1.difference(aibe2)
+print('Unikalūs aibės 1 elementai:', unikalios_aibe1)
+
+aibe3 = aibe2.difference(aibe1)
+print('Nauja aibė su aibės 2 unikaliais elementais:', aibe3)
+
+aibe3_kvadratu = {x**2 for x in aibe3}
+print('Aibės 3 elementai kvadratu:', aibe3_kvadratu)
+```
+
+Rezultatas:
+
+```Text
+Bendra aibė: {4, 5}
+Unikalūs aibės 1 elementai: {1, 2, 3}
+Nauja aibė su aibės 2 unikaliais elementais: {8, 6, 7}
+Aibės 3 elementai kvadratu: {64, 49, 36}
+```
+</details>
