@@ -99,3 +99,33 @@ print(x)  # išspausdina 10
 print(y)  # išspausdina 5
 ```
 Šiuo kodu kintamajam "y" yra priskirta reikšmė "5", kai jis priskiriamas kintamajam "x". Tačiau, kai kintamojo "x" reikšmė yra pakeičiama į 10, tai neturi įtakos kintamojo "y" reikšmei, kuri vis dar lygi 5.
+
+# Užduotys
+
+- Sukurkite kintamąjį a ir priskirkite jam bet kokį sveikąjį skaičių.
+- Sukurkite kitą kintamąjį b ir priskirkite jam bet kokį slankiojo kablelio skaičių.
+- Tada sukurkite trečią kintamąjį c ir priskirkite jam bet kokį kompleksinį skaičių. 
+- Atspausdinkite visus tris kintamuosius ir patikrinkite jų tipus.
+
+# Atsakymai į užduotis
+<details><summary>❗Rodyti atsakymus</summary>
+<hr>
+<p>Kintamasis a yra sveikasis skaičius. Kintamasis b yra slankiojo kablelio skaičius. Kintamasis c yra kompleksinis skaičius.</p>
+  
+```Python
+a = 5
+b = 3.14
+c = 2 + 3j
+
+print(a, type(a))
+print(b, type(b))
+print(c, type(c))
+```
+<p>Output: </p>
+
+```
+5 <class 'int'>
+3.14 <class 'float'>
+(2+3j) <class 'complex'>
+```
+</details>
