@@ -173,6 +173,53 @@ else:
     print('Ciklo vykdymas baigtas.')
 ```
 
+## Sąrašų iteravimas su indeksu
+
+`enumerate()` funkcija naudojama kartu su `for` ciklu gražina poras, kurių kiekvienos poros pirmasis elementas yra elemento indeksas, o antrasis - elementas paties sąrašo. Pvz.:
+
+```Python
+sarasas = ['a', 'b', 'c', 'd', 'e']
+for indeksas, reiksme in enumerate(sarasas):
+    print(indeksas, reiksme)
+```
+
+Rezultatas:
+
+```Text
+0 a
+1 b
+2 c
+3 d
+4 e
+```
+
+## Ciklas cikle
+
+Ciklo cikle konstrukcija leidžia kurti ciklus, kuriuose vienas ar kelias vidiniai ciklai yra vykdomi kiekvienai išorinio ciklo iteracijai. Tai ypač naudinga, kai turime kokią nors duomenų struktūrą, kurią reikia išgryninti arba apdoroti sudėtingu būdu. Pvz.:
+
+```Python
+spalvos = ['raudona', 'geltona', 'mėlyna']
+dydziai = ['mažas', 'vidutinis', 'didelis']
+
+for spalva in spalvos:
+    for dydis in dydziai:
+        print(spalva, dydis, 'šikšnosparnis')
+```
+
+Rezultatas:
+
+```Text
+raudona mažas šikšnosparnis
+raudona vidutinis šikšnosparnis
+raudona didelis šikšnosparnis
+geltona mažas šikšnosparnis
+geltona vidutinis šikšnosparnis
+geltona didelis šikšnosparnis
+mėlyna mažas šikšnosparnis
+mėlyna vidutinis šikšnosparnis
+mėlyna didelis šikšnosparnis
+```
+
 Rezultatas:
 
 ```Text

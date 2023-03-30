@@ -1,6 +1,6 @@
 # Aibės
 
-Aibės (`sets`) yra kolekcijos tipo objektai, kurie saugo unikalius elementus be tvarkos. Tai reiškia, kad kiekvienas elementas aibėje yra unikalus ir nėra jokios tvarkos, kaip jie yra saugomi.
+Aibės (`sets`) yra kolekcijos tipo objektai, kurie skiriasi nuo sąrašų (`list`) ir `tuple` tuo, kad jos saugo tik unikalius elementus. Tai reiškia, kad, jei į aibę bandome įdėti jau esantį elementą, jis nebus pridėtas į aibę ir nebus atvaizduotas kelis kartus. Sąrašai ir `tuple` gali saugoti kartojančius elementus, taip pat skirtingai nei aibė, jie saugo elementus tvarkos tvarka. Kitas svarbus skirtumas yra tai, kad aibės nenaudoja indeksų, taigi jų elementų tvarka nėra nurodoma.
 
 ## Aibių kūrimas
 
