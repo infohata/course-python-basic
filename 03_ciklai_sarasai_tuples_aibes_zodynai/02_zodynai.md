@@ -105,3 +105,70 @@ print(zodynas) # {}
 ```
 
 # Užduotys
+
+- Sukurkite tuščią žodyną pavadinimu "automobiliai".
+- Pridėkite prie žodyno informaciją apie 3 skirtingus automobilius (nebijokite naudoti savo kūrybiškumo ir įtraukti įvairių markių, modelių, metų, spalvų ir variklių tipų).
+- Išveskite žodyno informaciją apie vieną iš automobilių.
+- Pakeiskite informaciją apie vieną automobilį (pavyzdžiui, pakeiskite variklio tipą).
+- Pridėkite naują automobilį į žodyną.
+- Pašalinkite informaciją apie vieną automobilį iš žodyno.
+- Išveskite kiek yra automobilių žodyne.
+- Patikrinkite ar tam tikras automobilis yra žodyne.
+- Išvalykite žodyną.
+
+## Atsakymai į užduotis
+
+<details><summary>❗ Rodyti atsakymus</summary>
+<hr>
+
+```Python
+automobiliai = {}
+automobiliai = {
+    '1': {
+        'marke': 'Audi',
+        'modelis': 'A6',
+        'metai': 2020,
+        'spalva': 'Juoda',
+        'variklis': 'Benzinas'
+    },
+    '2': {
+        'marke': 'Tesla',
+        'modelis': 'Model S',
+        'metai': 2018,
+        'spalva': 'Raudona',
+        'variklis': 'Elektra'
+    },
+    '3': {
+        'marke': 'Ferrari',
+        'modelis': '488 GTB',
+        'metai': 2019,
+        'spalva': 'Geltona',
+        'variklis': 'Benzinas'
+    }
+}
+print("Automobilis nr.2:", automobiliai['2'])
+automobiliai['3']['variklis'] = 'Elektra'
+print("Automobilis nr.3 po variklio pakeitimo:", automobiliai['3'])
+automobiliai['4'] = {
+    'marke': 'BMW',
+    'modelis': 'M5',
+    'metai': 2022,
+    'spalva': 'Mėlyna',
+    'variklis': 'Dyzelis'
+}
+del automobiliai['1']
+print("Automobilių skaičius žodyne:", len(automobiliai))
+print("Ar žodyne yra Audi A6?", 'Audi A6' in [automobiliai[auto]['marke'] + ' ' + automobiliai[auto]['modelis'] for auto in automobiliai])
+automobiliai.clear()
+print("Išvalytas žodynas:", automobiliai)
+```
+
+Rezultatas:
+
+```Text
+Automobilis nr.2: {'marke': 'Tesla', 'modelis': 'Model S', 'metai': 2018, 'spalva': 'Raudona', 'variklis': 'Elektra'}
+Automobilis nr.3 po variklio pakeitimo: {'marke': 'Ferrari', 'modelis': '488 GTB', 'metai': 2019, 'spalva': 'Geltona', 'variklis': 'Elektra'}
+Automobilių skaičius žodyne: 3
+Ar žodyne yra Audi A6? False
+Išvalytas žodynas: {}
+```
