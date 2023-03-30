@@ -36,13 +36,13 @@ c = 0.0
 Kaip matote iš aukščiau pateiktų pavyzdžių, kintamieji gali būti
 priskiriami slankiojo kablelio skaičiams.
 
-## Kompleksiniai skaičiai (complex)
+## 💡Iššūkis: Kompleksiniai skaičiai (complex)
 
 Kompleksiniai skaičiai (`complex`) - tai skaičiai, kurie susideda iš realiosios ir įsivaizduojamosios dalies. Jie aprašomi naudojant 'j' raidę kaip įsivaizduojamosios dalies simbolį. Pavyzdžiui: 
 
 ```Python
 a = 2 + 3j
-b =  -4j
+b = -4j
 c = 1 - 2j
 ```
 
