@@ -39,36 +39,9 @@ print(type(x))
 
 Šis kodas išspausdins "int", nurodydamas, kad "x" yra sveikasis skaičius (integer).
 
-## Paprasti matematiniai veiksmai
-
-1. Sudėties operacija (+) - naudojama sumuoti du ar daugiau skaičių. Pavyzdžiui:
-
-```Python
-x = 5 + 3
-print(x)  # 8
-```
-2. Atimties operacija (-) - naudojama atimti du ar daugiau skaičių. Pavyzdžiui:
-
-```Python
-y = 10 - 4
-print(y)  # 6
-```
-3. Daugybos operacija (*) - naudojama padauginti du ar daugiau skaičių. Pavyzdžiui:
-
-```Python
-z = 2 * 3
-print(z)  # 6
-```
-4. Dalybos operacija (/) - naudojama padalinti vieną skaičių iš kito. Pavyzdžiui:
-
-```Python
-a = 10 / 2
-print(a)  # 5.0
-```
-
 ## Pagrindinės taisyklės ir išimtys
 
-1. Kintamųjų pavadinimo taisyklės: 
+### Kintamųjų pavadinimo taisyklės: 
 
 ```Python
 # Pavyzdys su netinkamu kintamojo pavadinimu:
@@ -81,7 +54,7 @@ print(mano_kintamasis)  # išspausdina 10
 ```
 Šiame pavyzdyje parodyta, kad kintamieji turi prasidėti raidėmis arba pabrėžimu (_), o ne skaičiais. Tai yra priežastis, kodėl pirmas pavyzdys su netinkamu kintamojo pavadinimu sukels klaidą.
 
-2. Kintamųjų jautrumas didžiajai ir mažajai raidei:
+### Kintamųjų jautrumas didžiajai ir mažajai raidei:
 
 ```Python
 x = 5
@@ -91,7 +64,7 @@ print(X)  # išspausdina 10
 ```
 Šiame pavyzdyje parodyta, kad kintamųjų pavadinimai yra jautrūs didžiajai ir mažajai raidei. Tai reiškia, kad "x" ir "X" yra skirtingi kintamųjų pavadinimai.
 
-3. Kintamųjų tipai:
+### Kintamųjų tipai:
 
 ```Python
 x = 5
@@ -103,7 +76,7 @@ print(type(z))  # išspausdina <class 'float'>
 ```
 Šiame pavyzdyje parodyta, kad Python kalboje kintamieji nėra apibrėžiami tipu, o jų tipas yra nustatomas pagal priskirtą reikšmę. Tai reiškia, kad kintamasis gali turėti skirtingus tipus skirtingais programos etapais.
 
-4. Kintamųjų reikšmių keitimas:
+### Kintamųjų reikšmių keitimas:
 
 ```Python
 x = 5
@@ -113,7 +86,7 @@ print(x)  # išspausdina "Hello, world!"
 ```
 Šiame pavyzdyje parodyta, kad kintamojo reikšmė gali būti keičiama bet kuriuo metu, ir kintamasis gali turėti skirtingus tipus skirtingais programos etapais.
 
-5. Kintamųjų priskyrimas kitam kintamajam:
+### Kintamųjų priskyrimas kitam kintamajam:
 
 Šiame pavyzdyje parodyta, kad kai kintamasis yra priskiriamas kitam kintamajam, pavyzdžiui, "y = x", tai reiškia, kad kintamasis "y" gaus tą pačią reikšmę kaip ir kintamasis "x". Tačiau, kai keičiama kintamojo "x" reikšmė, kintamasis "y" nesikeičia, nes jie rodo į skirtingas atminties vietas. Tai yra susiję su kintamųjų saugojimu atmintyje ir gali lemti neefektyvų programos veikimą, jei yra naudojami dideli kintamieji arba yra daugiau operacijų su kintamaisiais.
 
