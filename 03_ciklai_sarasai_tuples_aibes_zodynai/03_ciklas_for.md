@@ -4,7 +4,7 @@
 
 ❗ Iteracija yra bendras terminas, naudojamas programavimo ir kompiuterinių mokslų srityse, kuris reiškia procesą, kai tam tikros operacijos yra atliekamos kartojant tas pačias instrukcijas daug kartų su skirtingais duomenimis. Tai yra proceso dalis, kurio metu programos vykdomas kodas yra kartojamas tam tikrą skaičių kartų arba tol, kol yra patenkinama tam tikra sąlyga.
 
-`for` cikle yra nurodomas kintamasis, kuriame bus saugomi kiekvieno iteracijos metu pasirinkto rinkinio elementai. Ciklo blokas rašomas su atitraukimu nuo kairės pusės ir yra vykdomas kiekvienai rinkinio elementų iteracijai
+`for` cikle yra nurodomas kintamasis, kuriame bus saugomi kiekvieno iteracijos metu pasirinkto rinkinio elementai. Ciklo blokas rašomas su atitraukimu nuo kairės pusės ir yra vykdomas kiekvienai rinkinio elementų iteracijai.
 
 <br>
 
@@ -21,7 +21,7 @@ for skaicius in skaiciai:
 
 Šis kodas atspausdins:
 
-```Python
+```
 1
 2
 3
@@ -59,7 +59,7 @@ for irasas in amzius:
 
 Šis kodas atspausdins:
 
-```Python
+```
 Rokas
 Andrius
 Laura
@@ -76,7 +76,7 @@ for irasas in amzius.values():
 
 Šis kodas atspausdins:
 
-```Python
+```
 20
 34
 25
@@ -93,7 +93,7 @@ for raktas, reiksme in amzius.items():
 
 Šis kodas atspausdins:
 
-```Python
+```
 Rokas 20
 Andrius 34
 Laura 25
@@ -112,7 +112,7 @@ for skaicius in range(1, 6):
 
 Šis kodas atspausdins:
 
-```Python
+```
 1
 2
 3
@@ -137,7 +137,7 @@ for skaicius in skaiciai:
 
 Šis kodas atspausdins:
 
-```Python
+```
 1
 2
 ```
@@ -161,7 +161,7 @@ for skaicius in skaiciai:
 
 Šis kodas atspausdins:
 
-```Python
+```
 1
 2
 4
@@ -187,7 +187,7 @@ else:
 
 Šis kodas atspausdins:
 
-```Python
+```
 1
 2
 3

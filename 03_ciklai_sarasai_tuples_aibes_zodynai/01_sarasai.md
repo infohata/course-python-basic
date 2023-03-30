@@ -233,7 +233,7 @@ maisto_produktai.clear()
 print("Išvalytas sąrašas:", maisto_produktai)
 
 ```
-<p>Output:</p>
+<p>Rezultatas:</p>
 
 ```Python
 Visas sąrašas: ['Cepelinai', 'Sriuba', 'Koldūnai', 'Kebabai']
