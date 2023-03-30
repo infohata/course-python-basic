@@ -185,3 +185,77 @@ Ciklo vykdymas baigtas
 ```
 
 # Užduotys
+
+### Pirma užduotis
+
+Sukurti programą, kuri:
+
+- Leistų vartotojui po vieną įvesti 5 žodžius
+- Pridėtų įvestus žodžius į sąrašą
+- Atspausdintų kiekvieną žodį, jo ilgį ir eilės numerį sąraše (nuo 1)
+- Iššūkis 💡: padarykite, kad programa leistų įvesti norimą žodžių kiekį
+
+Patarimas: Naudoti sąrašą (list), ciklą for, funkcijas len ir index
+
+### Antra užduotis
+
+Sukurti programą, kuri:
+
+- Leistų vartotojui įvesti metus
+- Atspausdintų "Keliamieji metai", jei taip yra
+- Atspausdintų "Nekeliamieji metai", jei taip yra
+
+### Trečia užduotis
+
+- Perdaryti antrą užduoti taip, kad programa atspausdintų visus keliamuosius metus, nuo 1900 iki 2100 metų.
+
+## Atsakymai į užduotis
+
+<details><summary>❗ Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+zodziai = []
+
+for zodis in range(5):
+    zodziai.append(input('Įveskite žodį: '))
+
+for numeris, zodis in enumerate(zodziai):
+    print(f'{numeris + 1}: {zodis}, simbolių kiekis: {len(zodis)}')
+print('Žodžių kiekis:', len(zodziai))
+```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+```Python
+metai = int(input('Įveskite metus: '))
+if (metai % 400 == 0) or (metai % 100 != 0 and metai % 4 == 0):
+    print('Keliamieji metai')
+else:
+    print('Nekeliamieji metai')
+```
+
+</details>
+<details>
+<summary>Trečia užduotis</summary>
+<hr>
+
+```Python
+for metai in range(2000, 2100):
+    if metai % 400 == 0:
+        print(metai)
+    elif metai % 100 == 0:
+        continue
+    elif metai % 4 == 0:
+        print(metai)
+    else:
+        continue
+```
+</details>
+</details>

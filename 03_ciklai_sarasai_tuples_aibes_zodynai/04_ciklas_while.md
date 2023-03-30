@@ -127,3 +127,73 @@ Ciklas baigtas
 ❗ Svarbu prisiminti, kad `else` blokas su `while` ciklu gali būti naudojamas tik tada, kai ciklas baigiasi natūraliai, o ne kai jis yra nutraukiamas `break`.
 
 # Užduotys
+
+### Pirma užduotis
+
+Parašyti programą, kuri:
+
+- Leistų vartotojui įvesti skaičių.
+- Jei įvestas skaičius yra teigiamas, paprašyti įvesti dar vieną skaičių
+- Jei įvestas skaičius neigiamas, nutraukti programą ir atspausdinti visų įvestų teigiamų skaičių sumą
+
+Patarimas: Naudoti ciklą while, sąlygą if, break
+
+### Antra užduotis
+
+Sukurkite kauliukų žaidimą, kuris:
+
+- Sugeneruotų tris atsitiktinius skaičius nuo 1 iki 6
+- Jei vienas iš šių skaičių yra 5, atspausdinti „Pralaimėjai...“
+- Kitu atveju atspausdinti „Laimėjai!“
+- Patarimas: Naudoti while ciklą, funkciją random.randint (import random), else, break
+
+Random skaičiaus generavimo pavyzdys:
+
+```Python
+import random
+
+print(random.randint(1, 6))
+```
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+suma = 0
+
+while True:
+    skaicius = int(input('Įveskite skaičių: '))
+    if skaicius < 0:
+        break
+    suma += skaicius
+
+print(suma)
+```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+```Python
+import random
+
+print('Bus sugeneruoti 3 skaičiai')
+print('Jei vienas iš jų – 5, tu pralaimėjai!')
+
+for skaicius in range(3):
+    skaiciai = random.randint(1, 6)
+    print(skaiciai)
+    if skaicius == 5:
+        print('Pralaimėjai...')
+        break
+else:
+    print('Laimėjai!')
+```
+</details>
+</details>
