@@ -96,7 +96,7 @@ print(atsakymas3)
 print(atsakymas4)
 print(atsakymas5)
 ```
-<p>Output: </p>
+  <p>Rezultatas: </p>
 
 ```
 12.5
@@ -127,7 +127,7 @@ print(atsakymas3)
 print(atsakymas4)
 print(atsakymas5)
 ```
-<p>Output: </p>
+<p>Rezultatas: </p>
 
 ```
 (14+2j)
@@ -151,7 +151,7 @@ atsakymas2 = a % b
 print(atsakymas1)
 print(atsakymas2)
 ```
-<p>Output: </p>
+<p>Rezultatas: </p>
 
 ```
 2.0
