@@ -90,7 +90,7 @@ print(a, type(a))
 print(b, type(b))
 print(c, type(c))
 ```
-  <p>Output: </p>
+  <p>Rezultatas: </p>
 
 ```Python
 5 <class 'int'>
@@ -107,19 +107,19 @@ x = 10
 y = 2.5
 z = 4 + 2j
 
-result1 = x + y
-result2 = y - z
-result3 = x * y * z
-result4 = x / y
-result5 = x ** z
+rezultatas1 = x + y
+rezultatas2 = y - z
+rezultatas3 = x * y * z
+rezultatas4 = x / y
+rezultatas5 = x ** z
 
-print(result1)
-print(result2)
-print(result3)
-print(result4)
-print(result5)
+print(rezultatas1)
+print(rezultatas2)
+print(rezultatas3)
+print(rezultatas4)
+print(rezultatas5)
 ```
-<p>Output: </p>
+<p>Rezultatas: </p>
 
 ```Python
 12.5
@@ -137,13 +137,13 @@ print(result5)
 a = 10
 b = 3.5
 
-result1 = a // b
-result2 = a % b
+rezultatas1 = a // b
+rezultatas2 = a % b
 
-print(result1)
-print(result2)
+print(rezultatas1)
+print(rezultatas2)
 ```
-<p>Output: </p>
+<p>Rezultatas: </p>
 
 ```Python
 2.0
