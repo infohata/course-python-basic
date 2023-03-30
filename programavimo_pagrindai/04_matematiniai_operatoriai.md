@@ -1,4 +1,4 @@
-## Python operacijos su skaičiais
+# Python operacijos su skaičiais
 
 Pagrindinės operacijos yra:
 
