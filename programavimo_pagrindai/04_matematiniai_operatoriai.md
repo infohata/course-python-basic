@@ -63,7 +63,7 @@ Atspausdinkite visus penkis rezultatus.
 
 ### Antra užduotis
 
-Iššūkis: Perdarykite pirmąją užduotį, tik vietoj kintamojo y panaudokite z kintamąjį.
+Iššūkis 💡: Perdarykite pirmąją užduotį, tik vietoj kintamojo y panaudokite z kintamąjį.
 
 ### Trečia užduotis
 
@@ -96,7 +96,7 @@ print(atsakymas3)
 print(atsakymas4)
 print(atsakymas5)
 ```
-  <p>Rezultatas: </p>
+<p>Rezultatas: </p>
 
 ```
 12.5

@@ -121,7 +121,7 @@ print(a, type(a))
 print(b, type(b))
 print(c, type(c))
 ```
-<p>Output: </p>
+<p>Rezultatas: </p>
 
 ```
 5 <class 'int'>
