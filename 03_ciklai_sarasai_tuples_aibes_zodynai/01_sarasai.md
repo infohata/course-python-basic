@@ -171,6 +171,18 @@ print(len(sarasas)) # 5
 
 <br>
 
+## Patikrinti ar elementas yra sąraše
+
+Norint patikrinti, ar elementas yra sąraše, galima naudoti `in` raktinį žodį. Šis žodis patikrina, ar elementas yra sąraše, ir grąžina `True`, jei taip, ir `False`, jei ne.
+
+```Python
+sarasas = ['obuolys', 'bananas', 'kriause']
+print('obuolys' in sarasas) # True
+print('melionas' in sarasas) # False
+```
+
+<br>
+
 # Užduotys
 
 ### Pirma užduotis
@@ -185,6 +197,8 @@ print(len(sarasas)) # 5
 - Ištrinkite sąrašo trečią elementą.
 - Suraskite sąraše "sriubą" indeksą.
 - Įterpkite naują maisto produktą "kepta vištiena" į sąrašo ketvirtą vietą.
+- Patikrinkite sąrašo ilgį.
+- Patikrinkite ar priduktas "makaronai" yra sąraše.
 - Išvalykite sąrašą.
 
 # Atsakymai į užduotis
@@ -213,6 +227,8 @@ sriubos_indeksas = maisto_produktai.index('Sriuba')
 print("Sąrašo 'Sriuba' indeksas:", sriubos_indeksas)
 maisto_produktai.insert(3, 'Kepta vištiena')
 print("Sąrašas su įterptu nauju elementu:", maisto_produktai)
+print("Sąrašo ilgis:", len(maisto_produktai))
+print("Sąraše yra makaronai:", 'makaronai' in maisto_produktai)
 maisto_produktai.clear()
 print("Išvalytas sąrašas:", maisto_produktai)
 
@@ -229,6 +245,8 @@ Sąrašas su įtrauktais elementais: ['Kava', 'Sriuba', 'Makaronai', 'Kepsnys', 
 Sąrašas be trečiojo elemento: ['Kava', 'Sriuba', 'Kepsnys', 'Kebabai', 'Pica']
 Sąrašo 'Sriuba' indeksas: 1
 Sąrašas su įterptu nauju elementu: ['Kava', 'Sriuba', 'Kepsnys', 'Kepta vištiena', 'Kebabai', 'Pica']
+Sąrašo ilgis: 6
+Sąraše yra makaronai: False
 Išvalytas sąrašas: []
 ```
 </details>
