@@ -12,10 +12,10 @@ string2 = "Kaip sekasi?"
 Galite gauti tam tikrus simbolius iš simbolių eilutės naudodami kvadratinius skliaustus ir nurodydami, kuriose pozicijose norite gauti simbolius. Skliausteliuose nurodoma pozicija pradedant nuo 0. Taigi, jei norite gauti pirmąjį simbolį, nurodykite 0, antrasis simbolis būtų 1, ir t.t.
 
 ```Python
-string = 'Labas, pasauli!'
-print(string[0]) # Išveda 'L'
-print(string[1]) # Išveda 'a'
-print(string[-1]) # Išveda '!'
+kintamasis = 'Labas, pasauli!'
+print(kintamasis[0]) # Išveda 'L'
+print(kintamasis[1]) # Išveda 'a'
+print(kintamasis[-1]) # Išveda '!'
 ```
 
 ❗Pastaba: Naudokite neigiamus skaičius, kad gautumėte simbolius nuo galo. Pavyzdžiui, -1 reiškia paskutinį simbolį, -2 reiškia antrą nuo paskutinio, ir t.t.
@@ -25,24 +25,24 @@ print(string[-1]) # Išveda '!'
 Simbolių eilutę galite keisti, naudodami = operatorių. Tai gali būti naudinga, jei norite pakeisti tam tikrus simbolius arba visą simbolių eilutę.
 
 ```Python
-string = 'Labas, pasauli!'
-string = string[:5] + ' rytas' + string[5:]
-print(string) # Išveda 'Labas rytas, pasauli!'
+kintamasis = 'Labas, pasauli!'
+kintamasis = kintamasis[:5] + ' rytas' + kintamasis[5:]
+print(kintamasis) # Išveda 'Labas rytas, pasauli!'
 ```
 
-❗Pastaba: Šiuo atveju string[:5] reiškia simbolių eilutę nuo pradžios iki 5 pozicijos, o string[5:] reiškia simbolių eilutę nuo 5 pozicijos iki pabaigos.
+❗Pastaba: Šiuo atveju kintamasis[:5] reiškia simbolių eilutę nuo pradžios iki 5 pozicijos, o kintamasis[5:] reiškia simbolių eilutę nuo 5 pozicijos iki pabaigos.
 
 ❗Pastaba: atkreipkite dėmesį, kad po žodžio labas prieš kablelį nėra tarpo, todėl norint įterpti žodį "rytas", prieš jį reikia įterpri ir tarpą " ".
 
 ## Simbolių skaidymas (slicing)
 
-Galite gauti tam tikrą dalį simbolių eilutės, naudodami slicing (skaidymo) operatorių :. Šis operatorius leidžia nurodyti, kuriuos simbolius reikia ištraukti. Pvz., string[start:stop] gautų simbolius nuo pozicijos start iki pozicijos stop - 1.
+Galite gauti tam tikrą dalį simbolių eilutės, naudodami slicing (skaidymo) operatorių :. Šis operatorius leidžia nurodyti, kuriuos simbolius reikia ištraukti. Pvz., kintamasis[start:stop] gautų simbolius nuo pozicijos start iki pozicijos stop - 1.
 
 ```Python
-string = 'Labas, pasauli!'
-print(string[0:5]) # Išveda 'Labas'
-print(string[7:]) # Išveda 'pasauli!'
-print(string[:5]) # Išveda 'Labas'
+kintamasis = 'Labas, pasauli!'
+print(kintamasis[0:5]) # Išveda 'Labas'
+print(kintamasis[7:]) # Išveda 'pasauli!'
+print(kintamasis[:5]) # Išveda 'Labas'
 ```
 
 ❗Pastaba: Jei nenurodoma start reikšmė, slicing prasideda nuo pradžios. Jei nenurodoma stop reikšmė, slicing baigiasi iki pabaigos.
@@ -52,8 +52,8 @@ print(string[:5]) # Išveda 'Labas'
 Jei norite sužinoti, kiek simbolių yra simbolių eilutėje, galite naudoti funkciją len().
 
 ```Python
-string = 'Labas, pasauli!'
-print(len(string)) # Išveda 15
+kintamasis = 'Labas, pasauli!'
+print(len(kintamasis)) # Išveda 15
 ```
 
 ## Nauja eilutė, tabuliacija ir Unicode simboliai
@@ -407,8 +407,8 @@ Galima naudoti ir kitus formatavimo raktus, kad sukurtumėte reikiamą tekstini�
 Kodas, kuris paprašo vartotojo įvesti savo vardą ir išveda pranešimą su pasisveikinimu:
 
 ```Python
-name = input("Įveskite savo vardą: ")
-print("Sveiki, " + name + "!")
+vardas = input("Įveskite savo vardą: ")
+print("Sveiki, " + vardas + "!")
 ```
 
 Jeigu programoje norite naudoti skaičius, "input" funkcija taip pat gali būti naudojama skaičių įvedimui. Tačiau svarbu prisiminti, kad "input" funkcija visada grąžina tekstą, todėl turite konvertuoti įvestus duomenis į skaičių formatą, jei norite atlikti skaičiavimus.
@@ -492,3 +492,184 @@ print("{:.1f} laipsnių Celsijaus yra {:.1f} laipsnių Farenheitų.".format(cels
 ```
 
 Ši programa paprašys vartotojo įvesti temperatūrą laipsniais Celsijaus. Tada konvertuos šią temperatūrą į laipsnius Farenheitų, naudodama formulę: F = (C * 1.8) + 32. Galiausiai išves konvertuotą temperatūrą į konsolę, naudojant formatavimo simbolius.
+
+# Užduotys
+
+### Pirma užduotis
+
+- Parašykite programą, kuri leidžia vartotojui įvesti bet kokią simbolių eilutę ir atspausdina jos pirmąjį ir paskutinį simbolius.
+
+### Antra užduotis
+
+- Sukurkite simbolių eilutę, kurią sudaro jūsų mėgstamos knygos pavadinimas. Atspausdinkite jo pirmąsias penkias raides.
+
+### Trečia užduotis
+
+- Sukurkite simbolių eilutę, kurią sudaro jūsų mėgstama citata. Atspausdinkite jo paskutines tris raides.
+
+### Ketvirta užduotis
+
+- Sukurkite programą, kuri leidžia vartotojui įvesti du skirtingus žodžius ir atspausdina kiekvieno žodžio pirmuosius simbolius, atskirtus brūkšneliu. Pvz., "Labas vakaras" ir "geros dienos" -> "L-v", "g-d".
+
+### Penkta užduotis
+
+- Sukurkite tekstą "Aš esu studentas".
+
+- Panaudokite `upper` metodą, kad pakeistumėte visas raides didžiosiomis.
+
+- Panaudokite `lower` metodą, kad pakeistumėte visas raides mažosiomis.
+
+- Panaudokite `join` metodą, kad sujungtumėte žodžių sąrašą ["Aš", "esu", "studentas"] į vieną eilutę su tarpais tarp žodžių.
+
+- Panaudokite `split` metodą, kad padalintumėte eilutę "Aš esu studentas" į žodžių sąrašą.
+
+- Panaudokite `find` metodą, kad rastumėte poziciją, kurioje prasideda žodis "studentas" eilutėje "Aš esu studentas".
+
+- Panaudokite `replace` metodą, kad pakeistumėte žodį "studentas" žodžiu "programuotojas" eilutėje "Aš esu studentas".
+
+### Šešta užduotis
+
+Paprašykite vartotojo įvesti savo vardą ir amžių. Tada išveskite pranešimą, kuriame nurodomi vartotojo vardas ir metai, kai vartotojui sukaks 100 metų.
+
+### Septinta užduotis
+
+Parašykite programą, kuri paprašytų vartotojo įvesti savo ūgį centimetrais. Tada programą turi paversti vartotojo ūgį metrais ir išvesti pranešimą su vartotojo ūgiu abiejomis matavimo vienetų.
+
+### Aštunta užduotis
+
+Paprašykite vartotojo įvesti savo atlyginimą ir taikomą mokesčio procentą. Tada apskaičiuokite, kiek vartotojas gaus mėnesio pabaigoje, kai nuo atlyginimo bus nuskaičiuotas mokesčio procentas.
+
+### Devinta užduotis
+
+Sukurkite programą, kuri leistų vartotojui pasirinkti, kokią konversiją jis nori atlikti: arba keisti temperatūrą iš laipsnių Celsijaus į laipsnius Farenheito, arba iš laipsnių Farenheito į laipsnius Celsijaus. Tada programa turi paprašyti vartotojo įvesti pradinę temperatūrą ir atlikti konversiją bei išvesti rezultatą.
+
+# Atsakymai į užduotis
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+  <summary>Pirma užduotis</summary>
+  <hr>
+  
+```Python
+kintamasis = input("Įveskite simbolių eilutę: ")
+print("Pirmasis simbolis:", kintamasis[0])
+print("Paskutinis simbolis:", kintamasis[-1])
+```
+</details>
+<details>
+  <summary>Antra užduotis</summary>
+  <hr>
+
+```Python
+knygos_pavadinimas = "Moby Dick"
+print(knygos_pavadinimas[:5])
+```
+</details>
+<details>
+  <summary>Trečia užduotis</summary>
+  <hr>
+
+```Python
+citata = "Be the change you wish to see in the world"
+print(citata[-3:])
+```
+</details>
+<details>
+  <summary>Ketvirta užduotis</summary>
+  <hr>
+
+```Python
+pirmas_zodis = input("Įveskite pirmąjį žodį: ")
+antras_zodis = input("Įveskite antrąjį žodį: ")
+print(pirmas_zodis[0] + "-" + antras_zodis[0])
+```
+</details>
+<details>
+  <summary>Penkta užduotis</summary>
+  <hr>
+
+```Python
+# 1. Sukuriamas tekstas
+sakinys = "Aš esu studentas"
+
+# 2. Upper metodas: pakeičia visas raides didžiosiomis raidėmis
+didziosios_raides = sakinys.upper()
+
+# 3. Lower metodas: pakeičia visas raides mažosiomis raidėmis
+mazosios_raides = sakinys.lower()
+
+# 4. Join metodas: sujungia eilučių sąrašą į vieną eilutę
+zodziu_sarasas = ["Aš", "esu", "studentas"]
+eilute = " ".join(zodziu_sarasas)
+
+# 5. Split metodas: skaido eilutę pagal nurodytą skyriklį ir grąžina sąrašą
+zodziu_sarasas = sakinys.split(" ")
+
+# 6. Find metodas: ieško nurodytos frazės ir grąžina jos poziciją
+pozicija = sakinys.find("studentas")
+
+# 7. Replace metodas: pakeičia nurodytą frazę kitu tekstu
+pakeistas_tekstas = sakinys.replace("studentas", "programuotojas")
+
+# Atsakymų spausdinimas
+print("Pradinis tekstas:", sakinys)
+print("Tekstas didžiosiomis raidėmis:", didziosios_raides)
+print("Tekstas mažosiomis raidėmis:", mazosios_raides)
+print("Sąrašo sujungta eilutė:", eilute)
+print("Sakinys padalintas į žodžius:", zodziu_sarasas)
+print("Žodžio 'studentas' pozicija:", pozicija)
+print("Tekstas su pakeistu žodžiu:", pakeistas_tekstas)
+```
+</details>
+<details>
+  <summary>Šešta užduotis</summary>
+  <hr>
+
+```Python
+vardas = input("Įveskite savo vardą: ")
+metai = input("Įveskite savo amžių: ")
+metai_iki_100 = 100 - int(metai)
+rezultatas = 2023 + metai_iki_100
+print(f"Sveiki, {vardas}! Jūs sukaksite 100 metų {rezultatas}-aisiais.")
+```
+</details>
+<details>
+  <summary>Septinta užduotis</summary>
+  <hr>
+
+```Python
+ugis_cm = input("Įveskite savo ūgį centimetrais: ")
+ugis_m = int(ugis_cm) / 100
+print(f"Jūsų ūgis yra {ugis_cm} cm arba {ugis_m:.2f} m.")
+```
+</details>
+<details>
+  <summary>Aštunta užduotis</summary>
+  <hr>
+
+```Python
+atlyginimas = input("Įveskite savo atlyginimą: ")
+mokescio_procentas = input("Įveskite taikomą mokesčio procentą: ")
+neto_atlyginimas = int(atlyginimas) * (1 - int(mokescio_procentas) / 100)
+print(f"Jūsų atlyginimas į rankas yra: {neto_atlyginimas:.2f} EUR")
+```
+</details>
+<details>
+  <summary>Devinta užduotis</summary>
+  <hr>
+
+```Python
+konversijos_tipas = input("Pasirinkite konversijos tipą (įveskite C arba F): ")
+temperatura = input("Įveskite temperatūrą: ")
+
+if konversijos_tipas == "C":
+    fahrenheit = float(temperatura) * 9/5 + 32
+    print(f"{temperatura} laipsnių Celsijaus yra {fahrenheit:.2f} laipsnių Farenheito.")
+elif konversijos_tipas == "F":
+    celsius = (float(temperatura) - 32) * 5/9
+    print(f"{temperatura} laipsnių Farenheito yra {celsius:.2f} laipsnių Celsijaus.")
+else:
+    print("Neteisingas konversijos tipas. Bandykite dar kartą.")
+```
+</details>
+</details>
