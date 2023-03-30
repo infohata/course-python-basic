@@ -1,13 +1,14 @@
 # Simbolių eilutės
 
-1. Simbolių eilutės kūrimas:
+## Simbolių eilutės kūrimas
 
 ```Python
 string1 = 'Labas, pasauli!'
 string2 = "Kaip sekasi?"
 ```
 
-2. Simbolių ištraukimas:
+## Simbolių ištraukimas
+
 Galite gauti tam tikrus simbolius iš simbolių eilutės naudodami kvadratinius skliaustus ir nurodydami, kuriose pozicijose norite gauti simbolius. Skliausteliuose nurodoma pozicija pradedant nuo 0. Taigi, jei norite gauti pirmąjį simbolį, nurodykite 0, antrasis simbolis būtų 1, ir t.t.
 
 ```Python
@@ -16,19 +17,25 @@ print(string[0]) # Išveda 'L'
 print(string[1]) # Išveda 'a'
 print(string[-1]) # Išveda '!'
 ```
+
 ❗Pastaba: Naudokite neigiamus skaičius, kad gautumėte simbolius nuo galo. Pavyzdžiui, -1 reiškia paskutinį simbolį, -2 reiškia antrą nuo paskutinio, ir t.t.
 
-3. Simbolių keitimas:
+## Simbolių keitimas
+
 Simbolių eilutę galite keisti, naudodami = operatorių. Tai gali būti naudinga, jei norite pakeisti tam tikrus simbolius arba visą simbolių eilutę.
 
 ```Python
 string = 'Labas, pasauli!'
-string = string[:6] + 'rytas' + string[11:]
-print(string) # Išveda 'Labas, rytas!'
+string = string[:5] + ' rytas' + string[5:]
+print(string) # Išveda 'Labas rytas, pasauli!'
 ```
-❗Pastaba: Šiuo atveju string[:6] reiškia simbolių eilutę nuo pradžios iki 6 pozicijos, o string[11:] reiškia simbolių eilutę nuo 11 pozicijos iki pabaigos.
 
-4. Simbolių skaidymas (slicing):
+❗Pastaba: Šiuo atveju string[:5] reiškia simbolių eilutę nuo pradžios iki 5 pozicijos, o string[5:] reiškia simbolių eilutę nuo 5 pozicijos iki pabaigos.
+
+❗Pastaba: atkreipkite dėmesį, kad po žodžio labas prieš kablelį nėra tarpo, todėl norint įterpti žodį "rytas", prieš jį reikia įterpri ir tarpą " ".
+
+## Simbolių skaidymas (slicing)
+
 Galite gauti tam tikrą dalį simbolių eilutės, naudodami slicing (skaidymo) operatorių :. Šis operatorius leidžia nurodyti, kuriuos simbolius reikia ištraukti. Pvz., string[start:stop] gautų simbolius nuo pozicijos start iki pozicijos stop - 1.
 
 ```Python
@@ -37,9 +44,11 @@ print(string[0:5]) # Išveda 'Labas'
 print(string[7:]) # Išveda 'pasauli!'
 print(string[:5]) # Išveda 'Labas'
 ```
+
 ❗Pastaba: Jei nenurodoma start reikšmė, slicing prasideda nuo pradžios. Jei nenurodoma stop reikšmė, slicing baigiasi iki pabaigos.
 
-5. Simbolių eilutės ilgis:
+## Simbolių eilutės ilgis
+
 Jei norite sužinoti, kiek simbolių yra simbolių eilutėje, galite naudoti funkciją len().
 
 ```Python
@@ -54,12 +63,14 @@ Naujos eilutės pavyzdys:
 ```Python
 print("Labas\nPasauli")
 ```
-Rezultatas: 
 
-```Python
+Rezultatas:
+
+```Text
 Labas
 Pasauli
 ```
+
 Šiame pavyzdyje "\n" yra naujos eilutės simbolis. Jis pasako programai, kad teksto eilutę reikia padalinti ir pradėti naują eilutę.
 
 Tabuliacijos pavyzdys:
@@ -69,13 +80,15 @@ print("Vardas\tAmžius\tMiestas")
 print("Tomas\t25\tVilnius")
 print("Monika\t28\tKaunas")
 ```
+
 Rezultatas:
 
-```Python
+```Text
 Vardas  Amžius  Miestas
 Tomas   25      Vilnius
 Monika  28      Kaunas
 ```
+
 Šiame pavyzdyje "\t" yra tab simbolis. Jis naudojamas padaryti tam tikrą atstumą tarp skirtingų teksto eilučių.
 
 Unicode simbolių pavyzdys:
@@ -83,16 +96,20 @@ Unicode simbolių pavyzdys:
 ```Python
 print("\u00A9 2023 OpenAI")
 ```
-Rezultatas: 
+
+Rezultatas:
 
 ```Python
 © 2023 OpenAI
 ```
+
 Šiame pavyzdyje "\u00A9" yra Unicode simbolis, kuris atitinka copyright simbolį.
 
 Jei norite pamatyti visus Unicode simbolius, galite naudoti Unicode kodo lentelę, kuri pateikia sąrašą visų galimų simbolių kartu su jų skaitiniais kodais: http://unicode-table.com.
 
-## Eilučių metodai
+💡 Gerai žinoti: galima tekste naudoti ir emoji, pvz. šią lemputę, jeigu jūsų naudojamas šriftas juos palaiko.
+
+## Simbolių eilučių metodai
 
 ```Python
 # Sukuriamas tekstas
@@ -126,6 +143,7 @@ print("Split metodas: ", zodziu_sarasas)
 print("Find metodas: ", pozicija)
 print("Replace metodas: ", pakeistas_tekstas)
 ```
+
 Ši programa išvestų šiuos rezultatus:
 
 ```Python
@@ -137,11 +155,57 @@ Split metodas: ['Labas', 'pasauli!']
 Find metodas: 7
 Replace metodas: Sveiki, pasauli!
 ```
+
+❗Pastaba: atsargiai naudokite `.find()` rezultatus loginėse išraiškose. Pvz.
+
+```Python
+tekstas = "Labas pasauli"
+if tekstas.find("pasauli"):
+    print("radau pasauli")
+else:
+    print("neradau pasauli")
+if tekstas.find("Labas"):
+    print("radau Labas")
+else:
+    print("neradau Labas")
+```
+
+Rezultatas:
+
+```Text
+radau pasauli
+neradau Labas
+```
+
+Taip gaunasi todėl, kad paieškos rezultatas yra nulis, o konvertuojant tarp kintamųjų tipų `int` ir `bool`, nulis yra False.
+
+```Python
+print(tekstas.find("Labas"))
+print(0 == True)
+print(0 == False)
+```
+
+```Text
+0
+False
+True
+```
+
+Teisingas naudojimas `.find()` metodo sąlygoje būtų tikrinti, ar randama reikšmė yra neneigiama
+
+```Python
+if tekstas.find("Labas") >= 0:
+    print("radau Labas")
+else:
+    print("neradau Labas")
+# radau Labas
+```
+
 ## Formatavimas
 
-Formatavimas yra svarbi programavimo koncepcija, leidžianti kurti teksto eilutes su kintamaisiais arba reikšmėmis, kurios gali būti pateikiamos įvairiais būdais. 
+Formatavimas yra svarbi programavimo koncepcija, leidžianti kurti teksto eilutes su kintamaisiais arba reikšmėmis, kurios gali būti pateikiamos įvairiais būdais.
 
-1. Konkatenacija (`+`)
+## Konkatenacija (`+`)
 Konkatenacija yra paprasčiausias būdas sujungti tekstą su kintamaisiais. Norint pridėti kintamąjį prie teksto, tiesiog naudojamas pliuso simbolis. Pavyzdžiui:
 
 ```Python
@@ -151,14 +215,16 @@ amzius = 25
 tekstas = "Sveiki, mano vardas yra " + vardas + " ir man yra " + str(amzius) + " metai."
 print(tekstas)
 ```
+
 Rezultatas:
 
 ```Python
 Sveiki, mano vardas yra Jonas ir man yra 25 metai.
 ```
+
 Šiame pavyzdyje teksto eilutė sukurta sujungiant atskirus tekstus ir kintamuosius. Reikia atkreipti dėmesį, kad skaičius amzius buvo konvertuotas į eilutę naudojant str() funkciją.
 
-2. `f'` eilučių formatas
+## `f'` eilučių formatas
 `f'` eilučių formatas yra formatavimo metodas, leidžiantis sukurti tekstą su kintamaisiais tiesiogiai eilutėje. Norint pridėti kintamąjį, tiesiog reikia naudoti `f'` simbolį ir įdėti kintamojo pavadinimą į skliaustus. Pavyzdžiui:
 
 ```Python
