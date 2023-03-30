@@ -39,33 +39,6 @@ print(type(x))
 
 Šis kodas išspausdins "int", nurodydamas, kad "x" yra sveikasis skaičius (integer).
 
-## Paprasti matematiniai veiksmai
-
-### Sudėties operacija (+) - naudojama sumuoti du ar daugiau skaičių. Pavyzdžiui:
-
-```Python
-x = 5 + 3
-print(x)  # 8
-```
-### Atimties operacija (-) - naudojama atimti du ar daugiau skaičių. Pavyzdžiui:
-
-```Python
-y = 10 - 4
-print(y)  # 6
-```
-### Daugybos operacija (*) - naudojama padauginti du ar daugiau skaičių. Pavyzdžiui:
-
-```Python
-z = 2 * 3
-print(z)  # 6
-```
-### Dalybos operacija (/) - naudojama padalinti vieną skaičių iš kito. Pavyzdžiui:
-
-```Python
-a = 10 / 2
-print(a)  # 5.0
-```
-
 ## Pagrindinės taisyklės ir išimtys
 
 ### Kintamųjų pavadinimo taisyklės: 
