@@ -158,6 +158,10 @@ sarasas.reverse()
 print(sarasas)  # [5, 4, 7, 6, 3, 2, 1]
 ```
 
+<br>
+
+## Sąrašų ilgio matavimas
+
 `len()` grąžina sąrašo elementų skaičių. Tai yra naudinga, kai norime sužinoti, kiek elementų yra sąraše.
 
 ```Python
