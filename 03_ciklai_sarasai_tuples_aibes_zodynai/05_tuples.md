@@ -151,3 +151,42 @@ d
 Kaip matote, `while` cikle naudojame `len()` funkciją, kad sužinotume, kiek `tuple` turi elementų. Tada, naudodami kintamąjį `i`, per kiekvieną iteraciją gautume reikšmę, kurią spausdintume, ir padidintume `i` reikšmę vienetu, kad galėtume per eiti per kitą `tuple` elementą.
 
 # Užduotys
+
+- Sukurkite du `tuple`, kurie susideda iš jūsų mėgstamų grupių pavadinimų. Sujunkite juos į vieną naują `tuple`.
+- Atspausdinkite naują `tuple`.
+- Atspausdinkite visus `tuple` elementus atskirose eilutėse.
+- Patikrinkite ar kuri nors grupė yra `tuple`.
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<hr>
+
+```Python
+megstamos_grupes = ('Metallica', 'Deep Purple', 'Dio', 'Pearl Jam')
+megstamiausios_grupes = ('Queen', 'AC/DC', 'Led Zeppelin')
+
+visos_grupes = megstamos_grupes + megstamiausios_grupes
+
+print(visos_grupes)
+
+for grupe in visos_grupes:
+    print(grupe)
+
+print('Black Sabbath' in visos_grupes)
+```
+
+Rezultatas:
+
+```Text
+('Metallica', 'Deep Purple', 'Dio', 'Pearl Jam', 'Queen', 'AC/DC', 'Led Zeppelin')
+Metallica
+Deep Purple
+Dio
+Pearl Jam
+Queen
+AC/DC
+Led Zeppelin
+False
+```
+</details>
