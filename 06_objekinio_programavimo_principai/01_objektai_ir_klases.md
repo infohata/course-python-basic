@@ -88,10 +88,10 @@ class Automobilis:
         self.spalva = spalva
 
     def vaziuoti(self):
-      print('Važiuoja')
+        print('Važiuoja')
 
     def pypseti(self, zinute='Pyp', kiekis=1):
-      print(zinute * kiekis)
+        print(zinute * kiekis)
 
 antras_automobilis = Automobilis("BMW", "X5", 2021)
 
@@ -155,7 +155,7 @@ class Automobilis:
         self.spalva = spalva
 
     def __str__(self):
-      return f'{self.marke} {self.modelis}: {self.metai} metai, spalva {self.spalva}'
+        return f'{self.marke} {self.modelis}: {self.metai} metai, spalva {self.spalva}'
 
 antras_automobilis = Automobilis("BMW", "X5", 2021)
 
@@ -216,7 +216,7 @@ class Automobilis:
         self.spalva = spalva
 
     def __str__(self):
-      return f'{self.marke} {self.modelis}: {self.metai} metai, spalva {self.spalva}'
+        return f'{self.marke} {self.modelis}: {self.metai} metai, spalva {self.spalva}'
 ```
 
 ```Python
@@ -231,7 +231,7 @@ automobiliai.append(antras_automobilis)
 automobiliai.append(ketvirtas_automobilis)
 
 for automobilis in automobiliai:
-  print(automobilis)
+    print(automobilis)
 ```
 
 Rezultatas:
