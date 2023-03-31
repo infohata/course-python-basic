@@ -1,14 +1,14 @@
-# `while` ciklai
+# ciklai `while`
 
-`while` ciklas leidžia kurti kartojamus procesus, kol tam tikra sąlyga yra teisinga.
+`while` ciklas leidžia kurti kartojamus procesus, kol nurodyta sąlyga yra teisinga.
 
 Sąlyga yra logiškas reiškinys, kuris yra tikrinamas prieš kiekvieną ciklo vykdymą. Jei sąlyga yra teisinga, kodo blokas tarp `while` ir žymės `:` yra vykdomas. Jei sąlyga tampa neteisinga, vykdymas nutraukiamas ir programa tęsia vykdymą nuo žymės `:` po `while` ciklo. Pvz.:
 
 ```Python
-skaičius = 1
-while skaičius <= 5:
-    print(skaičius)
-    skaičius = skaičius + 1
+skaicius = 1
+while skaicius <= 5:
+    print(skaicius)
+    skaicius = skaicius + 1
 ```
 
 Rezultatas:
@@ -25,7 +25,7 @@ Rezultatas:
 
 ## Begalinis ciklas (`infinite loop`)
 
-Begalinis ciklas kartojasi be pabaigos, nes sąlyga, kurią tikrina ciklas, visada yra teisinga. Tai gali būti neigiamai paveikti programos veikimą, nes begalinis ciklas gali sukelti programos sustojimą ar net kompiuterio nugadinimą.
+Begalinis ciklas kartojasi be pabaigos, nes sąlyga, kurią tikrina ciklas, visada yra teisinga. Tai gali būti neigiamai paveikti programos veikimą, nes begalinis ciklas gali sukelti programos sustojimą ar net viso kompiuterio  užstrigimą.
 
 Šioje programoje `while` ciklas niekada nesibaigs, nes sąlyga `True` yra visada teisinga:
 
@@ -45,7 +45,7 @@ while True:
 
 Tam, kad išvengtumėte begalinių ciklų, turite užtikrinti, kad ciklas turėtų galutinę sąlygą, kuri pasibaigs kai reikia. Pavyzdžiui, jei naudojate `while` ciklą, įsitikinkite, kad jis yra su tiksliomis pradinio ir galutinio kintamojo reikšmėmis arba kitomis galutinėmis sąlygomis.
 
-## Ciklo nutraukimas (`break`)
+## Ciklo nutraukimas su `break`
 
 Ciklo nutraukimas leidžianti nutraukti ciklą iki jo paprastai numatytos pabaigos. Tai yra naudinga, jeigu norite nutraukti ciklą, kai įvykdoma tam tikra sąlyga arba kai jūsų programa negali tinkamai veikti, jei ciklas vykdomas per ilgai.
 
@@ -55,7 +55,7 @@ Naudojant `break` ciklas iškart sustoja, o programa tęsia vykdymą iš kito ko
 skaicius = 0
 while skaicius < 10:
     skaicius += 1
-    if skaicius == 5:
+    if skaicius >= 5:
         break
     print(skaicius)
 ```
@@ -71,11 +71,9 @@ Rezultatas:
 
 ❗ Svarbu prisiminti, kad `break` yra naudojamas tik cikle, kuriame yra vykdomi tam tikri veiksmai, ir kad jis turi būti naudojamas atsargiai, kad nebūtų nutrauktas per daug anksti arba per dažnai.
 
-<br>
+## Žingsnio praleidimas su `continue`
 
-## Pakartojimo praleidimas (`continue`)
-
-Pakartojimo praleidimas leidžia praleisti dabartinę ciklo iteraciją ir tęsti kitą iteraciją. Tai yra naudinga, jeigu norite praleisti ciklo iteraciją, kai įvykdoma tam tikra sąlyga, ir tęsti su kitu ciklo elementu. Pvz.:
+Žingsio praleidimas leidžia praleisti dabartinę ciklo iteraciją ir tęsti kitą iteraciją. Tai yra naudinga, jeigu norite praleisti ciklo žingsnį ar jo dalį, kai įvykdoma tam tikra sąlyga, ir tęsti su kitu ciklo elementu. Pvz.:
 
 ```Python
 skaicius = 0
@@ -124,9 +122,9 @@ Rezultatas:
 Ciklas baigtas
 ```
 
-❗ Svarbu prisiminti, kad `else` blokas su `while` ciklu gali būti naudojamas tik tada, kai ciklas baigiasi natūraliai, o ne kai jis yra nutraukiamas `break`.
+❗ Svarbu prisiminti, kad `else` blokas su `while` ciklu gali būti naudojamas tik tada, kai ciklas baigiasi natūraliai, o ne kai jis yra nutraukiamas su `break`.
 
-# Užduotys
+## Užduotys
 
 ### Pirma užduotis
 
