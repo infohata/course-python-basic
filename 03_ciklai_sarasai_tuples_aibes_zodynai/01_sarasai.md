@@ -7,17 +7,18 @@ Sąrašai (`lists`) yra objektų rinkiniai, kurie gali būti priskirti kintamies
 Python leidžia sukurti sąrašus naudojant laužtinius skliaustus `[ ]`. Sąrašo elementus atskiriame kableliais `,`. Pvz.:
 
 ```Python
+tuscias_sarasas = []
 skaiciu_sarasas = [1, 2, 3, 4, 5]
 zodziu_sarasas = ['obuolys', 'kriaušė', 'bananas']
 misrus_sarasas = ['obuolys', 2, 1.4, 'kriaušė', True, 'bananas']
 ```
 
-Pirmame sąraše skaiciu_sarasas yra skaičiai, antrame zodziu_sarasas - žodžiai, o trečiame misrus_sarasas - mišrūs objektai. Pastebime, kad sąraše gali būti skirtingi objektai, jie nėra apribojami vieno tipo duomenų.
+Sąraše `skaiciu_sarasas` yra skaičiai, `zodziu_sarasas` - žodžiai, o  `misrus_sarasas` - mišrūs objektai. Pastebime, kad sąraše gali būti skirtingi objektai, jie nėra apribojami vieno tipo duomenų.
 
 Sąrašą taip pat galima sukurti naudojant `list()` funkciją ir perduodant jai elementus. Pvz.:
 
 ```Python
-sarasas = list(('obuolys', 'kriaušė', 'bananas'))
+tuscias_sarasas = list()
 ```
 
 ## Sąrašų indeksavimas
@@ -44,7 +45,7 @@ print(sarasas[-3])   # obuolys
 
 ## Sąrašų dalijimas
 
-Sąrašus taip pat galima dalinti (`slicing`), kad gautumėte tik dalį sąrašo. Norėdami tai padaryti, naudokite `:` simbolius. Reikia nurodyti pradinį indeksą ir galinį indeksą, tarp kurių yra laužtiniai skliaustai. Kai nenurodomas pradinis indeksas, Python automatiškai priskiria pradinį indeksą 0. Kai nenurodomas galinis indeksas, Python automatiškai priskiria galinį indeksą sąrašo pabaigos indeksui. Taip pat galima naudoti neigiamus indeksus, kad pradėtumėte skaičiavimą sąrašo pabaigos pusėje. Pvz.:
+Sąrašus taip pat galima dalinti (`slicing`), kad gautumėte tik dalį sąrašo. Norėdami tai padaryti, naudokite `:` simbolius. Galima nurodyti pradinį indeksą ir galinį indeksą laužtiniuose skliaustuose. Kai nenurodomas pradinis indeksas, Python automatiškai priskiria pradinį indeksą 0. Kai nenurodomas galinis indeksas, Python automatiškai priskiria galinį indeksą sąrašo pabaigos indeksui. Taip pat galima naudoti neigiamus indeksus, kad pradėtumėte skaičiavimą sąrašo pabaigos pusėje. Pvz.:
 
 ```Python
 sarasas = ['obuolys', 'kriaušė', 'bananas', 'apelsinas', 'persimonas']
@@ -169,7 +170,7 @@ print('obuolys' in sarasas) # True
 print('melionas' in sarasas) # False
 ```
 
-# Užduotys
+## Užduotys
 
 - Sukurkite sąrašą, kuriame yra keli jūsų mėgstamų maisto produktų pavadinimai.
 - Atspausdinkite visą sąrašą.
