@@ -195,5 +195,6 @@ for skaicius in range(3):
 else:
     print('Laimėjai!')
 ```
+
 </details>
 </details>

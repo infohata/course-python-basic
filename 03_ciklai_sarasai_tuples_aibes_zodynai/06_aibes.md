@@ -183,4 +183,5 @@ Unikalūs aibės 1 elementai: {1, 2, 3}
 Nauja aibė su aibės 2 unikaliais elementais: {8, 6, 7}
 Aibės 3 elementai kvadratu: {64, 49, 36}
 ```
+
 </details>
