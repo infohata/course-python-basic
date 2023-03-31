@@ -2,7 +2,7 @@
 
 Python yra programavimo kalba, kuri remiasi tam tikrais principais ir taisyklėmis.
 
-## Kodo struktūra
+## Kodo ir blokų struktūra
 
 Python kodo struktūra yra labai svarbi, nes ji nusako, kaip kodo eilutės turi būti struktūrizuotos ir kiek reikia naudoti įtraukas (indentation). Python nenaudoja skliaustų ar kabliatūros, kad atskirtų blokus. Vietoj to, Python naudoja įtraukas, kurios turi būti tuo pačiu atstumu nuo kairės eilutės.
 
@@ -34,31 +34,9 @@ Elementaraus sakinio pavyzdys:
 print("Sveiki, pasauli!")
 ```
 
-## Blokų struktūra
-
-Python programavimo kalba remiasi blokų struktūra. Tai reiškia, kad kodo blokai yra apibrėžti įtraukomis. Jei įtraukos nesutampa, gali būti gauta sintaksės klaida.
-
-Pavyzdžiui, šis kodas yra teisingas:
-
-```Python
-if x > 0:
-    print("x yra teigiamas")
-else:
-    print("x yra neigiamas arba lygus nuliui")
-```
-
-Tačiau šis kodas yra neteisingas:
-
-```Python
-if x > 0:
-print("x yra teigiamas")
-else:
-print("x yra neigiamas arba lygus nuliui")
-```
-
 ## PEP8 taisyklės
 
-PEP8 yra Python kodo rašymo taisyklių rinkinys, kuris padeda standartizuoti Python kodo formatavimą. Šios taisyklės yra naudingos, nes jie padeda kitiems programuotojams lengviau suprasti jūsų kodą. Kai kurios iš PEP8 taisyklių:
+PEP8 yra Python kodo rašymo taisyklių rinkinys, kuris padeda standartizuoti Python kodo formatavimą. Šios taisyklės yra naudingos, nes jos padeda kitiems programuotojams lengviau suprasti jūsų kodą. Kai kurios iš PEP8 taisyklių:
 
 ```Text
 ❗Nenaudokite tabuliavimo simbolių kaip įtraukos. Vietoj to naudokite tarpus.
@@ -84,7 +62,7 @@ PEP8 yra Python kodo rašymo taisyklių rinkinys, kuris padeda standartizuoti Py
 
 ## Komentarai
 
-Kodas yra skirtas ne tik kompiuteriams, bet ir žmonėms. Komentarai yra svarbūs, kad kiti programuotojai galėtų lengviau suprasti, ką reiškia tam tikri kodo blokai ką norite pasiekti su savo kodu. Komentarai taip pat gali padėti jums patiems, jei vėliau turėsite peržiūrėti savo kodą ir suprasti, ką jūs bandėte padaryti.
+Kodas yra skirtas ne tik kompiuteriams, bet ir žmonėms. Komentarai yra svarbūs, kad kiti programuotojai galėtų lengviau suprasti, ką reiškia tam tikri kodo blokai, ką norite pasiekti su savo kodu. Komentarai taip pat gali padėti jums patiems, jei vėliau turėsite peržiūrėti savo kodą ir suprasti, ką jūs bandėte padaryti.
 
 Komentarai yra rašomi tarp simbolio `#`, o kai yra paleidžiamas kodas, viskas, kas yra tarp `#` ir eilutės pabaigos, yra ignoruojama. Komentarai taip pat gali būti naudojami kaip laikinas kodas, kurio nenorite paleisti, bet kurį norite laikyti savo faile.
 
@@ -142,7 +120,7 @@ Klaviatūros sutrumpinimai (angl. keyboard shortcuts) yra efektyvus būdas darbu
 
 👉 `Ctrl + Shift + K` (`Cmd + Shift + K` macOS sistemoje) - Ištrinti eilutę
 
-👉 `Ctrl + /` (`Cmd + /` macOS sistemoje) - Sukurti išjungti komentarą
+👉 `Ctrl + /` (`Cmd + /` macOS sistemoje) - Sukurti / išjungti komentarą
 ```
 
 💡 Šie pavyzdžiai yra tik keli iš daugybės klaviatūros sutrumpinimų, kuriuos galite naudoti su VS Code.
@@ -156,7 +134,7 @@ Galite rasti visus oficialius VS Code klaviatūros sutrumpinimus dokumentacijoje
 
 ### Per VS Code svetainę
 
-1. Atidarykite VS Code svetainę (https://code.visualstudio.com/)
+1. Atidarykite VS Code svetainę https://code.visualstudio.com/
 2. Pasirinkite meniu Docs (Dokumentacija) -> Keyboard Shortcuts (Klaviatūros sutrumpinimai)
 
 Dokumentacija pateikia išsamią informaciją apie kiekvieną klaviatūros sutrumpinimą, taip pat jie yra suskirstyti pagal kategorijas, pvz., redagavimas, navigavimas, paieška ir kt. Be to, dokumentacija gali būti filtruojama pagal operacinę sistemą.
