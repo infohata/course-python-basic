@@ -4,7 +4,7 @@ Objektinis programavimas (`OOP`) yra programavimo paradigma, kuri leidžia kurti
 
 ## Klasės sukūrimas
 
-Klasės deklaracija yra paprasta - reikia naudoti `class` raktažodį, o po to klasės pavadinimą. Pvz.:
+Klasės deklaracija yra paprasta - reikia naudoti `class` žodį, o po to klasės pavadinimą. Pvz.:
 
 ```Python
 class Automobilis:
@@ -16,6 +16,12 @@ class Automobilis:
 ```
 
 Ši klasė turi keturias savybes: "marke", "modelis", "metai" ir "spalva". Konstruktorius `__init__` turi būti apibrėžtas kiekvienoje klasėje ir privalo turėti bent vieną parametrą `self`, nes jis nurodo, kad savybės yra susijusios su objektu, kuris bus sukuriamas iš šios klasės.
+
+<!-- TODO:
+Perdaryti eigą medžiagos iki šios vietos tokiu principu:
+- Klasės aprašymas be init, su savybės ir metodo pavyzdžiais (pvz. metai, def pypinti), paaiškinant kas tai yra
+- Tada supažindinti su konstruktorium __init__
+ -->
 
 ## Objekto sukūrimas
 
