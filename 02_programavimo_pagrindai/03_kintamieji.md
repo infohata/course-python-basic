@@ -112,7 +112,7 @@ print(y)  # išspausdina 5
 
 - Sukurkite kintamąjį a ir priskirkite jam bet kokį sveikąjį skaičių.
 - Sukurkite kitą kintamąjį b ir priskirkite jam bet kokį slankiojo kablelio skaičių.
-- Tada sukurkite trečią kintamąjį c ir priskirkite jam bet kokį kompleksinį skaičių. 
+- Tada sukurkite trečią kintamąjį c ir priskirkite jam bet kokį kompleksinį skaičių.
 - Atspausdinkite visus tris kintamuosius ir patikrinkite jų tipus.
 
 ## Atsakymai į užduotis
@@ -120,7 +120,7 @@ print(y)  # išspausdina 5
 <details><summary>❗Rodyti atsakymus</summary>
 <hr>
 <p>Kintamasis a yra sveikasis skaičius. Kintamasis b yra slankiojo kablelio skaičius. Kintamasis c yra kompleksinis skaičius.</p>
-  
+
 ```Python
 a = 5
 b = 3.14

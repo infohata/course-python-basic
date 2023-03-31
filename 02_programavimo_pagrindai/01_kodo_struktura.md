@@ -45,20 +45,20 @@ PEP8 yra Python kodo rašymo taisyklių rinkinys, kuris padeda standartizuoti Py
 
 ❗ Naudojant kelis argumentus, atskirkite juos kableliais ir po kiekvieno argumento padėkite po vieną tarpą.
 
-❗ Naudokite paaiškinamuosius kintamųjų pavadinimus.
+❗ Naudokite paaiškinamuosius kintamųjų pavadinimus. Kintamųjų pavadinimai turi kuo tiksliau reprezentuoti jų turinį.
 
-❗ Funkcijos ir klasės pavadinimai turėtų būti parašyti naudojant CapWords notaciją (pavyzdžiui, ManoKlasė).
+❗ Klasės pavadinimai turėtų naudojant CapWords notaciją (pavyzdžiui, ManoKlasė).
 
-❗ Trumpuosiuose funkcijų pavadinimuose naudokite mažąsias raides ir atskirkite žodžius apatiniais brūkšniais (pavyzdžiui, mano_funkcija).
+❗ Funkcijų, klasės metodų ir kintamųjų pavadinimuose naudokite mažąsias raides ir atskirkite žodžius apatiniais brūkšniais (pavyzdžiui, mano_funkcija, gimimo_data).
 
-❗ Nesupaprastinkite trumpųjų pavadinimų (pvz., nenaudokite l vietoj el).
+❗ Nesupaprastinkite trumpųjų pavadinimų (pvz., nenaudokite gd vietoj gimimo_data).
 
 ❗ Naudojant palyginimo operatorius, naudokite išsamias formas (pavyzdžiui, != vietoj <>).
 
-❗ Naudokite vienodą kabliataškių vietą. Pavyzdžiui, jei pradinis kabliataškis pradedamas naujoje eilutėje, tai ir visi kiti kabliataškiai turėtų būti pradedami naujoje eilutėje.
+❗ Naudokite vienodą skiriamųjų simbolių vietą. Pavyzdžiui, jeigu funkcijos argumentai netelpa vienoje eilutėje, ir argumentus išvardinote po vieną naujose eilutėse atitraukus nuo kairės per vieną įtrauką, tai funkcijos deklaracijos argumentų skliaustelis uždaromas irgi naujoje eilutėje, bet neatitraukus.
 ```
 
-💡 Šios taisyklės nėra būtinos, tačiau jų laikymasis padės padidinti jūsų kodo skaitomumą ir suprantamumą, ypač jei jūs dirbate su keliais programuotojais arba dalyvaujate atviro kodo projektuose.
+💡 Šios taisyklės nėra būtinos, tačiau jų laikymasis padės padidinti jūsų kodo skaitomumą ir suprantamumą, ypač jei jūs dirbate komandoje su kitais programuotojais arba dalyvaujate atviro kodo projektuose.
 
 ## Komentarai
 
