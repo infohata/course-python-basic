@@ -105,7 +105,7 @@ Rezultatas:
 
 Šiame pavyzdyje "\u00A9" yra Unicode simbolis, kuris atitinka copyright simbolį.
 
-Jei norite pamatyti visus Unicode simbolius, galite naudoti Unicode kodo lentelę, kuri pateikia sąrašą visų galimų simbolių kartu su jų skaitiniais kodais: http://unicode-table.com.
+Jei norite pamatyti visus Unicode simbolius, galite naudoti Unicode kodo lentelę, kuri pateikia sąrašą visų galimų simbolių kartu su jų skaitiniais kodais: <http://unicode-table.com>.
 
 💡 Gerai žinoti: galima tekste naudoti ir emoji, pvz. šią lemputę, jeigu jūsų naudojamas šriftas juos palaiko.
 
@@ -422,7 +422,7 @@ suma = int(num1) + int(num2)
 print("Suma yra: " + str(suma))
 ```
 
-2. Išvedimas (`print`)
+### Išvedimas (`print`)
 
 `print` funkcija leidžia jums išvesti informaciją į konsolę arba į failą. Pavyzdžiui, jei norite išvesti pranešimą su tekstiniu turiniu, galite naudoti "print" funkciją.
 
