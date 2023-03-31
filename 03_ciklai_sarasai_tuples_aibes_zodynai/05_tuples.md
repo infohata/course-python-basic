@@ -1,16 +1,10 @@
 # `tuple`
 
-`tuple` yra nekeičiamas ir tvarkingas Python duomenų tipas, kuris gali saugoti bet kokio tipo elementus. Jis panašus į 
-sąrašą, tačiau yra nekeičiamas - tai reiškia, kad kai kartą sukuriamas, jo elementai negali būti pakeisti ar pašalinti.
+`tuple` yra nekeičiamas ir tvarkingas Python duomenų tipas, panašus į sąrašą, kuris gali saugoti bet kokio tipo elementus. Tai reiškia, kad po sukūrimo, tuplės elementai negali būti pakeisti ar pašalinti.
 
 ## `tuple` kūrimas
 
 `tuple` sukūrimas yra labai panašus į sąrašo sukūrimą, tik naudojama skliaustelių pora `()` vietoj laužtinių skliaustų `[]`:
-
-```Python
-tuscias_tuple = ()
-print(tuscias_tuple) # ()
-```
 
 ```Python
 vieno_elemento_tuple = (1,)
@@ -18,14 +12,16 @@ print(vieno_elemento_tuple) # (1,)
 print(type(vieno_elemento_tuple)) # <class 'tuple'>
 ```
 
+❗Pastaba: tuščia tuplė neturi prasmės, todėl tuščios tuplės aprašyti neina.
+
 ```Python
 skaiciu_tuple = (1, 2, 3, 4, 5)
 print(skaiciu_tuple) # (1, 2, 3, 4, 5)
 ```
 
 ```Python
-misrus_tuple = (1, 'du', 3.0, [4, 5], True)
-print(misrus_tuple) # (1, 'du', 3.0, [4, 5], True)
+misri_tuple = (1, 'du', 3.0, [4, 5], True)
+print(misri_tuple) # (1, 'du', 3.0, [4, 5], True)
 ```
 
 ## `tuple` sujungimas
@@ -42,6 +38,12 @@ naujas_tuple = pirmas_tuple + antras_tuple + trecias_tuple
 print(naujas_tuple)
 ```
 
+Rezultatas:
+
+```Text
+(1, 2, 3, 'a', 'b', 'c', True, False)
+```
+
 ## Kaip pasiekti `tuple` elementus
 
 Tuple elementai yra pasiekiami naudojant indeksus, taip pat kaip ir sąrašuose. Indeksai prasideda nuo nulio, o paskutinis elementas yra pasiekiamas naudojant indeksą -1:
@@ -52,12 +54,6 @@ misrus_tuple = (1, 'du', 3.0, [4, 5], True)
 print(misrus_tuple[0]) # 1
 print(misrus_tuple[3]) # [4, 5]
 print(misrus_tuple[-1]) # True
-```
-
-Rezultatas:
-
-```Text
-(1, 2, 3, 'a', 'b', 'c', True, False)
 ```
 
 ## `tuple` dalijimas
@@ -150,7 +146,7 @@ d
 
 Kaip matote, `while` cikle naudojame `len()` funkciją, kad sužinotume, kiek `tuple` turi elementų. Tada, naudodami kintamąjį `i`, per kiekvieną iteraciją gautume reikšmę, kurią spausdintume, ir padidintume `i` reikšmę vienetu, kad galėtume per eiti per kitą `tuple` elementą.
 
-# Užduotys
+## Užduotys
 
 - Sukurkite du `tuple`, kurie susideda iš jūsų mėgstamų grupių pavadinimų. Sujunkite juos į vieną naują `tuple`.
 - Atspausdinkite naują `tuple`.

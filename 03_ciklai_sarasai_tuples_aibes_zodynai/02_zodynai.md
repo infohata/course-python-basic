@@ -4,26 +4,16 @@
 
 ## Žodynų kūrimas
 
-Žodynus galima sukurti naudojant laužtinius skliaustus `{}` ir atskyrus juos kableliais. Kiekvienas raktas ir reikšmė yra atskirti dvitaškiais. Pvz.:
+Žodynus galima sukurti naudojant riestinius skliaustus `{}`. Kiekvienas raktas ir reikšmė yra atskirti dvitaškiais, o kelių raktų/reikšmių kombinacijos atskiriamos kableliais. Pvz.:
 
 ```Python
 zodynas = {'raktas1': 'reiksme1', 'raktas2': 'reiksme2'}
 print(zodynas) # {'raktas1': 'reiksme1', 'raktas2': 'reiksme2'}
 ```
 
-## Pridėti žodyno įrašą
-
-Žodyno įrašo pridėjimui galima naudoti paprastą priskyrimo operatorių `=`. Pvz.:
-
-```Python
-zmones = {'Jonas': 24, 'Petras': 32}
-zmones['Ona'] = 28
-print(zmones) # {'Jonas': 24, 'Petras': 32, 'Ona': 28}
-```
-
 ## Pasiekti konkretų žodyno įrašą
 
-Norint pasiekti konkretų žodyno įrašą, reikia tiesiog nurodyti raktą:
+Norint pasiekti konkretų žodyno įrašą, reikia tiesiog nurodyti raktą laužtiniuose skliaustuose:
 
 ```Python
 zmones = {'Jonas': 24, 'Petras': 32, 'Ona': 28}
@@ -31,9 +21,19 @@ print(zmones['Petras']) # 32
 print(zmones['Ona']) # 28
 ```
 
+## Pridėti žodyno įrašą
+
+Žodyno įrašo pridėjimui galima naudoti paprastą priskyrimo operatorių `=`, raktą nurodant po žodyno kintamojo pavadinimo laužtiniuose skliaustuose. Pvz.:
+
+```Python
+zmones = {'Jonas': 24, 'Petras': 32}
+zmones['Ona'] = 28
+print(zmones) # {'Jonas': 24, 'Petras': 32, 'Ona': 28}
+```
+
 ## Pakeisti konkretų žodyno įrašą
 
-Norint pakeisti žodyno įrašą, reikia nurodyti jau esamą raktą ir priskirti naują reikšmę, kuri bus priskirta tam pačiam raktui:
+Norint pakeisti žodyno įrašą, reikia prie žodyno kintamojo pavadinimo laužtiniuose skliaustuose nurodyti jau esamą raktą ir priskirti naują reikšmę:
 
 ```Python
 zmones = {'Jonas': 24, 'Petras': 32, 'Ona': 28}
@@ -43,7 +43,7 @@ print(zmones) # {'Jonas': 24, 'Petras': 33, 'Ona': 28}
 
 ## Ištrinti konkretų žodyno įrašą
 
-Norint ištrinti žodyno įrašą, reikia naudoti `del` komandą su raktu, kurio reikšmės norime ištrinti iš žodyno.
+Norint ištrinti žodyno įrašą, reikia naudoti `del` komandą prieš žodyno kintamąjį su raktu laužtiniuose skliaustuose, kurio reikšmės norime ištrinti iš žodyno.
 
 ```Python
 zmones = {'Jonas': 24, 'Petras': 32, 'Ona': 28}
@@ -55,7 +55,7 @@ print(zmones) # {'Jonas': 24, 'Petras': 32}
 
 Žodynų metodai leidžia atlikti veiksmus su žodynu ir manipuliuoti jo turiniu. Štai keletas dažniausiai naudojamų metodų:
 
-`keys()` grąžina visus žodyno raktažodžius.
+`.keys()` grąžina visus žodyno raktažodžius.
 
 ```Python
 zodynas = {'Jonas': 24, 'Petras': 32, 'Ona': 28}
@@ -63,7 +63,7 @@ raktažodžiai = zodynas.keys()
 print(raktažodžiai) # dict_keys(['Jonas', 'Petras', 'Ona'])
 ```
 
-`values()` grąžina visas žodyno reikšmes.
+`.values()` grąžina visas žodyno reikšmes.
 
 ```Python
 zodynas = {'Jonas': 24, 'Petras': 32, 'Ona': 28}
@@ -71,7 +71,7 @@ reiksmes = zodynas.values()
 print(reiksmes) # dict_values([24, 32, 28])
 ```
 
-`items()` grąžina visus žodyno raktažodžius ir reikšmes kaip poras.
+`.items()` grąžina visus žodyno raktažodžius ir reikšmes porų sąrašą.
 
 ```Python
 zodynas = {'Jonas': 24, 'Petras': 32, 'Ona': 28}
@@ -79,20 +79,24 @@ poros = zodynas.items()
 print(poros) # dict_items([('Jonas', 24), ('Petras', 32), ('Ona', 28)])
 ```
 
-`get()` grąžina reikšmę, atitinkančią nurodytą raktą. Jei raktas nerastas, grąžina numatytąją reikšmę arba `None`.
+`.get()` grąžina reikšmę, atitinkančią nurodytą raktą. Jei raktas nerastas, grąžina numatytąją reikšmę (nurodoma atskiru argumentu) arba `None`.
 
 ```Python
 zodynas = {'Jonas': 24, 'Petras': 32, 'Ona': 28}
 reiksme = zodynas.get('Jonas')
 print(reiksme) # 24
+print(zodynas.get('Juozas', 0)) # 0
+print(zodynas.get('Juozas')) # None
 ```
 
-`pop()` pašalina ir grąžina reikšmę, atitinkančią nurodytą raktą. Jei raktas nerastas, grąžina numatytąją reikšmę arba išmeta klaidą.
+`pop()` pašalina ir grąžina reikšmę, atitinkančią nurodytą raktą. Jei raktas nerastas, grąžina numatytąją reikšmę (nurodoma atskiru argumentu) arba išmeta klaidą.
 
 ```Python
 zodynas = {'Jonas': 24, 'Petras': 32, 'Ona': 28}
 reiksme = zodynas.pop('Petras')
 print(reiksme) # 32
+nerasta = zodynas.pop('Juozas', 0) 
+print(nerasta) # 0
 print(zodynas) # {'Jonas': 24, 'Ona': 28}
 ```
 
@@ -104,7 +108,8 @@ zodynas.clear()
 print(zodynas) # {}
 ```
 
-# Užduotys
+## Užduotys
+<!-- TODO: perdaryti automobilių sąrašą į sąrašą, ir šią užduotį palikti kaip antrą/trečia. Pradžiai reikėtų duoti paprastesnę -->
 
 - Sukurkite tuščią žodyną pavadinimu "automobiliai".
 - Pridėkite prie žodyno informaciją apie 3 skirtingus automobilius (nebijokite naudoti savo kūrybiškumo ir įtraukti įvairių markių, modelių, metų, spalvų ir variklių tipų).
