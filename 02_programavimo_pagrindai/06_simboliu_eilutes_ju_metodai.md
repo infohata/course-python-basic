@@ -94,13 +94,13 @@ Monika  28      Kaunas
 Unicode simbolių pavyzdys:
 
 ```Python
-print("\u00A9 2023 OpenAI")
+print("\u00A9 2023 Middle of Nowhere oy")
 ```
 
 Rezultatas:
 
-```Python
-© 2023 OpenAI
+```Text
+© 2023 Middle of Nowhere oy
 ```
 
 Šiame pavyzdyje "\u00A9" yra Unicode simbolis, kuris atitinka copyright simbolį.
@@ -493,7 +493,7 @@ print("{:.1f} laipsnių Celsijaus yra {:.1f} laipsnių Farenheitų.".format(cels
 
 Ši programa paprašys vartotojo įvesti temperatūrą laipsniais Celsijaus. Tada konvertuos šią temperatūrą į laipsnius Farenheitų, naudodama formulę: F = (C * 1.8) + 32. Galiausiai išves konvertuotą temperatūrą į konsolę, naudojant formatavimo simbolius.
 
-# Užduotys
+## Užduotys
 
 ### Pirma užduotis
 
