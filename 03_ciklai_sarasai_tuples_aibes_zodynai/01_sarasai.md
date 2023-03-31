@@ -231,4 +231,5 @@ Sąrašo ilgis: 6
 Sąraše yra makaronai: False
 Išvalytas sąrašas: []
 ```
+
 </details>

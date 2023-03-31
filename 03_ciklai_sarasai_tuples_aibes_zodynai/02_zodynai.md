@@ -172,3 +172,5 @@ Automobilių skaičius žodyne: 3
 Ar žodyne yra Audi A6? False
 Išvalytas žodynas: {}
 ```
+
+</details>
