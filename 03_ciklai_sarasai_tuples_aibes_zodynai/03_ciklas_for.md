@@ -1,12 +1,12 @@
-# `for` ciklai
+# Ciklai `for`
 
-`for` ciklas yra Python programavimo kalbos ciklas, kuris leidžia iteruoti tam tikrą rinkinį elementų, pvz., sąrašus, žodynas ir kt.
+`for` ciklas yra Python programavimo kalbos ciklas, kuris leidžia iteruoti tam tikrą rinkinį elementų, pvz., sąrašus, žodynus ir kt.
 
 ❗ Iteracija yra bendras terminas, naudojamas programavimo ir kompiuterinių mokslų srityse, kuris reiškia procesą, kai tam tikros operacijos yra atliekamos kartojant tas pačias instrukcijas daug kartų su skirtingais duomenimis. Tai yra proceso dalis, kurio metu programos vykdomas kodas yra kartojamas tam tikrą skaičių kartų arba tol, kol yra patenkinama tam tikra sąlyga.
 
-`for` cikle yra nurodomas kintamasis, kuriame bus saugomi kiekvieno iteracijos metu pasirinkto rinkinio elementai. Ciklo blokas rašomas su atitraukimu nuo kairės pusės ir yra vykdomas kiekvienai rinkinio elementų iteracijai.
+`for` cikle yra nurodomas kintamasis (ar kintamieji), kuriame saugomas kiekvieno žingsio iteracijos elementas. Ciklo blokas rašomas su atitraukimu nuo kairės pusės ir yra vykdomas kiekvienam rinkinio iteracijos žingsniui.
 
-## `for` ciklas su sąrašu
+## Ciklas su sąrašu
 
 Pavyzdžiui, jei turime sąrašą skaičių ir norime atspausdinti kiekvieną skaičių, galime naudoti `for` ciklą kaip parodyta žemiau:
 
@@ -42,7 +42,7 @@ print(skaiciu_suma) # 904
 
 ## `for` ciklas su žodynu
 
-Taip pat galime naudoti `for` ciklą su žodynu, yra keli variantai kaip tai galima padaryti.
+Taip pat galime naudoti `for` ciklą su žodynu. Yra keli variantai kaip tai galima padaryti.
 
 Šis ciklas iteruos per žodyno raktus (`keys`) ir grąžins kiekvieną raktą atskirai. Pvz.:
 
@@ -61,7 +61,7 @@ Andrius
 Laura
 ```
 
-Kai naudojame `values()`, ciklas iteruos per žodyno reikšmes (`values`) ir grąžins kiekvieną reikšmę atskirai. Pvz.:
+Cikle galime naudoti žodyno metodą `.values()`, tada ciklas iteruos per žodyno reikšmes (`values`) ir grąžins kiekvieną reikšmę atskirai. Pvz.:
 
 ```Python
 amzius = {'Rokas': 20, 'Andrius': 34, 'Laura': 25}
@@ -78,7 +78,7 @@ Rezultatas:
 25
 ```
 
-Kai nurodome raktą, reikšmę ir `items()`, ciklas iteruos per žodyno raktus, reikšmes ir grąžins kiekvieną raktą ir reikšmę atskirai. Pvz.:
+Kai nurodome raktą, reikšmę ir `.items()`, ciklas iteruos per žodyno raktus, reikšmes ir grąžins kiekvieną raktą ir reikšmę atskirai. Pvz.:
 
 ```Python
 amzius = {'Rokas': 20, 'Andrius': 34, 'Laura': 25}
@@ -95,14 +95,36 @@ Andrius 34
 Laura 25
 ```
 
+Taip pat galima kreiptis į žodyno elementus su raktu cikle. Ypač rekomenduojama keičiant reiškmes:
+
+```Python
+amzius = {'Rokas': 20, 'Andrius': 34, 'Laura': 25}
+
+for irasas in amzius:
+    print("Dabar", irasas, amzius[irasas])
+    amzius[irasas] += 1
+    print("Po pakeitimo", irasas, amzius[irasas])
+```
+
+Rezultatas:
+
+```Text
+Dabar Rokas 20
+Po pakeitimo Rokas 21
+Dabar Andrius 34
+Po pakeitimo Andrius 35
+Dabar Laura 25
+Po pakeitimo Laura 26
+```
+
 ## `for` ciklas su `range` funkcija
 
 `range()` funkcija sugeneruoja seką skaičių nuo pradžios iki pabaigos. Galime naudoti `for` ciklą su `range` funkcija, kad atliktume tam tikrus veiksmus su kiekvienu skaičiumi šioje sekoje.
 
- ```Python
+```Python
 for skaicius in range(1, 6):
     print(skaicius)
- ```
+```
 
 Rezultatas:
 
@@ -114,7 +136,7 @@ Rezultatas:
 5
 ```
 
-## `for` ciklas su `break` komanda
+## Ciklas nutraukimo komanda `break`
 
 Kai naudojame `break` komandą, ciklas baigiasi ir programa tęsiasi nuo kito kodo bloko, kuris yra po ciklo bloko. Pvz.:
 
@@ -136,7 +158,7 @@ Rezultatas:
 
 Kaip matote, programa nutraukė ciklą, kai buvo pasiektas skaičius "3", ir neatspausdino kitų skaičių, kurie buvo sąraše po jo.
 
-## `for` ciklas su `continue` komanda
+## Ciklo žingsnio tolimesnio vykdymo praleidimo komanda `continue`
 
 Kai naudojame `continue` komandą, programa praleidžia šią iteraciją ir tęsia su kitu rinkinio elementu. Pvz.:
 
@@ -160,7 +182,7 @@ Rezultatas:
 
 Kaip matote, programa praleido skaičių "3" ir tęsė su likusiais skaičiais sąraše.
 
-## `for` ciklas su `else` bloku
+## Ciklo `for` pabaigos `else` blokas
 
 `else` blokas yra naudojamas norint atlikti tam tikrus veiksmus, kai `for` ciklas pasiekia savo pabaigą.
 
@@ -172,6 +194,19 @@ for skaicius in skaiciai:
 else:
     print('Ciklo vykdymas baigtas.')
 ```
+
+Rezultatas:
+
+```Text
+1
+2
+3
+4
+5
+Ciklo vykdymas baigtas
+```
+
+Jeigu ciklas buvo nutrauktas su `break` komanda, `else` sąlygos blokas nebus vykdomas.
 
 ## Sąrašų iteravimas su indeksu
 
@@ -198,40 +233,29 @@ Rezultatas:
 Ciklo cikle konstrukcija leidžia kurti ciklus, kuriuose vienas ar kelias vidiniai ciklai yra vykdomi kiekvienai išorinio ciklo iteracijai. Tai ypač naudinga, kai turime kokią nors duomenų struktūrą, kurią reikia išgryninti arba apdoroti sudėtingu būdu. Pvz.:
 
 ```Python
-spalvos = ['raudona', 'geltona', 'mėlyna']
+spalvos = ['raudonas', 'geltonas', 'mėlynas']
 dydziai = ['mažas', 'vidutinis', 'didelis']
 
 for spalva in spalvos:
     for dydis in dydziai:
-        print(spalva, dydis, 'šikšnosparnis')
+        print(dydis, spalva, 'šikšnosparnis')
 ```
 
 Rezultatas:
 
 ```Text
-raudona mažas šikšnosparnis
-raudona vidutinis šikšnosparnis
-raudona didelis šikšnosparnis
-geltona mažas šikšnosparnis
-geltona vidutinis šikšnosparnis
-geltona didelis šikšnosparnis
-mėlyna mažas šikšnosparnis
-mėlyna vidutinis šikšnosparnis
-mėlyna didelis šikšnosparnis
+mažas raudonas šikšnosparnis
+vidutinis raudonas šikšnosparnis
+didelis raudonas šikšnosparnis
+mažas geltonas šikšnosparnis
+vidutinis geltonas šikšnosparnis
+didelis geltonas šikšnosparnis
+mažas mėlynas šikšnosparnis
+vidutinis mėlynas šikšnosparnis
+didelis mėlynas šikšnosparnis
 ```
 
-Rezultatas:
-
-```Text
-1
-2
-3
-4
-5
-Ciklo vykdymas baigtas
-```
-
-# Užduotys
+## Užduotys
 
 ### Pirma užduotis
 
