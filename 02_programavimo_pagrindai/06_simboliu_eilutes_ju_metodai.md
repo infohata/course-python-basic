@@ -109,6 +109,24 @@ Jei norite pamatyti visus Unicode simbolius, galite naudoti Unicode kodo lentel�
 
 💡 Gerai žinoti: galima tekste naudoti ir emoji, pvz. šią lemputę, jeigu jūsų naudojamas šriftas juos palaiko.
 
+## Užduotys
+
+### Pirma užduotis
+
+- Parašykite programą, kuri leidžia vartotojui įvesti bet kokią simbolių eilutę ir atspausdina jos pirmąjį ir paskutinį simbolius.
+
+### Antra užduotis
+
+- Sukurkite simbolių eilutę, kurią sudaro jūsų mėgstamos knygos pavadinimas. Atspausdinkite jo pirmąsias penkias raides.
+
+### Trečia užduotis
+
+- Sukurkite simbolių eilutę, kurią sudaro jūsų mėgstama citata. Atspausdinkite jo paskutines tris raides.
+
+### Ketvirta užduotis
+
+- Sukurkite programą, kuri leidžia vartotojui įvesti du skirtingus žodžius ir atspausdina kiekvieno žodžio pirmuosius simbolius, atskirtus brūkšneliu. Pvz., "Labas vakaras" ir "geros dienos" -> "L-v", "g-d".
+
 ## Simbolių eilučių metodai
 
 ```Python
@@ -200,6 +218,24 @@ else:
     print("neradau Labas")
 # radau Labas
 ```
+
+## Užduotys
+
+### Penkta užduotis
+
+- Sukurkite tekstą "Aš esu studentas".
+
+- Panaudokite `upper` metodą, kad pakeistumėte visas raides didžiosiomis.
+
+- Panaudokite `lower` metodą, kad pakeistumėte visas raides mažosiomis.
+
+- Panaudokite `join` metodą, kad sujungtumėte žodžių sąrašą ["Aš", "esu", "studentas"] į vieną eilutę su tarpais tarp žodžių.
+
+- Panaudokite `split` metodą, kad padalintumėte eilutę "Aš esu studentas" į žodžių sąrašą.
+
+- Panaudokite `find` metodą, kad rastumėte poziciją, kurioje prasideda žodis "studentas" eilutėje "Aš esu studentas".
+
+- Panaudokite `replace` metodą, kad pakeistumėte žodį "studentas" žodžiu "programuotojas" eilutėje "Aš esu studentas".
 
 ## Formatavimas
 
@@ -400,9 +436,9 @@ Galima naudoti ir kitus formatavimo raktus, kad sukurtumėte reikiamą tekstini�
 
 ## Įvedimas ir išvedimas
 
-### Įvedimas ('input')
+### Įvedimas `input()`
 
-`input` funkcija leidžia jums gauti informaciją iš vartotojo ir naudoti ją savo programoje. Pavyzdžiui, jei norite sužinoti vartotojo vardą, galite naudoti `input` funkciją.
+`input()` funkcija leidžia jums gauti informaciją iš vartotojo ir naudoti ją savo programoje. Pavyzdžiui, jei norite sužinoti vartotojo vardą, galite naudoti `input()` funkciją.
 
 Kodas, kuris paprašo vartotojo įvesti savo vardą ir išveda pranešimą su pasisveikinimu:
 
@@ -422,9 +458,9 @@ suma = int(num1) + int(num2)
 print("Suma yra: " + str(suma))
 ```
 
-2. Išvedimas (`print`)
+### Išvedimas `print()`
 
-`print` funkcija leidžia jums išvesti informaciją į konsolę arba į failą. Pavyzdžiui, jei norite išvesti pranešimą su tekstiniu turiniu, galite naudoti "print" funkciją.
+`print()` funkcija leidžia jums išvesti informaciją į konsolę arba į failą. Pavyzdžiui, jei norite išvesti pranešimą su tekstiniu turiniu, galite naudoti "print" funkciją.
 
 Kodas, kuris išveda pranešimą su tekstiniu turiniu:
 
@@ -443,7 +479,36 @@ print("Pirma reikšmė: {}, antra reikšmė: {}, suma: {}".format(x, y, sum))
 
 Šis kodas išvestų pranešimą, kuriame būtų pateikta pirmoji reikšmė, antra reikšmė ir jų suma.
 
-Todėl, "input" ir "print" funkcijos yra svarbios Python programavimo kalbos funkcijos, leidžiančios programuotojams įvesti duomenis ir išvesti informaciją savo programose.
+## `print()` argumentai `end` ir `sep`
+
+`end` argumentas nurodo, kokių simbolių turi būti naudojama kaip tekstą išvedančios funkcijos `print()` pabaigos simbolius. Pagal nutylėjimą end='\n', tai reiškia, kad po kiekvieno `print()` išvedimo yra dedamas naujos eilutės simbolis. Galite nurodyti kitą simbolį, kad sukurtumėte kitą elgesį. Pavyzdžiui, jei norite išvesti visus elementus tame pačiame eilutėje, atskirtus kableliais ir tarpu, galite naudoti `end=', '`. Pavyzdys:
+
+```Python
+print("Vienas", "du", "trys", end=', ')
+print("keturi", "penki", "šeši")
+```
+
+Ši funkcija išvestų:
+
+```Python 
+Vienas, du, trys, keturi penki šeši
+```
+
+`sep` argumentas nurodo, kaip atskirti kelių argumentų reikšmes išvedimo metu. Pagal nutylėjimą `sep=' '`, tai reiškia, kad tarp kiekvieno argumento yra dedamas tarpo simbolis. Galite nurodyti kitą simbolį, kad sukurtumėte kitą elgesį. Pavyzdžiui, jei norite atskirti kiekvieną argumentą kabliataškiu, galite naudoti `sep=':'`. Pavyzdys:
+
+```Python
+print("Vienas", "du", "trys", sep=':')
+```
+
+Ši funkcija išvestų:
+
+```Python
+Vienas:du:trys
+```
+
+Vartotojai dažnai naudoja šiuos argumentus, kad sukurtų tam tikrą formatą išvesties metu.
+
+Apibendrinant, `input()` ir `print()` funkcijos yra svarbios Python programavimo kalbos funkcijos, leidžiančios programuotojams įvesti duomenis ir išvesti informaciją savo programose.
 
 ## Sudėtingesni pavyzdžiai
 
@@ -494,38 +559,6 @@ print("{:.1f} laipsnių Celsijaus yra {:.1f} laipsnių Farenheitų.".format(cels
 Ši programa paprašys vartotojo įvesti temperatūrą laipsniais Celsijaus. Tada konvertuos šią temperatūrą į laipsnius Farenheitų, naudodama formulę: F = (C * 1.8) + 32. Galiausiai išves konvertuotą temperatūrą į konsolę, naudojant formatavimo simbolius.
 
 ## Užduotys
-
-### Pirma užduotis
-
-- Parašykite programą, kuri leidžia vartotojui įvesti bet kokią simbolių eilutę ir atspausdina jos pirmąjį ir paskutinį simbolius.
-
-### Antra užduotis
-
-- Sukurkite simbolių eilutę, kurią sudaro jūsų mėgstamos knygos pavadinimas. Atspausdinkite jo pirmąsias penkias raides.
-
-### Trečia užduotis
-
-- Sukurkite simbolių eilutę, kurią sudaro jūsų mėgstama citata. Atspausdinkite jo paskutines tris raides.
-
-### Ketvirta užduotis
-
-- Sukurkite programą, kuri leidžia vartotojui įvesti du skirtingus žodžius ir atspausdina kiekvieno žodžio pirmuosius simbolius, atskirtus brūkšneliu. Pvz., "Labas vakaras" ir "geros dienos" -> "L-v", "g-d".
-
-### Penkta užduotis
-
-- Sukurkite tekstą "Aš esu studentas".
-
-- Panaudokite `upper` metodą, kad pakeistumėte visas raides didžiosiomis.
-
-- Panaudokite `lower` metodą, kad pakeistumėte visas raides mažosiomis.
-
-- Panaudokite `join` metodą, kad sujungtumėte žodžių sąrašą ["Aš", "esu", "studentas"] į vieną eilutę su tarpais tarp žodžių.
-
-- Panaudokite `split` metodą, kad padalintumėte eilutę "Aš esu studentas" į žodžių sąrašą.
-
-- Panaudokite `find` metodą, kad rastumėte poziciją, kurioje prasideda žodis "studentas" eilutėje "Aš esu studentas".
-
-- Panaudokite `replace` metodą, kad pakeistumėte žodį "studentas" žodžiu "programuotojas" eilutėje "Aš esu studentas".
 
 ### Šešta užduotis
 
