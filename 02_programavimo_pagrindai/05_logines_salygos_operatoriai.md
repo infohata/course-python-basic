@@ -213,7 +213,7 @@ skaicius = float(input("Įveskite skaičių su kableliu: "))
 print("Jūsų įvestas skaičius yra:", skaicius)
 ```
 
-# Užduotys
+## Užduotys
 
 ### Pirma užduotis
 
