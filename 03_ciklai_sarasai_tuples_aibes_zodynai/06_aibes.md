@@ -145,7 +145,7 @@ Rezultatas:
 3
 ```
 
-# Užduotys
+## Užduotys
 
 - Sukurkite dvi aibes su skaičiais.
 - Grąžinkite tuos elementus, kurie yra bendri abiejoms aibėms.
