@@ -39,23 +39,23 @@ print("Sveiki, pasauli!")
 PEP8 yra Python kodo rašymo taisyklių rinkinys, kuris padeda standartizuoti Python kodo formatavimą. Šios taisyklės yra naudingos, nes jos padeda kitiems programuotojams lengviau suprasti jūsų kodą. Kai kurios iš PEP8 taisyklių:
 
 ```Text
-❗Nenaudokite tabuliavimo simbolių kaip įtraukos. Vietoj to naudokite tarpus.
+❗ Nenaudokite tabuliavimo simbolių kaip įtraukos. Vietoj to naudokite tarpus.
 
-❗Kiekvienas eilutėje neturėtų viršyti 79 simbolių ilgio.
+❗ Kiekvienas eilutėje neturėtų viršyti 79 simbolių ilgio.
 
-❗Naudojant kelis argumentus, atskirkite juos kableliais ir po kiekvieno argumento padėkite po vieną tarpą.
+❗ Naudojant kelis argumentus, atskirkite juos kableliais ir po kiekvieno argumento padėkite po vieną tarpą.
 
-❗Naudokite paaiškinamuosius kintamųjų pavadinimus.
+❗ Naudokite paaiškinamuosius kintamųjų pavadinimus.
 
-❗Funkcijos ir klasės pavadinimai turėtų būti parašyti naudojant CapWords notaciją (pavyzdžiui, ManoKlasė).
+❗ Funkcijos ir klasės pavadinimai turėtų būti parašyti naudojant CapWords notaciją (pavyzdžiui, ManoKlasė).
 
-❗Trumpuosiuose funkcijų pavadinimuose naudokite mažąsias raides ir atskirkite žodžius apatiniais brūkšniais (pavyzdžiui, mano_funkcija).
+❗ Trumpuosiuose funkcijų pavadinimuose naudokite mažąsias raides ir atskirkite žodžius apatiniais brūkšniais (pavyzdžiui, mano_funkcija).
 
-❗Nesupaprastinkite trumpųjų pavadinimų (pvz., nenaudokite l vietoj el).
+❗ Nesupaprastinkite trumpųjų pavadinimų (pvz., nenaudokite l vietoj el).
 
-❗Naudojant palyginimo operatorius, naudokite išsamias formas (pavyzdžiui, != vietoj <>).
+❗ Naudojant palyginimo operatorius, naudokite išsamias formas (pavyzdžiui, != vietoj <>).
 
-❗Naudokite vienodą kabliataškių vietą. Pavyzdžiui, jei pradinis kabliataškis pradedamas naujoje eilutėje, tai ir visi kiti kabliataškiai turėtų būti pradedami naujoje eilutėje.
+❗ Naudokite vienodą kabliataškių vietą. Pavyzdžiui, jei pradinis kabliataškis pradedamas naujoje eilutėje, tai ir visi kiti kabliataškiai turėtų būti pradedami naujoje eilutėje.
 ```
 
 💡 Šios taisyklės nėra būtinos, tačiau jų laikymasis padės padidinti jūsų kodo skaitomumą ir suprantamumą, ypač jei jūs dirbate su keliais programuotojais arba dalyvaujate atviro kodo projektuose.
