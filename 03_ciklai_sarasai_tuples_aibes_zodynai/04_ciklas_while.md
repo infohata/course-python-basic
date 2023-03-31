@@ -23,6 +23,8 @@ Rezultatas:
 
 Šioje programoje `while` ciklas kartojasi, kol kintamasis skaičius yra mažesnis arba lygus 5. Kiekvieną kartą, kai ciklas kartojasi, spausdiname skaičių ir padidiname jį vienetu.
 
+<!-- TODO: super paprastos užduotys po kiekvieno teorijos gabaliuko su pavyzdiu, kurios paprašytų atkartoti pavyzdį su maža modifikacija. Pvz. skaičius 10, while ciklas kol skaičius teigiamas, mažinant skaičių vienetu, spausdinti skaičių. -->
+
 ## Begalinis ciklas (`infinite loop`)
 
 Begalinis ciklas kartojasi be pabaigos, nes sąlyga, kurią tikrina ciklas, visada yra teisinga. Tai gali būti neigiamai paveikti programos veikimą, nes begalinis ciklas gali sukelti programos sustojimą ar net viso kompiuterio  užstrigimą.
