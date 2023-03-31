@@ -264,3 +264,106 @@ Anatanas: Audi A6: 2023 metai, spalva balta
 ```
 
 ## Užduotys
+
+### Pirma užduotis
+
+- Sukurti naują klasę Darbuotojas, turinčią savybes vardas, pavardė, pareigos ir atlyginimas (su numatyta minimalia alga)
+- Sukurti naują objektą darbuotojas
+- Atspausdinkite darbuotojo pareigas ir atlyginimą.
+- Pakeisti darbuotojo atlyginimą.
+- Atspausdinkite pilną darbuotojo informaciją.
+
+### Antra užduotis
+
+- Sukurkite klasę "Gyvūnas" su savybėmis: vardas, amžius ir svoris.
+- Sukurkite metodus, kurie apskaičiuos padidėjusį arba sumažėjusį svorį.
+- Sukurkite metodą, kuris apskaičiuotų padidėjusį amžių.
+- Sukurkite objektą su jūsų pasirinktomis reikšmėmis.
+- Atspausdinkite objektą.
+- Pakeiskite kelis kartus gyvūno svorį ir amžių naudojant sukurtus metodus ir po kiekvieno pakeitimo atspausdinkite.
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+class Darbuotojas:
+    def __init__(self, vardas, pavarde, pareigos, atlyginimas=1000):
+        self.vardas = vardas
+        self.pavarde = pavarde
+        self.pareigos = pareigos
+        self.atlyginimas = atlyginimas
+
+    def __str__(self):
+        return f'{self.vardas} {self.pavarde}, pareigos: {self.pareigos}, atlyginimas: {self.atlyginimas}'
+
+darbuotojas = Darbuotojas('Jonas', 'Jonaitis', 'Programuotojas', 2000)
+
+print('Darbuotojo pareigos:', darbuotojas.pareigos)
+print('Darbuotojo atlyginimas:', darbuotojas.atlyginimas)
+
+darbuotojas.atlyginimas = 2500
+
+print('Darbuotojas:', darbuotojas)
+```
+
+Rezultatas:
+
+```Text
+Darbuotojo pareigos: Programuotojas
+Darbuotojo atlyginimas: 2000
+Darbuotojas: Jonas Jonaitis, pareigos: Programuotojas, atlyginimas: 2500
+```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+```Python
+class Gyvunas:
+    def __init__(self, vardas, amzius, svoris):
+        self.vardas = vardas
+        self.amzius = amzius
+        self.svoris = svoris
+    
+    def padidinti_svori(self, kiek):
+        self.svoris += kiek
+    
+    def sumazinti_svori(self, kiek):
+        self.svoris -= kiek
+
+    def pasikeites_amzius(self):
+        self.amzius += 1
+        
+    def __str__(self):
+        return f'Gyvūnas vardu {self.vardas} yra {self.amzius} metų ir sveria {self.svoris} kg'
+
+gyvunas = Gyvunas('Reksas', 5, 20)
+print(gyvunas)
+
+gyvunas.padidinti_svori(5)
+print(gyvunas)
+
+gyvunas.pasikeites_amzius()
+print(gyvunas)
+
+gyvunas.sumazinti_svori(3)
+print(gyvunas)
+```
+
+Rezultatas:
+
+```Text
+Gyvūnas vardu Reksas yra 5 metų ir sveria 20 kg
+Gyvūnas vardu Reksas yra 5 metų ir sveria 25 kg
+Gyvūnas vardu Reksas yra 6 metų ir sveria 25 kg
+Gyvūnas vardu Reksas yra 6 metų ir sveria 22 kg
+```
+
+</details>
+</details>
