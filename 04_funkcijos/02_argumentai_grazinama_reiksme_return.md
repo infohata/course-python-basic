@@ -1,8 +1,8 @@
 # Funkcija su grąžinama reikšme `return`
 
-Funkcija su grąžinama reikšme (return) yra funkcija, kuri apdoroja tam tikrą įvestį ir grąžina rezultatą. Grąžinama reikšmė gali būti bet kokio tipo - skaičius, eilutė, sąrašas ar netgi kitas objektas. Grąžinti reikšmę iš funkcijos yra būtina, jei norite naudoti funkcijos apdorotus duomenis kitur programos eigoje.
+Funkcija su grąžinama reikšme (`return`) yra funkcija, kuri apdoroja tam tikrą įvestį ir grąžina rezultatą. Grąžinama reikšmė gali būti bet kokio tipo - skaičius, eilutė, sąrašas ar netgi kitas objektas. Grąžinti reikšmę iš funkcijos yra būtina, jei norite naudoti funkcijos apdorotus duomenis kitur programos eigoje.
 
-Funkcija su grąžinama reikšme apibrėžiama naudojant return raktažodį. Grąžinama reikšmė nurodoma return požymyje, o jei funkcija turi daugiau nei vieną grąžinamą reikšmę, jos gali būti grąžinamos per tuple arba sąrašą.
+Funkcija su grąžinama reikšme apibrėžiama `return` sakiniu. Grąžinama reikšmė nurodoma iš kart po `return`, o jei funkcija turi daugiau nei vieną grąžinamą reikšmę, jos gali būti grąžinamos per `tuple` arba sąrašą.
 
 Pavyzdys, kaip apibrėžti funkciją, kuri grąžina skaičiaus kėlimą kvadratu:
 
@@ -35,9 +35,9 @@ print(atsakymas)  # išvestų: 12
 
 Ši funkcija suma priima du argumentus: x ir y, tuomet juos sudeda ir grąžina sumą naudodama return sakinį.
 
-## Daugiau negu vieno kintamojo grąžinimas per 'tuple' arba 'sąrašą (list)'
+## Daugiau negu vieno kintamojo grąžinimas per `tuple` arba sąrašą (`list`)
 
-Norint grąžinti du kintamuosius, galima jų reikšmes sudėti į **tuple** ir grąžinti jį iš funkcijos, pavyzdžiui:
+Norint grąžinti du kintamuosius, galima jų reikšmes sudėti į `tuple` ir grąžinti jį iš funkcijos, pavyzdžiui:
 
 ```Python
 def skaiciu_suma_ir_sandauga(a, b):
@@ -50,6 +50,14 @@ print(rezultatas)  # išvestų (5, 6)
 ```
 
 Šiuo atveju `skaiciu_suma_ir_sandauga` funkcija grąžina du kintamuosius - suma ir sandauga, sudėtas į tuple. Tuomet rezultatas kintamasis priskiriamas tuple reikšmei, grąžintai iš funkcijos, ir išvedamas į ekraną.
+
+Rezultatą taip pat galima priimti į skirtingus kintamuosius:
+
+```Python
+suma, sandauga = skaiciu_suma_ir_sandauga(2, 3)
+print(suma)     # 5
+print(sandauga) # 6
+```
 
 Taip pat galima grąžinti **sąrašą**:
 
@@ -64,14 +72,14 @@ def teigiami_ir_neigiami_skaiciai(skaiciai):
             neigiami.append(skaicius)
     return [teigiami, neigiami]
 
-skaiciai = [2, -4, 5, -1, 0]
+skaiciai = [2, -4, 5, -1, -2]
 rezultatas = teigiami_ir_neigiami_skaiciai(skaiciai)
-print(rezultatas)  # išvestų [[2, 5], [-4, -1, 0]]
+print(rezultatas)  # išvestų [[2, 5], [-4, -1, -2]]
 ```
 
-Šiuo atveju `teigiami_ir_neigiami_skaiciai` funkcija grąžina du sąrašus - teigiami ir neigiami, kuriuos sudaro atitinkamai teigiami ir neigiami skaičiai iš pradinio sąrašo. Tuomet rezultatas kintamasis priskiriamas sąrašo reikšmei, grąžintai iš funkcijos, ir išvedamas į ekraną.
+Šiuo atveju `teigiami_ir_neigiami_skaiciai` funkcija grąžina du sąrašus - `teigiami` ir `neigiami`, kuriuos sudaro atitinkamai teigiami ir neigiami skaičiai iš pradinio sąrašo. Tuomet rezultatas kintamasis priskiriamas sąrašo reikšmei, grąžintai iš funkcijos, ir išvedamas į ekraną.
 
-❗ Svarbu atkreipti dėmesį, kad grąžinamas objektas turi būti išsaugotas kaip tuple arba sąrašas, kad galėtų būti naudojamas kaip toks, t.y. galima išgauti reikšmes su indeksavimu ar kitiems objektų manipuliacijoms, o ne kaip keli atskiri kintamieji.
+❗ Svarbu atkreipti dėmesį, kad grąžinamas objektas turi būti išsaugotas kaip tuple arba sąrašas, kad galėtų būti naudojamas kaip toks, t.y. galima išgauti reikšmes su indeksavimu ar kitiems objektų manipuliacijoms, o ne kaip keli atskiri kintamieji. Taip pat galima naudoti ir žodyną `dict`.
 
 ## Užduotys
 
@@ -125,9 +133,13 @@ Rezultatas:
 <summary>Antra užduotis</summary>
 <hr>
 
+s = (a + b + c) / 2, kur a, b ir c yra trikampio kraštinių ilgiai
+
+plotas = √(s * (s - a) * (s - b) * (s - c))
+
 ```Python
 def trikampio_plotas(a, b, c):
-    s = (a + b + c) / 2
+    s = (a + b + c) / 2  # pusė perimetro
     plotas = (s * (s - a) * (s - b) * (s - c)) ** 0.5
     return plotas
 
@@ -153,7 +165,7 @@ def rinkti_zodzius_pagal_ilgi(sakinys, ilgis):
     return ilgio_zodziai
 
 sakinys = "Labas vakaras, kaip sekasi?"
-ilgis = 5
+ilgis = 7
 zodziai = rinkti_zodzius_pagal_ilgi(sakinys, ilgis)
 print(zodziai)  # išvestų: ['vakaras', 'sekasi?']
 ```
@@ -190,7 +202,7 @@ def rinkti_zodzius_pagal_raide(zodziai, raide):
             raides_zodziai.append(zodis)
     return raides_zodziai
 
-zodziai = ["automobilis", "arklys", "avokadas", "bananas", "batonas"]
+zodziai = ["automobilis", "arklys", "avokadas", "bananas", "briedis"]
 raide = "a"
 a_zodziai = rinkti_zodzius_pagal_raide(zodziai, raide)
 print(a_zodziai)  # išvestų: ['automobilis', 'avokadas']
@@ -212,7 +224,7 @@ def rinkti_lyginio_ilgio_zodzius(tekstas):
 
 tekstas = "Labas Vakare, kaip sekasi?"
 lyginio_ilgio_zodziai = rinkti_lyginio_ilgio_zodzius(tekstas)
-print(lyginio_ilgio_zodziai)  # išvestų: ['Labas', 'Vakare,', 'sekasi?']
+print(lyginio_ilgio_zodziai)  # išvestų: ['Vakare,', 'kaip']
 ```
 
 </details>
