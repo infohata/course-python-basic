@@ -22,8 +22,13 @@ Kai funkcija yra iškviečiama, argumentai yra perduodami funkcijai, kad ji gal�
 
 ```Python
 spausdinti_duomenis("Jonas", 25)
-# Spausdinama: Vardas: Jonas
-#             Amžius: 25
+```
+
+Spausdina
+
+```Text
+Vardas: Jonas
+Amžius: 25
 ```
 
 Šiame pavyzdyje du argumentai "Jonas" ir 25 perduodami funkcijai spausdinti_duomenis() kaip jos argumentai. Funkcija tiesiog išspausdina šiuos argumentus į konsolę, jos veikla neįtraukia reikšmės grąžinimo.
