@@ -75,7 +75,7 @@ Sukurkite funkciją apskritimo_plotas, kuri priima 2 argumentus: apskritimo spin
 
 ### Antra užduotis
 
-Sukurkite funkciją kelvinai_i_celsijus, kuri priima 1 argumentą - temperatūrą kelvinais. Funkcija turi grąžinti temperatūrą Celsijais. Atkreipkite dėmesį, kad 0 kelvino yra -273,15 Celsijaus laipsnių.
+Sukurkite funkciją kelvinai_i_celsijus, kuri priima 1 argumentą - temperatūrą kelvinais. Funkcija turi grąžinti temperatūrą Celsijais. 0 laipsnių kelvino yra -273,15 Celsijaus laipsnių.
 
 ### Trečia užduotis
 
@@ -87,7 +87,7 @@ Sukurkite funkciją sandauga, kuri priima 3 argumentus: a, b ir c. Funkcija turi
 
 ### Penkta užduotis
 
-Sukurkite funkciją maisto_kalorijos, kuri priima 4 argumentus: baltymai, riebalai, angliavandeniai ir saldiklis. Funkcija turi grąžinti bendrą kalorijų kiekį maisto produktui. Kalorijos skaičiuojamos pagal šią formulę: (baltymai * 4) + (riebalai * 9) + (angliavandeniai * 4) + (saldiklis * 0). Kviesdami funkciją, nurodykite konkretų saldiklis argumento pavadinimą ir priskirkite reikšmę, lygią 2.
+Sukurkite funkciją maisto_kalorijos, kuri priima 4 argumentus: baltymai, riebalai, angliavandeniai ir saldiklis. Funkcija turi grąžinti bendrą kalorijų kiekį maisto produktui. Kalorijos skaičiuojamos pagal šią formulę: `(baltymai * 4) + (riebalai * 9) + (angliavandeniai * 4) + (saldiklis * 0)`. Kviesdami funkciją, nurodykite konkretų saldiklis argumento pavadinimą ir priskirkite reikšmę, lygią 2.
 
 # Atsakymai į užduotis
 
