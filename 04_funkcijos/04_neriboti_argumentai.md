@@ -76,7 +76,7 @@ print(eilutes_ilgis("Labas", "Pasauli"))  # [5, 7]
 print(eilutes_ilgis(123, 4567, 89))  # [3, 4, 2]
 ```
 
-`**kwargs` yra dar viena speciali Python sintaksės elementas, kuris leidžia perduoti bet kokią raktą ir reikšmę funkcijai. `**kwargs` sukuria žodyną, kuriame raktai yra perduoti raktai ir reikšmės yra perduotos reikšmės.
+`**kwargs` yra dar viena specialus Python sintaksės elementas, kuris leidžia perduoti raktų ir reikšmių rinkinį funkcijai kaip žodyną.
 
 Pavyzdys:
 
@@ -96,30 +96,26 @@ amzius: 30
 miestas: Vilnius
 ```
 
-Funkcija, kuri grąžina nurodyto elemento reikšmę, pavyzdys:
+Pavyzdys: funkcija `saskaita`, kuri išspausdina produktų sąrašą iš `**produktai` elementų ir susumuoja jų reikšmes - kainas. Čia tuo pačiu pademonstruojame, kad `**kwargs` gali būti pervadintas Jums patogiu terminu.
 
 ```Python
-def reiksme(**kwargs):
-    if "elementas" in kwargs:
-        return kwargs["elementas"]
-    else:
-        return None
+def saskaita(**produktai):
+    suma = 0
+    for produktas, kaina in produktai.items():
+        suma += kaina
+        print(f"{produktas}: {kaina:.2f}€")
+    print(f"Viso: {suma:.2f}€")
 
-print(reiksme(vardas="Jonas", elementas="LAIKAS"))  # LAIKAS
-print(reiksme(miestas="Vilnius", amzius=30))  # None
+saskaita(pienas=2, miltai=1, kiaušiniai=3)
 ```
 
-Funkcija, kuri sumuoja `**kwargs` elementų reikšmes, pavyzdys:
+Rezultatas:
 
-```Python
-def suma_kwargs(**kwargs):
-    suma = 0
-    for value in kwargs.values():
-        suma += value
-    return suma
-
-print(suma_kwargs(skaicius1=10, skaicius2=20, skaicius3=30))  # 60
-print(suma_kwargs(amzius=20, dienos=365, valanda=60))  # 445
+```Text
+pienas: 2.00€
+miltai: 1.00€
+kiaušiniai: 3.00€
+Viso: 6.00€
 ```
 
 Kai kuriose situacijose reikia turėti funkciją, kuri priima tiek pozicinius argumentus, tiek ir argumentus, kurie nėra aprašyti funkcijos deklaracijoje. Tokios funkcijos gali būti sukurtos naudojant `*args` ir `**kwargs` kartu su paprastais argumentais.
@@ -129,26 +125,26 @@ Pavyzdys:
 ```Python
 def spausdinti_argumentus(vardas, *args, **kwargs):
     print(f"Vardas: {vardas}")
-    for arg in args:
-        print(arg)
     for key, value in kwargs.items():
         print(f"{key}: {value}")
+    for arg in args:
+        print(arg)
 
-spausdinti_argumentus("Jonas", 1, 2, 3, miestas="Vilnius", amzius=30)
+spausdinti_argumentus("Jonas", "linksmas", "draugiškas", "drąsus", miestas="Vilnius", amzius=30)
 ```
 
 Šis kodas išvestų:
 
-```Python
+```Text
 Vardas: Jonas
-1
-2
-3
 miestas: Vilnius
 amzius: 30
+linksmas
+draugiškas
+drąsus
 ```
 
-Taigi, `*args` leidžia perduoti neribotą kiekį pozicinių argumentų, o `**kwargs` leidžia perduoti neribotą kiekį raktų ir reikšmių argumentų. Galima kombinuoti šiuos elementus su įprastais argumentais funkcijose, kad būtų gautas didesnis funkcionalumas ir lankstumas.
+Taigi, `*args` leidžia perduoti neribotą kiekį pozicinių argumentų, o `**kwargs` leidžia perduoti neribotą kiekį rakšažodinių argumentų, susidedančių iš raktų ir reikšmių. Galima kombinuoti šiuos elementus su įprastais argumentais funkcijose, kad būtų gautas didesnis funkcionalumas ir lankstumas.
 
 ## Užduotys
 
@@ -158,10 +154,10 @@ Parašykite funkciją, kuri grąžina didžiausią *args elemento reikšmę.
 
 ### Antra užduotis
 
-Parašykite funkciją, kuri grąžina **kwargs elemento raktus, kurie yra nurodyti funkcijos kvietime, pavyzdžiui: 
+Parašykite funkciją, kuri grąžina tik **kwargs elemento raktus, kurie yra nurodyti šiame funkcijos kvietime:
 
 ```Python
-print(raktai(vardas="Jonas", amzius=30, miestas="Vilnius", metai=2023))  
+print(raktai(vardas="Jonas", amzius=30, miestas="Vilnius"))  
 
 
 # kvietime galite nurodyti tik vardą, amžių bei miestą, kad grąžintų: {'vardas': 'Jonas', 'amzius': 30, 'miestas': 'Vilnius'}
@@ -169,11 +165,7 @@ print(raktai(vardas="Jonas", amzius=30, miestas="Vilnius", metai=2023))
 
 ### Trečia užduotis
 
-Parašykite funkciją, kuri sujungia *args sąrašą ir **kwargs elementus į vieną sarašą.
-
-### Ketvirta užduotis
-
-Sukurkite funkciją, kuri iš sąrašo išrenka didžiausią skaičių ir grąžina jį.
+Parašykite funkciją, kuri sujungia *args sąrašą ir **kwargs reikšmes į vieną sarašą.
 
 ## Atsakymai į užduotis
 
@@ -206,7 +198,7 @@ print(didziausias(-5, 10, 3, -2))  # 10
 def raktai(**kwargs):
     nurodyti_raktai = {}
     for key in kwargs:
-        if key in ["vardas", "amzius", "miestas"]:
+        if key in ["vardas", "amzius", "miestas", "metai"]:
             nurodyti_raktai[key] = kwargs[key]
     return nurodyti_raktai
 
