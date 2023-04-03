@@ -2,9 +2,9 @@
 
 ## Nebūtini argumentai su numatytomis reikšmėmis
 
-Nebūtini argumentai su numatytomis reikšmėmis leidžia nurodyti numatytas reikšmes funkcijos argumentams, kurie gali būti praleisti kviesdami funkciją. Ši funkcija leidžia pasiekti lankstumą funkcijų kūrimo metu.
+Nebūtini argumentai su numatytomis reikšmėmis leidžia nurodyti numatytas reikšmes funkcijos argumentams, kurie gali būti praleisti kviečiant funkciją. Tai leidžia pasiekti lankstumą funkcijų kūrimo metu.
 
-Štai pavyzdys funkcijos, turinčios nebūtiną argumentą su numatytą reikšme:
+Pavyzdys:
 
 ```Python
 def pasveikinti(vardas, pasisveikinimas="Sveiki"):
@@ -24,22 +24,30 @@ Dar vienas pavyzdys:
 ```Python
 def skaiciuoti_kaina(prekes_pavadinimas, kaina, nuolaida=0):
     kaina_su_nuolaida = kaina * (1 - nuolaida / 100)
-    print(f"{prekes_pavadinimas} kaina su nuolaida: {kaina_su_nuolaida:.2f}€")
+    print(f"{prekes_pavadinimas} - kaina su nuolaida: {kaina_su_nuolaida:.2f}€")
 
 # Kvietimas su visais argumentais
-skaiciuoti_kaina("Obuolys", 1.00, 10) # Išvestis: Obuolys kaina su nuolaida: 0.90€
+skaiciuoti_kaina("Obuolys", 1.00, 10) 
+# Išvestis: Obuolys - kaina su nuolaida: 0.90€
 
 # Kvietimas tik su privalomaisiais argumentais
-skaiciuoti_kaina("Slyva", 1.20) # Išvestis: Slyva kaina su nuolaida: 1.20€
+skaiciuoti_kaina("Avokadas", 1.20) 
+# Išvestis: Avokadas - kaina su nuolaida: 1.20€
 ```
 
 Ši funkcija turi privalomus argumentus prekes_pavadinimas ir kaina, taip pat neprivalomą argumentą nuolaida, kurio numatytoji reikšmė yra 0. Jei kviesite funkciją su nuolaida argumentu, bus naudojama jūsų pateikta reikšmė, jei kviesite funkciją be nuolaida argumento, bus naudojama numatytoji reikšmė 0.
 
 ## Konkretaus argumento perdavimas
 
-Konkretaus argumento perdavimas yra būdas nurodyti, kuriam argumentui skiriama kuri reikšmė. Šis perdavimo būdas naudojamas, kai norite iš anksto nurodyti, kuriam argumentui reikia priskirti kurią reikšmę.
+<!-- TODO: perrašyti šitą dalį, nes neatspindi esmės. Mintis būtų, pvz.
+def skaiciuoti_kaina(prekes_pavadinimas, kaina, nuolaida=0, pvm=21):
+ir panaudoti:
+skaiciuoti_kaina("pienas", 2, pvm=10)
+-->
 
-Štai pavyzdys funkcijos, kviečiančios kitą funkciją su konkrečiais argumentais:
+Konkretaus argumento perdavimas yra būdas nurodyti, kuriam argumentui skiriama kuri reikšmė.
+
+Pavyzdys:
 
 ```Python
 def skaiciuoti(veiksmas, a, b):
