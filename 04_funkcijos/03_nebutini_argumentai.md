@@ -79,7 +79,7 @@ Parašykite funkciją keliones_informacija, kuri turi šiuos argumentus:
 
 - keliones_trukme: privalomas argumentas, nurodantis kelionės trukmę valandomis.
 - greitis: privalomas argumentas, nurodantis vidutinį greitį km/h.
-- vartojimas: privalomas argumentas, nurodantis vidutinį kuro sąnaudų kiekį l/100 km.
+- vartojimas: neprivalomas argumentas, nurodantis vidutinį kuro sąnaudų kiekį su numatyta reikšme 7 (l/100 km.)
 - kuro_kaina: neprivalomas argumentas su numatyta reikšme 1.2 (kuro kaina eurais už litrą).
 
 Funkcija turėtų grąžinti šią informaciją:
@@ -89,10 +89,6 @@ Funkcija turėtų grąžinti šią informaciją:
 - Bendros kelionės išlaidos kuras (išlaidos = sąnaudos * kuro_kaina).
 
 Funkcija turi grąžinti šią informaciją kaip žodyną.
-
-### Trečia užduotis
-
-Sukurkite funkciją dauginti_skaicius, kuri priima 2 privalomus argumentus ir 1 neprivalomą argumentą multiplier, kurio numatytos reikšmės yra 1. Funkcija turi grąžinti dviejų privalomų argumentų sandaugą, padaugintą iš multiplier. Jei funkcijai perduodamas multiplier argumentas, jo reikšmė turėtų būti naudojama kaip daugiklis. Jei funkcija kviečiama be multiplier argumento, tada bus naudojama numatytoji reikšmė.
 
 # Atsakymai į užduotis
 
@@ -114,7 +110,7 @@ def apskritimo_plotas(spindulys, pi=3.14):
   <hr>
 
 ```Python
-def keliones_informacija(keliones_trukme, greitis, vartojimas, kuro_kaina=1.2):
+def keliones_informacija(keliones_trukme, greitis, vartojimas=7, kuro_kaina=1.2):
     atstumas = keliones_trukme * greitis
     sąnaudos = atstumas * vartojimas / 100
     išlaidos = sąnaudos * kuro_kaina
@@ -124,17 +120,6 @@ def keliones_informacija(keliones_trukme, greitis, vartojimas, kuro_kaina=1.2):
         'sąnaudos': sąnaudos,
         'išlaidos': išlaidos
     }
-```
-
-</details>
-<details>
-  <summary>Trečia užduotis</summary>
-  <hr>
-
-```Python
-def dauginti_skaicius(a, b, multiplier=1):
-    sandauga = a * b * multiplier
-    return sandauga
 ```
 
 </details>
