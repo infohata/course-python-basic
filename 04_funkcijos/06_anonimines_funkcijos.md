@@ -10,7 +10,7 @@ suma = lambda x, y: x + y
 print(suma(2, 3)) # išveda 5
 ```
 
-Šiame pavyzdyje apibrėžiama anoniminė funkcija "suma", kuri suskaičiuoja dviejų argumentų sumą. Ši funkcija yra iškviečiama naudojant "lambda" raktinį žodį, ir reikšmė yra priskiriama kintamajam "suma". Po to funkcija yra iškviečiama su argumentais "2" ir "3", ir išvesties rezultatas yra "5".
+Šiame pavyzdyje apibrėžiama anoniminė funkcija "suma", kuri suskaičiuoja dviejų argumentų sumą. Ši funkcija yra apibrėžiama naudojant "lambda" raktinį žodį, ir reikšmė yra priskiriama kintamajam "suma". Po to funkcija yra iškviečiama su argumentais "2" ir "3", ir išvesties rezultatas yra "5".
 
 Štai dar vienas pavyzdys:
 
@@ -23,9 +23,9 @@ print(skaiciu_kvadratai) # išveda [1, 4, 9, 16, 25]
 
 Funkcija `map` yra Python vidinė funkcija, kuri naudojama norint sukurti naują sąrašą iš kito sąrašo, keičiant kiekvieną jo elementą pagal tam tikrą funkciją arba anoniminę funkciją.
 
-Pavyzdžiui, kai naudojama anoniminė funkcija `lambda x: x**2`, funkcija `map` pakeičia kiekvieną sąrašo elementą jo kvadratu. Kiekvienam sąrašo elementui, funkcija "lambda" priskiria reikšmę ir paduoda ją į `map` funkciją, kuri tada sudaro naują sąrašą su pakeistais elementais.
+Pavyzdžiui, kai naudojama anoniminė funkcija `lambda x: x**2`, funkcija `map` pakeičia kiekvieną sąrašo elementą jo kvadratu. Kiekvienam sąrašo elementui, funkcija "lambda" priskiria reikšmę ir paduoda ją į `map` funkciją, kuri tada sudaro naują sąrašą su pakeistais elementais, o `list` funkcija paverčia gautą `map` funkcijos rezultatą sąrašu.
 
-Pabaigoje, sukurtas naujas sąrašas yra išvestas su "print" funkcija. Šiame pavyzdyje, `map` funkcija pakeičia kiekvieną sąrašo elementą jo kvadratu, o `list` funkcija paverčia gautą reikšmę sąrašu.
+Pabaigoje, sukurtas naujas sąrašas yra išvestas su `print` funkcija.
 
 Galutinis išvesties rezultatas yra naujas sąrašas, kuriame kiekvienas skaičius iš pradinio sąrašo yra pakeltas kvadratu, t.y. [1, 4, 9, 16, 25].
 
@@ -62,10 +62,11 @@ Sukurkite anoniminę funkciją, kuri iš sąrašo skaičių pasirenka tik tuos, 
 Sukurkite anoniminę funkciją, kuri grąžina sąrašo elementų vidurkį.
 
 ### Trečia užduotis
+<!-- perkurti, viskskai nonsence. Pigiau tiesiog didziausias = max(x,y,z) -->
 
 Parašykite anoniminę funkciją, kuri grąžina didžiausią skaičių iš duotų trijų skaičių.
 
-# Atsakymai į užduotis
+## Atsakymai į užduotis
 
 <details><summary>❗Rodyti atsakymus</summary>
 <br>
