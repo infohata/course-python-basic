@@ -31,7 +31,7 @@ def skaityti_duomenis(failo_pavadinimas):
 
 Šiame pavyzdyje modulis ir funkcija turi docstrings. Modulio docstring trumpai aprašo modulio paskirtį, o funkcijos docstring aprašo funkcijos paskirtį, argumentus ir grąžinamas reikšmes.
 
-## Docstring klasės aprašymui:
+## Docstring klasės aprašymui
 
 ```Python
 class Studentas:
