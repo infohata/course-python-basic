@@ -172,65 +172,171 @@ print('melionas' in sarasas) # False
 
 ## Užduotys
 
-- Sukurkite sąrašą, kuriame yra keli jūsų mėgstamų maisto produktų pavadinimai.
+### Pirma užduotis
+
+- Sukurkite sąrašą su bent penkiais jūsų mėgstamų maisto produktų pavadinimais.
 - Atspausdinkite visą sąrašą.
+
+### Antra užduotis
+
+- Atspausdinkite sąrašo pirmą elementą.
+- Atspausdinkite sąrašo trečią elementą.
 - Atspausdinkite sąrašo paskutinį elementą.
+
+### Trečia užduotis
+
+- Atspausdinkite sąrašo pirmus tris elementus.
+- Atspausdinkite sąrašo paskutinius du elementus.
+- Atspausdinkite tris elementus iš sąrašo vidurio.
+- Atspausdinkite sąrašo kas antrą elementą.
+
+### Ketvirta užduotis
+
+Atlikite žemiau nurodytus veiksmus su turimu sąrašu ir po kiekvieno veiksmo, sąrašą atspausdinkite:
+
 - Pridėkite dar vieną mėgstamo maisto pavadinimą į sąrašo galą.
-- Ištrinkite pirmąjį sąrašo elementą.
+- Įterpkite naują maisto produktą į sąrašo ketvirtą vietą.
 - Pakeiskite antrąjį sąrašo elementą kitu mėgstamo maisto pavadinimu.
-- Įtraukite du naujus maisto produktus į sąrašą, vieną pradžioje, kitą viduryje.
+- Ištrinkite pirmąjį sąrašo elementą.
 - Ištrinkite sąrašo trečią elementą.
-- Suraskite sąraše "sriubą" indeksą.
-- Įterpkite naują maisto produktą "kepta vištiena" į sąrašo ketvirtą vietą.
+- Suraskite sąraše kurio nors elemento indeksą.
+- Atspausdinkite sąrašą atvirkštine tvarka.
+- Pabandykite papildomai panaudoti kitus metodus.
+
+### Penkta užduotis
+
 - Patikrinkite sąrašo ilgį.
-- Patikrinkite ar priduktas "makaronai" yra sąraše.
-- Išvalykite sąrašą.
+
+### Šešta užduotis
+
+- Patikrinkite ar tam tikras produktas yra sąraše.
 
 ## Atsakymai į užduotis
 
 <details><summary>❗ Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
 <hr>
 
 ```Python
-maisto_produktai = ['Cepelinai', 'Sriuba', 'Koldūnai', 'Kebabai']
-print("Visas sąrašas:", maisto_produktai)
-print("Sąrašo paskutinis elementas:", maisto_produktai[-1])
-maisto_produktai.append('Pica')
-print("Sąrašas su pridėtu elementu:", maisto_produktai)
-maisto_produktai.pop(0)
-print("Sąrašas be pirmojo elemento:", maisto_produktai)
-maisto_produktai[1] = 'Kepsnys'
-print("Sąrašas su pakeistu antruoju elementu:", maisto_produktai)
-maisto_produktai.insert(0, 'Kava')
-maisto_produktai.insert(2, 'Makaronai')
-print("Sąrašas su įtrauktais elementais:", maisto_produktai)
-maisto_produktai.pop(2)
-print("Sąrašas be trečiojo elemento:", maisto_produktai)
-sriubos_indeksas = maisto_produktai.index('Sriuba')
-print("Sąrašo 'Sriuba' indeksas:", sriubos_indeksas)
-maisto_produktai.insert(3, 'Kepta vištiena')
-print("Sąrašas su įterptu nauju elementu:", maisto_produktai)
-print("Sąrašo ilgis:", len(maisto_produktai))
-print("Sąraše yra makaronai:", 'makaronai' in maisto_produktai)
-maisto_produktai.clear()
-print("Išvalytas sąrašas:", maisto_produktai)
+maisto_produktai = ['obuoliai', 'sūris', 'kepta duona', 'mėsa', 'bulvės']
+print(maisto_produktai)
 ```
 
 Rezultatas:
 
 ```Text
-Visas sąrašas: ['Cepelinai', 'Sriuba', 'Koldūnai', 'Kebabai']
-Sąrašo paskutinis elementas: Kebabai
-Sąrašas su pridėtu elementu: ['Cepelinai', 'Sriuba', 'Koldūnai', 'Kebabai', 'Pica']
-Sąrašas be pirmojo elemento: ['Sriuba', 'Koldūnai', 'Kebabai', 'Pica']
-Sąrašas su pakeistu antruoju elementu: ['Sriuba', 'Kepsnys', 'Kebabai', 'Pica']
-Sąrašas su įtrauktais elementais: ['Kava', 'Sriuba', 'Makaronai', 'Kepsnys', 'Kebabai', 'Pica']
-Sąrašas be trečiojo elemento: ['Kava', 'Sriuba', 'Kepsnys', 'Kebabai', 'Pica']
-Sąrašo 'Sriuba' indeksas: 1
-Sąrašas su įterptu nauju elementu: ['Kava', 'Sriuba', 'Kepsnys', 'Kepta vištiena', 'Kebabai', 'Pica']
-Sąrašo ilgis: 6
-Sąraše yra makaronai: False
-Išvalytas sąrašas: []
+['obuoliai', 'sūris', 'kepta duona', 'mėsa', 'bulvės']
+```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+```Python
+print(maisto_produktai[0])
+print(maisto_produktai[2])
+print(maisto_produktai[-1])
+```
+
+Rezultatas:
+
+```Text
+obuoliai
+kepta duona
+bulvės
+```
+
+</details>
+<details>
+<summary>Trečia užduotis</summary>
+<hr>
+
+```Python
+print(maisto_produktai[:3])
+print(maisto_produktai[-2:])
+print(maisto_produktai[1:4])
+print(maisto_produktai[::2])
+```
+
+Rezultatas:
+
+```Text
+['obuoliai', 'sūris', 'kepta duona']
+['mėsa', 'bulvės']
+['sūris', 'kepta duona', 'mėsa']
+['obuoliai', 'kepta duona', 'bulvės']
+```
+
+</details>
+<details>
+<summary>Ketvirta užduotis</summary>
+<hr>
+
+```Python
+maisto_produktai.append('bananai')
+print(maisto_produktai)
+
+maisto_produktai.insert(3, 'avokadas')
+print(maisto_produktai)
+
+maisto_produktai[1] = 'varškė'
+print(maisto_produktai)
+
+del maisto_produktai[0]
+print(maisto_produktai)
+
+maisto_produktai.pop(2)
+print(maisto_produktai)
+
+print(maisto_produktai.index('bulvės'))
+
+maisto_produktai.reverse()
+print(maisto_produktai)
+```
+
+Rezultatas:
+
+```Text
+['obuoliai', 'sūris', 'kepta duona', 'mėsa', 'bulvės', 'bananai']
+['obuoliai', 'sūris', 'kepta duona', 'avokadas', 'mėsa', 'bulvės', 'bananai']
+['obuoliai', 'varškė', 'kepta duona', 'avokadas', 'mėsa', 'bulvės', 'bananai']
+['varškė', 'kepta duona', 'avokadas', 'mėsa', 'bulvės', 'bananai']
+['varškė', 'kepta duona', 'mėsa', 'bulvės', 'bananai']
+3
+['bananai', 'bulvės', 'mėsa', 'kepta duona', 'varškė']
+```
+
+</details>
+<details>
+<summary>Penkta užduotis</summary>
+<hr>
+
+```Python
+print(len(maisto_produktai))
+```
+
+Rezultatas:
+
+```Text
+5
+```
+
+</details>
+<details>
+<summary>Šešta užduotis</summary>
+<hr>
+
+```Python
+print('abrikosas' in maisto_produktai)
+```
+
+Rezultatas:
+
+```Text
+False
 ```
 
 </details>

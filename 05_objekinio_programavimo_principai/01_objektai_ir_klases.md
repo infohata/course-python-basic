@@ -37,7 +37,7 @@ Dabar `pirmas_automobilis` kintamasis yra objektas, kuris saugo duomenis apie Au
 print(pirmas_automobilis.marke)  # Audi
 print(pirmas_automobilis.modelis)  # A6
 print(pirmas_automobilis.metai)  # 2019
-print(pirmas_automnobilis.spalva) # balta
+print(pirmas_automobilis.spalva) # balta
 ```
 
 ## Savybių pakeitimas
