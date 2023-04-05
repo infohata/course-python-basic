@@ -259,6 +259,11 @@ didelis mėlynas šikšnosparnis
 
 ### Pirma užduotis
 
+- Sukurkite sąrašą su bent penkiais elementais
+- Atspausdinkite jį naudodami `for` ciklą
+
+### Antra užduotis
+
 Sukurti programą, kuri:
 
 - Leistų vartotojui po vieną įvesti 5 žodžius
@@ -268,7 +273,7 @@ Sukurti programą, kuri:
 
 Patarimas: Naudoti sąrašą (list), ciklą for, funkcijas len ir index
 
-### Antra užduotis
+### Trečia užduotis
 
 Sukurti programą, kuri:
 
@@ -276,9 +281,9 @@ Sukurti programą, kuri:
 - Atspausdintų "Keliamieji metai", jei taip yra
 - Atspausdintų "Nekeliamieji metai", jei taip yra
 
-### Trečia užduotis
+### Ketvirta užduotis
 
-- Perdaryti antrą užduoti taip, kad programa atspausdintų visus keliamuosius metus, nuo 1900 iki 2100 metų.
+- Perdaryti trečią užduoti taip, kad programa atspausdintų visus keliamuosius metus, nuo 1900 iki 2100 metų.
 
 ## Atsakymai į užduotis
 
@@ -286,6 +291,30 @@ Sukurti programą, kuri:
 <br>
 <details>
 <summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+savaite = ['pirmadienis', 'antradienis', 'trečiadienis', 'ketvirtadienis', 'penktadienis', 'šeštadienis', 'sekmadienis']
+
+for diena in savaite:
+    print(diena)
+```
+
+Rezultatas:
+
+```Text
+pirmadienis
+antradienis
+trečiadienis
+ketvirtadienis
+penktadienis
+šeštadienis
+sekmadienis
+```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
 <hr>
 
 ```Python
@@ -299,9 +328,25 @@ for numeris, zodis in enumerate(zodziai):
 print('Žodžių kiekis:', len(zodziai))
 ```
 
+Rezultatas:
+
+```Text
+Įveskite žodį: Labas
+Įveskite žodį: rytas
+Įveskite žodį: studentai
+Įveskite žodį: Kaip
+Įveskite žodį: sekasi?
+1: Labas, simbolių kiekis: 5
+2: rytas, simbolių kiekis: 5
+3: studentai, simbolių kiekis: 9
+4: Kaip, simbolių kiekis: 4
+5: sekasi?, simbolių kiekis: 7
+Žodžių kiekis: 5
+```
+
 </details>
 <details>
-<summary>Antra užduotis</summary>
+<summary>Trečia užduotis</summary>
 <hr>
 
 ```Python
@@ -312,9 +357,16 @@ else:
     print('Nekeliamieji metai')
 ```
 
+Rezultatas:
+
+```Text
+Įveskite metus: 2024
+Keliamieji metai
+```
+
 </details>
 <details>
-<summary>Trečia užduotis</summary>
+<summary>Ketvirta užduotis</summary>
 <hr>
 
 ```Python
@@ -327,6 +379,36 @@ for metai in range(2000, 2100):
         print(metai)
     else:
         continue
+```
+
+Rezultatas:
+
+```Text
+2000
+2004
+2008
+2012
+2016
+2020
+2024
+2028
+2032
+2036
+2040
+2044
+2048
+2052
+2056
+2060
+2064
+2068
+2072
+2076
+2080
+2084
+2088
+2092
+2096
 ```
 
 </details>
