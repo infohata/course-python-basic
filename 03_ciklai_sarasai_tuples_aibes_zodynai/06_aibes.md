@@ -147,41 +147,137 @@ Rezultatas:
 
 ## Užduotys
 
-- Sukurkite dvi aibes su skaičiais.
-- Grąžinkite tuos elementus, kurie yra bendri abiejoms aibėms.
-- Grąžinkite tuos elementus, kurie yra pirmoje aibėje, bet ne antroje.
-- Sukurkite trečią aibę, kurioje yra unikalūs elementai tik iš antrosios aibės.
-- Pakelkite trečiosios aibės elementus kvadratu.
+### Pirma užduotis
+
+- Sukurkite aibę su skaičiais.
+- Pridėkite skaičių į aibę
+- Atspausdinkite papildytą aibę.
+
+### Antra užduotis
+
+- Sukurkite naują aibę su skaičiais.
+- Ištrinkite skaičių iš aibės.
+- Atspausdinkite pakoreguotą aibę.
+
+### Trečia užduotis
+
+- Sukurkite naują aibę iš abiejų turimų aibių su tais elementais, kurie yra bendri.
+- Atspausdinkite naują aibę.
+
+### Ketvirta užduotis
+
+- Sukurkite naują aibę iš pirmoje ir antroje užduotyje sukurtų aibių su tais elementais, kurie yra pirmoje aibėje, bet ne antroje.
+- Atspausdinkite naują aibę.
+
+### Penkta užduotis
+
+- Sukurkite naują aibę iš pirmoje ir antroje užduotyje sukurtų aibių su tais elementais, kurie yra unikalūs tik antroje.
+- Atspausdinkite naują aibę.
+
+### Bonus užduotis
+
+- Pakelkite penktosios užduoties aibės elementus kvadratu.
 
 ## Atsakymai į užduotis
 
 <details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
 <hr>
 
 ```Python
-aibe1 = {1, 2, 3, 4, 5}
-aibe2 = {4, 5, 6, 7, 8}
-
-bendra_aibe = aibe1.intersection(aibe2)
-print('Bendra aibė:', bendra_aibe)
-
-unikalios_aibe1 = aibe1.difference(aibe2)
-print('Unikalūs aibės 1 elementai:', unikalios_aibe1)
-
-aibe3 = aibe2.difference(aibe1)
-print('Nauja aibė su aibės 2 unikaliais elementais:', aibe3)
-
-aibe3_kvadratu = {x**2 for x in aibe3}
-print('Aibės 3 elementai kvadratu:', aibe3_kvadratu)
+pirma_aibe = {1, 2, 3, 4}
+pirma_aibe.add(5)
+print(pirma_aibe)
 ```
 
 Rezultatas:
 
 ```Text
-Bendra aibė: {4, 5}
-Unikalūs aibės 1 elementai: {1, 2, 3}
-Nauja aibė su aibės 2 unikaliais elementais: {8, 6, 7}
-Aibės 3 elementai kvadratu: {64, 49, 36}
+{1, 2, 3, 4, 5}
 ```
 
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+```Python
+antra_aibe = {3, 4, 5, 6, 7, 8}
+antra_aibe.discard(7)
+print(antra_aibe)
+```
+
+Rezultatas:
+
+```Text
+{3, 4, 5, 6, 8}
+```
+
+</details>
+<details>
+<summary>Trečia užduotis</summary>
+<hr>
+
+```Python
+trecia_aibe = pirma_aibe.intersection(antra_aibe)
+print(trecia_aibe)
+```
+
+Rezultatas:
+
+```Text
+{3, 4, 5}
+```
+
+</details>
+<details>
+<summary>Ketvirta užduotis</summary>
+<hr>
+
+```Python
+ketvirta_aibe = pirma_aibe.difference(antra_aibe)
+print(ketvirta_aibe)
+```
+
+Rezultatas:
+
+```Text
+{1, 2}
+```
+
+</details>
+<details>
+<summary>Penkta užduotis</summary>
+<hr>
+
+```Python
+penkta_aibe = antra_aibe.difference(pirma_aibe)
+print(penkta_aibe)
+```
+
+Rezultatas:
+
+```Text
+{6, 8}
+```
+
+</details>
+<details>
+<summary>Bonus užduotis</summary>
+<hr>
+
+```Python
+aibe_kvadratu = {x**2 for x in penkta_aibe}
+print('5 užduoties aibės elementai kvadratu:', aibe_kvadratu)
+```
+
+Rezultatas:
+
+```Text
+5 užduoties aibės elementai kvadratu: {64, 36}
+```
+
+</details>
 </details>
