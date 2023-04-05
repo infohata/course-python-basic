@@ -23,8 +23,6 @@ Rezultatas:
 
 Šioje programoje `while` ciklas kartojasi, kol kintamasis skaičius yra mažesnis arba lygus 5. Kiekvieną kartą, kai ciklas kartojasi, spausdiname skaičių ir padidiname jį vienetu.
 
-<!-- TODO: super paprastos užduotys po kiekvieno teorijos gabaliuko su pavyzdiu, kurios paprašytų atkartoti pavyzdį su maža modifikacija. Pvz. skaičius 10, while ciklas kol skaičius teigiamas, mažinant skaičių vienetu, spausdinti skaičių. -->
-
 ## Begalinis ciklas (`infinite loop`)
 
 Begalinis ciklas kartojasi be pabaigos, nes sąlyga, kurią tikrina ciklas, visada yra teisinga. Tai gali būti neigiamai paveikti programos veikimą, nes begalinis ciklas gali sukelti programos sustojimą ar net viso kompiuterio  užstrigimą.
@@ -130,6 +128,14 @@ Ciklas baigtas
 
 ### Pirma užduotis
 
+- Turite skaičių lygų 10. Atspausdinkite skaičiaus mažinimo ciklą, kol jis pasieks -1.
+
+### Antra užduotis
+
+- Turite skaičių lygų 5. Atspausdinkite skaičiaus mažinimo ciklą, kol jis pasieks -10, tačiau sustabdykite ciklą, kai skaičius bus lygus -5, bet pratęskite, jeigu skaičius bus lygus 0.
+
+### Trečia užduotis
+
 Parašyti programą, kuri:
 
 - Leistų vartotojui įvesti skaičių.
@@ -138,7 +144,7 @@ Parašyti programą, kuri:
 
 Patarimas: Naudoti ciklą while, sąlygą if, break
 
-### Antra užduotis
+### Ketvirta užduotis
 
 Sukurkite kauliukų žaidimą, kuris:
 
@@ -164,6 +170,68 @@ print(random.randint(1, 6))
 <hr>
 
 ```Python
+skaicius = 10
+while skaicius >= -1:
+    print(skaicius)
+    skaicius -= 1
+```
+
+Rezultatas
+
+```Text
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+-1
+```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+```Python
+skaicius = 5
+while skaicius >= -10:
+    skaicius -= 1
+    if skaicius == -5:
+        print('Sustabdomas ciklas, nes pasiektas skaičius -5')
+        break
+    elif skaicius == 0:
+        print('Pratęsiame ciklą, nes pasiektas skaičius 0')
+        continue
+    print(skaicius)
+```
+
+Rezultatas
+
+```Text
+4
+3
+2
+1
+Pratęsiame ciklą, nes pasiektas skaičius 0
+-1
+-2
+-3
+-4
+Sustabdomas ciklas, nes pasiektas skaičius -5
+```
+
+</details>
+<details>
+<summary>Trečia užduotis</summary>
+<hr>
+
+```Python
 suma = 0
 
 while True:
@@ -177,7 +245,7 @@ print(suma)
 
 </details>
 <details>
-<summary>Antra užduotis</summary>
+<summary>Ketvirta užduotis</summary>
 <hr>
 
 ```Python
