@@ -69,20 +69,19 @@ import math
 print(dir(math))
 ```
 
-## Paketai, subpaketai ir init.py failai
+## Paketai, subpaketai ir `__init__.py` failai
 
 **Paketai** yra būdas organizuoti Python kodo modulius į struktūruotą hierarchiją. Paketai leidžia lengvai suskirstyti projekto funkcionalumą į susijusias dalis, taip padidinant kodo tvarką ir supratimą.
 
-Python paketas yra paprastai direktorija, kurioje yra init.py failas. Paketas gali turėti modulius, subpaketus ir jų init.py failus.
+Python paketas yra paprastai direktorija, kurioje yra `__init__.py` failas. Paketas gali turėti modulius, subpaketus ir jų `__init__.py` failus.
 
 **Subpaketai** yra paketų direktorijos, esančios kituose paketuose. Jie taip pat turi `__init__.py` failą ir gali turėti savo modulius bei kitus subpaketus.
 
-**`__init__.py` failai** yra specialūs Python failai, kuriuos interpretatorius naudoja, kad nustatytų direktoriją kaip paketą ar subpaketą. init.py failai gali būti tušti arba turėti kodą, pvz., importuoti kai kuriuos modulius, priskirti kintamuosius arba apibrėžti funkcijas ir klases. Importuojant paketą, `__init__.py` failai yra visada paleidžiami.
+**`__init__.py` failai** yra specialūs Python failai, kuriuos interpretatorius naudoja, kad nustatytų direktoriją kaip paketą ar subpaketą. `__init__.py` failai gali būti tušti arba turėti kodą, pvz., importuoti kai kuriuos modulius, priskirti kintamuosius arba apibrėžti funkcijas ir klases. Importuojant paketą, `__init__.py` failai yra visada paleidžiami.
 
 ### Paketų pavadinimų taisyklės
 
-<!-- prašosi redagavimo -->
-Vengti didžiųjų raidžių. Katalogai negali prasidėti skaičiais, negali turėti tarpų, nelotyniškų raidžių ir t.t. Gera logika naudoti kintamųjų pavadinimų sudarymo taisykles.
+Venkite didžiųjų raidžių naudojimo. Katalogų pavadinimai neturi prasidėti skaičiais, turėti tarpų, ne lotyniškų simbolių ir t.t. Rekomenduojama laikytis kintamųjų pavadinimų sudarymo taisyklių.
 
 ### Projekto pavyzdys
 
@@ -102,7 +101,7 @@ projektas/
             kvadratas.py
 ```
 
-`projektas` yra pagrindinis paketas, kuris turi modulį `main.py` ir subpaketą `geometrija`. `geometrija` subpaketas turi modulius `plotas.py` ir `perimetras.py` bei subpaketą `dvimate`, kuris turi modulius `apskritimas.py` ir `kvadratas.py`. Atkreipkite dėmesį, kad `dvimate` vadinti `2D` būtų nors gal ir patogiau, bet negalima.
+`projektas` yra pagrindinis paketas, kuris turi modulį `main.py` ir subpaketą `geometrija`. `geometrija` subpaketas turi modulius `plotas.py` ir `perimetras.py` bei subpaketą `dvimate`, kuris turi modulius `apskritimas.py` ir `kvadratas.py`. Atkreipkite dėmesį, kad `dvimate` subpaketo vadinti `2D` negalima, nors gal ir patogiau, bet negalima.
 
 ## Absoliutus importavimas
 
@@ -133,7 +132,7 @@ from projektas.geometrija.plotas import trikampio_plotas
 from projektas.geometrija.dvimate.apskritimas import apskritimo_plotas
 ```
 
-`init.py` failų panaudojimas:
+``__init__.py`` failų panaudojimas:
 Tarkime, kad `projektas/geometrija/__init__.py` failas turi šį kodą:
 
 ```Python
