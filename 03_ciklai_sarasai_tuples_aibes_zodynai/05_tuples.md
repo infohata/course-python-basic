@@ -148,42 +148,151 @@ Kaip matote, `while` cikle naudojame `len()` funkciją, kad sužinotume, kiek `t
 
 ## Užduotys
 
-- Sukurkite du `tuple`, kurie susideda iš jūsų mėgstamų grupių pavadinimų. Sujunkite juos į vieną naują `tuple`.
+### Pirma užduotis
+
+- Sukurkite `tuple`, kuris susideda iš jūsų mėgstamų grupių pavadinimų.
+- Atspausdinkite `tuple`.
+
+### Antra užduotis
+
+- Sukurkite dar vieną `tuple` su grupių pavadinimais (pavadinimai gali kartotis) ir sujunkite abu turimus `tuple` į vieną naują.
 - Atspausdinkite naują `tuple`.
-- Atspausdinkite visus `tuple` elementus atskirose eilutėse.
+
+### Trečia užduotis
+
+- Atspausdinkite pirmą grupę.
+- Atspausdinkite trečia grupę.
+- Atspausdinkite paskutinę grupę.
+
+### Ketvirta užduotis
+
+- Atspausdinkite kas antrą grupę.
+
+### Penkta užduotis
+
+- Atspausdinkite kiek kartų sąraše kartojasi kuri nors grupė.
+- Atspausdinkite kurios nors grupės indeksą.
 - Patikrinkite ar kuri nors grupė yra `tuple`.
+
+### Bonus užduotis
+
+- Atspausdinkite grupes atskirose eilutėse taip, kad pavadinimai nesidubliuotų.
 
 ## Atsakymai į užduotis
 
 <details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
 <hr>
 
 ```Python
-megstamos_grupes = ('Metallica', 'Deep Purple', 'Dio', 'Pearl Jam')
-megstamiausios_grupes = ('Queen', 'AC/DC', 'Led Zeppelin')
-
-visos_grupes = megstamos_grupes + megstamiausios_grupes
-
-print(visos_grupes)
-
-for grupe in visos_grupes:
-    print(grupe)
-
-print('Black Sabbath' in visos_grupes)
+megstamos_grupes = ('Radiohead', 'The Beatles', 'Pink Floyd', 'Led Zeppelin')
+print(megstamos_grupes)
 ```
 
 Rezultatas:
 
 ```Text
-('Metallica', 'Deep Purple', 'Dio', 'Pearl Jam', 'Queen', 'AC/DC', 'Led Zeppelin')
-Metallica
-Deep Purple
-Dio
-Pearl Jam
-Queen
-AC/DC
+('Radiohead', 'The Beatles', 'Pink Floyd', 'Led Zeppelin')
+```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+```Python
+kitos_grupes = ('Queen', 'The Beatles', 'Nirvana', 'Led Zeppelin')
+visos_grupes = megstamos_grupes + kitos_grupes
+print(visos_grupes)
+```
+
+Rezultatas:
+
+```Text
+('Radiohead', 'The Beatles', 'Pink Floyd', 'Led Zeppelin', 'Queen', 'The Beatles', 'Nirvana', 'Led Zeppelin')
+```
+
+</details>
+<details>
+<summary>Trečia užduotis</summary>
+<hr>
+
+```Python
+print(visos_grupes[0])
+print(visos_grupes[2])
+print(visos_grupes[-1])
+```
+
+Rezultatas:
+
+```Text
+Radiohead
+Pink Floyd
 Led Zeppelin
+```
+
+</details>
+<details>
+<summary>Ketvirta užduotis</summary>
+<hr>
+
+```Python
+print(visos_grupes[::2])
+```
+
+Rezultatas:
+
+```Text
+('Radiohead', 'Pink Floyd', 'Queen', 'Nirvana')
+```
+
+</details>
+<details>
+<summary>Penkta užduotis</summary>
+<hr>
+
+```Python
+kartai = visos_grupes.count('Led Zeppelin')
+print("Grupė 'Led Zeppelin' pasikartoja: ", kartai)
+
+indeksas = visos_grupes.index('Pink Floyd')
+print("Grupės 'Pink Floyd' indeksas yra: ", indeksas)
+
+print('Deep Purple' in visos_grupes)
+```
+
+Rezultatas:
+
+```Text
+Grupė 'Led Zeppelin' pasikartoja:  2
+Grupės 'Pink Floyd' indeksas yra:  2
 False
 ```
 
+</details>
+<details>
+<summary>Bonus užduotis</summary>
+<hr>
+
+```Python
+unikalios_grupes = tuple(set(visos_grupes))
+
+for grupe in unikalios_grupes:
+  print(grupe)
+```
+
+Rezultatas:
+
+```Text
+The Beatles
+Led Zeppelin
+Pink Floyd
+Nirvana
+Radiohead
+Queen
+```
+
+</details>
 </details>
