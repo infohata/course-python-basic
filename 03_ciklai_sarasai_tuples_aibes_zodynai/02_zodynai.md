@@ -16,9 +16,9 @@ print(zodynas) # {'raktas1': 'reiksme1', 'raktas2': 'reiksme2'}
 Norint pasiekti konkretų žodyno įrašą, reikia tiesiog nurodyti raktą laužtiniuose skliaustuose:
 
 ```Python
-zmones = {'Jonas': 24, 'Petras': 32, 'Ona': 28}
+zmones = {'Jonas': 24, 'Petras': 32}
 print(zmones['Petras']) # 32
-print(zmones['Ona']) # 28
+print(zmones['Jonas']) # 24
 ```
 
 ## Pridėti žodyno įrašą
@@ -71,7 +71,7 @@ reiksmes = zodynas.values()
 print(reiksmes) # dict_values([24, 32, 28])
 ```
 
-`.items()` grąžina visus žodyno raktažodžius ir reikšmes porų sąrašą.
+`.items()` grąžina visus žodyno raktažodžių ir reikšmių porų sąrašą.
 
 ```Python
 zodynas = {'Jonas': 24, 'Petras': 32, 'Ona': 28}
@@ -109,10 +109,41 @@ print(zodynas) # {}
 ```
 
 ## Užduotys
+
+### Pirma užduotis
+
+- Sukurkite žodyną su bent trimis augintinių vardais ir jų amžiumi.
+- Atspausdinkite visą žodyną.
+
+### Antra užduotis
+
+- Atspausdinkite kurio nors augintinio amžių.
+
+### Trečia užduotis
+
+- Pridėkite naują augintinį.
+
+### Ketvirta užduotis
+
+- Pakeiskite kurio nors augintinio amžių.
+
+### Penkta užduotis
+
+- Ištrinkite kurį nors augintinį.
+- Atspausdinkite visą žodyną.
+
+### Šešta užduotis
+
+- Atspausdinkite visų augintinių vardus.
+- Atspausdinkite visų augintinių amžius.
+- Atspausdinkite visų augintinių vardų ir amžių sąrašą.
+- Atspausdinkite konkretaus augintinio amžių pagal jo vardą.
+- Pabandykite papildomai panaudoti kitus metodus.
+
+### Bonus užduotis
 <!-- TODO: perdaryti automobilių sąrašą į sąrašą, ir šią užduotį palikti kaip antrą/trečia. Pradžiai reikėtų duoti paprastesnę -->
 
-- Sukurkite tuščią žodyną pavadinimu "automobiliai".
-- Pridėkite prie žodyno informaciją apie 3 skirtingus automobilius (nebijokite naudoti savo kūrybiškumo ir įtraukti įvairių markių, modelių, metų, spalvų ir variklių tipų).
+- Sukurkite tuščią žodyną pavadinimu "automobiliai" ir pridėkite prie žodyno informaciją apie 3 skirtingus automobilius (nebijokite naudoti savo kūrybiškumo ir įtraukti įvairių markių, modelių, metų, spalvų ir variklių tipų).
 - Išveskite žodyno informaciją apie vieną iš automobilių.
 - Pakeiskite informaciją apie vieną automobilį (pavyzdžiui, pakeiskite variklio tipą).
 - Pridėkite naują automobilį į žodyną.
@@ -124,10 +155,119 @@ print(zodynas) # {}
 ## Atsakymai į užduotis
 
 <details><summary>❗ Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
 <hr>
 
 ```Python
-automobiliai = {}
+augintiniai = {'Reksas': 3, 'Lakis': 2, 'Pūkelis': 7}
+print(augintiniai)
+```
+
+Rezultatas:
+
+```Text
+{'Reksas': 3, 'Lakis': 2, 'Pūkelis': 7}
+```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+```Python
+print(augintiniai['Reksas'])
+```
+
+Rezultatas:
+
+```Text
+3
+```
+
+</details>
+<details>
+<summary>Trečia užduotis</summary>
+<hr>
+
+```Python
+augintiniai['Pupa'] = 1
+print(augintiniai)
+```
+
+Rezultatas:
+
+```Text
+{'Reksas': 3, 'Lakis': 2, 'Pūkelis': 7, 'Pupa': 1}
+```
+
+</details>
+<details>
+<summary>Ketvirta užduotis</summary>
+<hr>
+
+```Python
+augintiniai['Lakis'] = 4
+print(augintiniai)
+```
+
+Rezultatas:
+
+```Text
+{'Reksas': 3, 'Lakis': 4, 'Pūkelis': 7, 'Pupa': 1}
+```
+
+</details>
+<details>
+<summary>Penkta užduotis</summary>
+<hr>
+
+```Python
+del augintiniai['Pūkelis']
+print(augintiniai)
+```
+
+Rezultatas:
+
+```Text
+{'Reksas': 3, 'Lakis': 4, 'Pupa': 1}
+```
+
+</details>
+<details>
+<summary>Šešta užduotis</summary>
+<hr>
+
+```Python
+vardai = augintiniai.keys()
+print(vardai)
+
+amzius = augintiniai.values()
+print(amzius)
+
+augintiniu_sarasas = augintiniai.items()
+print(augintiniu_sarasas)
+
+suo = augintiniai.get('Reksas')
+print(suo)
+```
+
+Rezultatas:
+
+```Text
+dict_keys(['Reksas', 'Lakis', 'Pupa'])
+dict_values([3, 4, 1])
+dict_items([('Reksas', 3), ('Lakis', 4), ('Pupa', 1)])
+3
+```
+
+</details>
+<details>
+<summary>Bonus užduotis</summary>
+<hr>
+
+```Python
 automobiliai = {
     '1': {
         'marke': 'Audi',
