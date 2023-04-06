@@ -3,25 +3,29 @@
 Viena iš objektinio programavimo savybių yra paveldėjimas. Tai reiškia, kad klasė gali paveldėti kitos klasės savybes ir metodus. Paveldėjimas padeda sumažinti kodą, nes leidžia sukurti naujas klases, kurios naudoja savybes ir metodus iš jau egzistuojančių klasių.
 
 ```Python
-class SportinisAutomobilis(Automobilis):
-    def greitis(self):
-        print('Šis automobilis gali važiuoti iki 300 km/h')
+class Elektromobilis(Automobilis):
+    kuro_tipas = 'elektra'
 
-ferrari = SportinisAutomobilis('Ferrari', '458 Italia', metai=2021, spalva='raudona')
+    def max_greitis(self):
+        print('Šis automobilis gali važiuoti iki 350 km/h')
+        return 350
+
+tesla_sp = Elektromobilis('Tesla', 'Model S Plaid', metai=2022, spalva='raudona')
 ```
 
 Šiame pavyzdyje sukūrėme objektą, kuris paveldi savybes ir metodus iš klasės "Automobilis", tačiau turi savo unikalų metodą "greitis".
 
 ```Python
-print(ferrari.marke) # Ferrari
-print(ferrari.modelis) # 458 Italia
-print(ferrari.gauti_metus()) # 2021
-print(ferrari.gauti_spalva()) # raudona
+print(tesla_sp.marke) # Tesla
+print(tesla_sp.modelis) # Model S Plaid
+print(tesla_sp.gauti_metus()) # 2022
+print(tesla_sp.gauti_spalva()) # raudona
 
-ferrari.keisti_spalva("geltona")
-print(ferrari.gauti_spalva()) # geltona
+tesla_sp.keisti_spalva("geltona")
+print(tesla_sp.gauti_spalva()) # geltona
 
-ferrari.greitis() # Šis automobilis gali važiuoti iki 300 km/h
+print(tesla.kuro_tipas) # elektra
+tesla_sp.max_greitis() # Šis automobilis gali važiuoti iki 350 km/h
 ```
 
 ## Objekto priklausymo klasei patikrinimas
@@ -29,13 +33,13 @@ ferrari.greitis() # Šis automobilis gali važiuoti iki 300 km/h
 `isinstance` yra funkcija, kuri leidžia patikrinti, ar objektas priklauso tam tikrai klasei. Ši funkcija grąžina `True`, jei objektas yra tos klasės objektas arba objekto klasė paveldi nurodytą klasę, ir `False` kitu atveju. Pvz.:
 
 ```Python
-ferrari = SportinisAutomobilis('Ferrari', '458 Italia')
+tesla_sp = Elektromobilis('Tesla', 'Model S Plaid')
 audi = Automobilis("Audi", "A4")
 
 print(isinstance(audi, Automobilis)) # True
-print(isinstance(ferrari, Automobilis)) # True
-print(isinstance(audi, SportinisAutomobilis)) # False
-print(isinstance(ferrari, SportinisAutomobilis)) # True
+print(isinstance(tesla_sp, Automobilis)) # True
+print(isinstance(audi, Elektromobilis)) # False
+print(isinstance(tesla_sp, Elektromobilis)) # True
 ```
 
 ## Užduotys
