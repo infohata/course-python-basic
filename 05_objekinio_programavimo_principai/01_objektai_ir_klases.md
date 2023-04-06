@@ -8,30 +8,25 @@ Klasės deklaracija yra paprasta - reikia naudoti `class` žodį, o po to klasė
 
 ```Python
 class Automobilis:
-    def __init__(self, marke, modelis, metai, spalva):
-        self.marke = marke
-        self.modelis = modelis
-        self.metai = metai
-        self.spalva = spalva
+    marke = ''
+    modelis = ''
+    metai = ''
+    spalva = ''
 ```
-
-Ši klasė turi keturias savybes: "marke", "modelis", "metai" ir "spalva". Konstruktorius `__init__` turi būti apibrėžtas kiekvienoje klasėje ir privalo turėti bent vieną parametrą `self`, nes jis nurodo, kad savybės yra susijusios su objektu, kuris bus sukuriamas iš šios klasės.
-
-<!-- TODO:
-Perdaryti eigą medžiagos iki šios vietos tokiu principu:
-- Klasės aprašymas be init, su savybės ir metodo pavyzdžiais (pvz. metai, def pypinti), paaiškinant kas tai yra
-- Tada supažindinti su konstruktorium __init__
- -->
 
 ## Objekto sukūrimas
 
-Norėdami sukurti naują objektą pagal esamą klasę, turime perduoti reikiamus argumentus konstruktoriui:
+Norėdami sukurti naują objektą pagal esamą klasę, turime perduoti reikiamus argumentus:
 
 ```Python
-pirmas_automobilis = Automobilis('Audi', 'A6', 2019, 'balta')
+pirmas_automobilis = Automobilis()
+pirmas_automobilis.marke = 'Audi'
+pirmas_automobilis.modelis = 'A6'
+pirmas_automobilis.metai = 2019
+pirmas_automobilis.spalva = 'balta'
 ```
 
-Dabar `pirmas_automobilis` kintamasis yra objektas, kuris saugo duomenis apie Audi A6 automobilį, pagal mūsų nurodytus parametrus. Galime pasiekti objekto atributus:
+Dabar `pirmas_automobilis` kintamasis yra objektas, kuris saugo duomenis apie automobilį pagal mūsų nurodytus parametrus. Galime pasiekti objekto atributus:
 
 ```Python
 print(pirmas_automobilis.marke)  # Audi
@@ -56,13 +51,15 @@ Savybė pagal nutylėjimą yra klasės atributas, kuriam yra priskirta numatyta 
 
 ```Python
 class Automobilis:
-    def __init__(self, marke, modelis, metai=2023, spalva='pilka'):
-        self.marke = marke
-        self.modelis = modelis
-        self.metai = metai
-        self.spalva = spalva
+    marke = ''
+    modelis = ''
+    metai = 2023
+    spalva = 'pilka'
 
-antras_automobilis = Automobilis("BMW", "X5", 2021)
+antras_automobilis = Automobilis()
+antras_automobilis.marke = 'BMW'
+antras_automobilis.modelis = 'X5'
+antras_automobilis.metai = 2001
 print(antras_automobilis.metai) # 2021
 print(antras_automobilis.spalva) # pilka
 ```
@@ -72,13 +69,8 @@ print(antras_automobilis.spalva) # pilka
 Klasės, kurios objektai gali būti inicijuoti su skirtingu kiekiu savybių, yra naudingos tuo atveju, kai norime suteikti vartotojui galimybę nurodyti tik dalį objekto savybių, o likusios savybės būtų priskiriamos pagal nutylėjimą, pvz.:
 
 ```Python
-trecias_automobilis = Automobilis('Toyota', 'Corolla', 2022, 'raudona')
-ketvirtas_automobilis = Automobilis('Volkswagen', 'Golf')
-penktas_automobilis = Automobilis('Audi', 'A6', spalva='raudona')
-
-print(trecias_automobilis.metai, trecias_automobilis.spalva) # 2022 raudona
-print(ketvirtas_automobilis.metai, ketvirtas_automobilis.spalva) # 2023 pilka
-print(penktas_automobilis.metai, penktas_automobilis.spalva) # 2023 raudona
+print(pirmas_automobilis.marke, pirmas_automobilis.spalva) # Audi balta
+print(antras_automobilis.marke, antras_automobilis.spalva) # BMW pilka
 ```
 
 ## Objekto metodai
@@ -87,11 +79,10 @@ Metodas yra funkcija, apibrėžta klasės viduje. Norint sukurti metodą, reikia
 
 ```Python
 class Automobilis:
-    def __init__(self, marke, modelis, metai=2023, spalva='pilka'):
-        self.marke = marke
-        self.modelis = modelis
-        self.metai = metai
-        self.spalva = spalva
+    marke = ''
+    modelis = ''
+    metai = 2023
+    spalva = 'pilka'
 
     def vaziuoti(self):
         print('Važiuoja')
@@ -99,11 +90,34 @@ class Automobilis:
     def pypseti(self, zinute='Pyp', kiekis=1):
         print(zinute * kiekis)
 
-antras_automobilis = Automobilis("BMW", "X5", 2021)
-
 antras_automobilis.vaziuoti() # Važiuoja
 antras_automobilis.pypseti() # Pyp
 antras_automobilis.pypseti('Pyyyp ', 3) # Pyyyp Pyyyp Pyyyp
+```
+
+## `init` konstruktorius
+
+Jeigu norite, kad klasę naudoti būtų daug lanksčiau, galite naudoti `init` konstruktorių. `__init__` yra specialus metodas, kuris kviečiamas, kai sukuriamas naujas objektas pagal klasę. Galima perrašyti jau turimą klasę, pvz.:
+
+```Python
+class Automobilis:
+    def __init__(self, marke, modelis, metai=2023, spalva='pilka'):
+        self.marke = marke
+        self.modelis = modelis
+        self.metai = metai
+        self.spalva = spalva
+```
+
+Konstruktorius `__init__` privalo turėti parametrą `self`, nes jis nurodo, kad savybės yra susijusios su objektu, kuris bus sukuriamas iš šios klasės.
+
+Žinodami klasės konstruktorių, galime lengvai sukurti naują objektą tiesiog nustatant norimas reikšmes, pvz.:
+
+```Python
+trecias_automobilis = Automobilis('Mercedes', 'C-Class', 2021, 'geltona')
+print(trecias_automobilis.marke)  # Mercedes
+print(trecias_automobilis.modelis)  # C-Class
+print(trecias_automobilis.metai)  # 2021
+print(trecias_automobilis.spalva) # geltona
 ```
 
 ## Metodai su skirtingu kiekiu savybių, *args, **kwargs
@@ -212,18 +226,6 @@ print(pasisveikinimas[9]) # p
 Klasės objektai gali būti saugomi ne tik kaip atskiri kintamieji, bet ir kaip sąrašo ar žodyno elementai. Tai gali būti naudinga, jei reikia apdoroti daug objektų ir juos tvarkingai organizuoti.
 
 Objektų saugojimas ir iteravimas sąraše:
-
-```Python
-class Automobilis:
-    def __init__(self, marke, modelis, metai=2023, spalva='pilka'):
-        self.marke = marke
-        self.modelis = modelis
-        self.metai = metai
-        self.spalva = spalva
-
-    def __str__(self):
-        return f'{self.marke} {self.modelis}: {self.metai} metai, spalva {self.spalva}'
-```
 
 ```Python
 automobiliai = []
