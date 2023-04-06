@@ -51,12 +51,12 @@ class Automobilis:
     def __keisti_spalva(self, nauja_spalva):
         self.__spalva = nauja_spalva
 
-    def keisti_spalva(self, nauja_spalva):
+    def perdazyti(self, nauja_spalva):
         self.__keisti_spalva(nauja_spalva)
 ```
 
 ```Python
-trecias_automobilis.keisti_spalva('raudona')
+trecias_automobilis.perdazyti('raudona')
 print(trecias_automobilis.gauti_spalva()) # raudona
 ```
 
