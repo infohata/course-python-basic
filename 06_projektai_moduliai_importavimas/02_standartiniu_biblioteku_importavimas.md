@@ -80,6 +80,15 @@ Parašykite funkciją, kuris atspausdina 10 atsitiktinių skaičių nuo 1 iki 10
 
 ### Antra užduotis
 
+Sukurkite kauliukų žaidimą, kuris:
+
+- Sugeneruotų tris atsitiktinius skaičius nuo 1 iki 6
+- Jei vienas iš šių skaičių yra 5, atspausdinti „Pralaimėjai...“
+- Kitu atveju atspausdinti „Laimėjai!“
+- Patarimas: Naudoti while ciklą
+
+### Trečia užduotis
+
 Parašykite Python funkciją, kuri priima metus ir mėnesį, o tada atspausdina šio mėnesio kalendorių bei parodo, kiek savaitgalių (šeštadienių ir sekmadienių) yra tame mėnesyje.
 
 ## Atsakymai į užduotis
@@ -106,6 +115,27 @@ rusiuoti_atsitiktinius_skaicius()
 </details>
 <details>
   <summary>Antra užduotis</summary>
+  <hr>
+
+```Python
+import random
+
+print('Bus sugeneruoti 3 skaičiai')
+print('Jei vienas iš jų – 5, tu pralaimėjai!')
+
+for skaicius in range(3):
+    skaiciai = random.randint(1, 6)
+    print(skaiciai)
+    if skaicius == 5:
+        print('Pralaimėjai...')
+        break
+else:
+    print('Laimėjai!')
+```
+
+</details>
+<details>
+  <summary>Trečia užduotis</summary>
   <hr>
 
 ```Python
