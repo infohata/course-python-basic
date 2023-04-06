@@ -14,7 +14,7 @@ class Automobilis:
         self.__metai = metai
         self.__spalva = spalva
 
-    def gauti_metai(self):
+    def gauti_metus(self):
         return self.__metai
 
     def gauti_spalva(self):
@@ -26,7 +26,7 @@ trecias_automobilis = Automobilis('Mercedes', 'C-Class')
 
 print(trecias_automobilis.marke) # Mercedes
 print(trecias_automobilis.modelis) # C-Class
-print(trecias_automobilis.gauti_metai()) # 2023
+print(trecias_automobilis.gauti_metus()) # 2023
 print(trecias_automobilis.gauti_spalva()) # pilka
 ```
 
@@ -42,7 +42,7 @@ class Automobilis:
         self.__metai = metai
         self.__spalva = spalva
 
-    def gauti_metai(self):
+    def gauti_metus(self):
         return self.__metai
 
     def gauti_spalva(self):
