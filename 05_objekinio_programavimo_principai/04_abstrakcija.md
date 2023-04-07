@@ -133,3 +133,66 @@ Opel Astra, 2023 m. pilka. Variklis: 1.6 benzinas. Max. 160 km/h
 ```
 
 ## Užduotys
+
+### Pirma užduotis
+
+- Parašykite klasę "Baseinas", kuri saugo informaciją apie vandens talpą ir dabartinį kiekį baseine.
+- Klasė turi turėti metodus vandens papildymui ir nuleidimui bei esamo vandens kiekio patikrinimui. Vandens kiekio keitimui panaudokite abstraktų metodą.
+- Sukurkite objektą ir kelis kartus iškvieskite klasės metodus.
+
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+class Baseinas:
+    def __init__(self, talpa, dabartinis_kiekis):
+        self.talpa = talpa
+        self.dabartinis_kiekis = dabartinis_kiekis
+    
+    def __keitimas(self, kiekis):
+        self.dabartinis_kiekis += kiekis
+
+    def pilamas_vanduo(self, kiekis):
+        if self.dabartinis_kiekis + kiekis <= self.talpa:
+            self.__keitimas(kiekis)
+            print(f'Įpilta {kiekis} litrų vandens')
+        else:
+            print(f'Negalima įpilti {kiekis} litrų vandens, nes viršytų talpą')
+
+    def nuleisti_vandeni(self, kiekis):
+        if self.dabartinis_kiekis - kiekis >= 0:
+            self.__keitimas(-kiekis)
+            print(f'Išpilta {kiekis} litrų vandens')
+        else:
+            print(f'Negalima išpilti {kiekis} litrų vandens, nes dabar yra tik {self.dabartinis_kiekis} litrų')
+          
+    def get_dabartinis_kiekis(self):
+        print(f'Šiuo metu baseine yra {self.dabartinis_kiekis} litrų vandens')
+
+
+baseinas = Baseinas(1000, 300)
+print(f'Baseinos talpa: {baseinas.talpa}, šiuo metu baseinas užpildytas: {baseinas.dabartinis_kiekis}')
+
+baseinas.get_dabartinis_kiekis()
+baseinas.nuleisti_vandeni(50)
+baseinas.get_dabartinis_kiekis()
+baseinas.pilamas_vanduo(480)
+baseinas.get_dabartinis_kiekis()
+```
+
+Rezultatas:
+
+```Text
+Baseinos talpa: 1000, šiuo metu baseinas užpildytas: 300
+Šiuo metu baseine yra 300 litrų vandens
+Išpilta 50 litrų vandens
+Šiuo metu baseine yra 250 litrų vandens
+Įpilta 480 litrų vandens
+Šiuo metu baseine yra 730 litrų vandens
+```
