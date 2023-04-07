@@ -43,3 +43,112 @@ print(isinstance(tesla_sp, Elektromobilis)) # True
 ```
 
 ## Užduotys
+
+### Pirma užduotis
+
+- Sukurkite klasę "Gyvunas" ir klases "Kate" ir "Suo", kurios paveldi tėvų klasės metodus.
+- Kiekviena paveldinti klasė turi turėti savo unikalų "balsas" ir "judeti" metodą.
+- Sukurkite kelis skirtingoms klasėms priklausančius objektus, priskirkite jiems vardus ir iškvieskite jų metodus.
+
+### Antra užduotis
+
+- Patikrinkite pirmoje užduotyje sukurtų objektų priklausomybę esančioms klasėms.
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+class Gyvunas:
+    def __init__(self, vardas):
+        self.vardas = vardas
+
+    def balsas(self):
+        pass
+
+    def judeti(self):
+        print('Ramiai guliu...')
+
+class Kate(Gyvunas):
+    def balsas(self):
+        print('Miau')
+
+    def judeti(self):
+        print('Einu lėtai')
+
+class Suo(Gyvunas):
+    def balsas(self):
+        print('Au au!')
+
+    def judeti(self):
+        print('Bėgu greitai')
+
+
+seskas = Gyvunas('Pilkis')
+kate = Kate('Rainė')
+suo = Suo('Margis')
+
+print(seskas.vardas)
+seskas.balsas()
+seskas.judeti()
+
+print(kate.vardas)
+kate.balsas()
+kate.judeti()
+
+print(suo.vardas)
+suo.balsas()
+suo.judeti()
+```
+
+Rezultatas:
+
+```Text
+Pilkis
+Ramiai guliu...
+Rainė
+Miau
+Einu lėtai
+Margis
+Au au!
+Bėgu greitai
+```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+
+```Python
+print(isinstance(seskas, Gyvunas))
+print(isinstance(seskas, Kate))
+print(isinstance(seskas, Suo))
+print(isinstance(kate, Gyvunas))
+print(isinstance(kate, Kate))
+print(isinstance(kate, Suo))
+print(isinstance(suo, Gyvunas))
+print(isinstance(suo, Kate))
+print(isinstance(suo, Suo))
+```
+
+Rezultatas:
+
+```Text
+True
+False
+False
+True
+True
+False
+True
+False
+True
+```
+
+</details>
+</details>
