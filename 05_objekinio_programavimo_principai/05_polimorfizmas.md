@@ -12,11 +12,9 @@ Metodų perrašymas leidžia mums turėti specializuotas klases, kurios gali kei
 
 ```Python
 class Automobilis:
-    def __init__(self, marke, modelis, metai=2023, spalva='pilka'):
+    def __init__(self, marke, modelis):
         self.marke = marke
         self.modelis = modelis
-        self.__metai = metai
-        self.__spalva = spalva
 
     def greitis(self):
         print('Šis automobilis važiuoja leistinu greičiu')
@@ -39,8 +37,8 @@ def informacija(automobilis):
 Iškvietę sukurtą funkciją su skirtingoms klasės priklausančiais objektais, gausime skirtingą rezultatą:
 
 ```Python
-ferrari = SportinisAutomobilis('Ferrari', '458 Italia', metai=2021, spalva='raudona')
-ford = IstorinisAutomobilis('Ford', 'Model T', 1927, spalva='juoda')
+ferrari = SportinisAutomobilis('Ferrari', '458 Italia')
+ford = IstorinisAutomobilis('Ford', 'Model T')
 audi = Automobilis("Audi", "A4")
 
 informacija(ferrari) # Šis automobilis gali važiuoti iki 300 km/h
@@ -54,11 +52,9 @@ Kai norite panaudoti paveldėtus tėvinės klasės metodus ir savybes, tačiau t
 
 ```Python
 class Automobilis:
-    def __init__(self, marke, modelis, metai=2023, spalva='pilka'):
+    def __init__(self, marke, modelis):
         self.marke = marke
         self.modelis = modelis
-        self.__metai = metai
-        self.__spalva = spalva
 
     def greitis(self):
         print('Šis automobilis važiuoja leistinu greičiu')
@@ -77,7 +73,7 @@ def informacija(automobilis):
 Iškvietę sukurtą funkciją su objektu, kuris paveldi tėvinės klasės metodą, gausime toki rezultatą:
 
 ```Python
-ferrari = SportinisAutomobilis('Ferrari', '458 Italia', metai=2021, spalva='raudona')
+ferrari = SportinisAutomobilis('Ferrari', '458 Italia')
 
 informacija(ferrari)    # Šis automobilis važiuoja leistinu greičiu
                         # Šis automobilis gali važiuoti iki 300 km/h
