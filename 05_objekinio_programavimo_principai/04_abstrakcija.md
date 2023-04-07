@@ -1,36 +1,135 @@
 # Abstrakcija
 
-Abstrakcija leidžia apibrėžti klasę ir jos metodus taip, kad jie būtų paprasti naudoti, siekiant paslėpti sudėtingumą ir sudaryti galimybę perrašyti funkcionalumą atsižvelgiant į konkrečią situaciją. Pavyzdžiui sukuriame abstraktų metodą, kuris apibrėžiamas klasėje kaip neimplementuotas metodas (`pass`):
+Abstrakcija leidžia apibrėžti klasę, jos atributus ir metodus taip, kad juos būtų galima perpanaudoti, siekiant išvengti kodo kartojimosi ir mažinti kompleksiškumą.
+
+## Vidinis panaudojimas
 
 ```Python
 class Automobilis:
     def __init__(self, marke, modelis, metai=2023, spalva='pilka'):
         self.marke = marke
         self.modelis = modelis
-        self.__metai = metai
-        self.__spalva = spalva
+        self.metai = metai
+        self.spalva = spalva
+        self.max_greitis = 200
+        self.__greitis = 0
 
-    def __greitis(self):
-        pass
+    # šį privatų abstraktų metodą panaudosime keliose vietose
+    def __keisti_greiti(self, greitis):
+        if greitis > self.max_greitis:
+            greitis = self.max_greitis
+        if greitis < -10:
+            greitis = -10
+        self.__greitis = greitis
+        return greitis
+
+    # šį viešą abstraktų metodą irgi panaudosime keliose vietose
+    def vaziuoti(self):
+        greitis = self.__greitis
+        if greitis > 0:
+            print(f"važiuoju {self.__greitis} km/h greičiu")
+        elif greitis < 0:
+            print(f"važiuoju {abs(self.__greitis)} km/h greičiu atgal")
+        else:
+            print("stoviu")
+
+    def didinti_greiti(self, pagreitis=10):
+        # panaudojame privatų metodą maksimalaus greičio ribojimui
+        self.__keisti_greiti(self.__greitis + pagreitis)
+        # panaudojame vieša metodą važiavimo situacijai išvesti
+        self.vaziuoti()
+
+    def mazinti_greiti(self, pagreitis=10):
+        # panaudojame privatų metodą maksimalaus greičio ribojimui
+        self.__keisti_greiti(self.__greitis - pagreitis)
+        # panaudojame vieša metodą važiavimo situacijai išvesti
+        self.vaziuoti()
+    
+
+guolis = Automobilis("Volkswagen", "Golf")
+print(guolis.marke, guolis.modelis, guolis.metai, guolis.spalva)
+guolis.vaziuoti()
+guolis.didinti_greiti()
+guolis.didinti_greiti()
+guolis.didinti_greiti(20)
+guolis.didinti_greiti(170)
+guolis.mazinti_greiti(100)
+guolis.mazinti_greiti(50)
+guolis.mazinti_greiti(50)
+guolis.mazinti_greiti()
+guolis.didinti_greiti()
 ```
 
-Neimplementuotas metodas gali būti perrašytas kiekvienoje išvestinėje klasėje pagal konkretų poreikį:
+Rezultatas
+
+```Text
+Volkswagen Golf 2023 pilka
+stoviu
+važiuoju 10 km/h greičiu
+važiuoju 20 km/h greičiu
+važiuoju 40 km/h greičiu
+važiuoju 200 km/h greičiu
+važiuoju 100 km/h greičiu
+važiuoju 50 km/h greičiu
+stoviu
+važiuoju 10 km/h greičiu atgal
+stoviu
+```
+
+## Abstrakčių savybių ir metodų panaudojimas paveldėtose klasėse
+
+Pavyzdys - paveldėtose funkcijose mes visus metodus tiesiog naudojame:
 
 ```Python
-class SportinisAutomobilis(Automobilis):
-    def greitis(self):
-        print('Šis automobilis gali važiuoti iki 300 km/h')
+class Elektromobilis(Automobilis):
+    pass
 
 
-class IstorinisAutomobilis(Automobilis):
-    def greitis(self):
-        print('Šis automobilis gali važiuoti iki 100 km/h')
+tesla = Elektromobilis("Tesla", "Model-3")
+print(tesla.marke, tesla.modelis, tesla.metai, tesla.spalva) # Tesla Model 3 2023 pilka
+tesla.vaziuoti() # stoviu
+tesla.didinti_greiti(100) # važiuoju 100 km/h greičiu
+```
 
-ferrari = SportinisAutomobilis('Ferrari', '458 Italia', metai=2021, spalva='raudona')
-ford = IstorinisAutomobilis('Ford', 'Model T', 1927, spalva='juoda')
+## Abstraktus `__init__` metodas su neribotais raktiniais argumentais
 
-ferrari.greitis() # Šis automobilis gali važiuoti iki 300 km/h
-ford.greitis() # Šis automobilis gali važiuoti iki 100 km/h
+```Python
+class Automobilis:
+    def __init__(self, marke, modelis, metai=2023, spalva='pilka', **kwargs):
+        self.marke = marke
+        self.modelis = modelis
+        self.metai = metai
+        self.spalva = spalva
+        self.max_greitis = 200
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+        self.__greitis = 0
+
+guolis = Automobilis("Volkswagen", "Golf", kuro_tipas="benzinas", variklis="1.6ti")
+print(f"{guolis.marke} {guolis.modelis}, {guolis.metai} m. {guolis.spalva}. Variklis: {guolis.variklis} {guolis.kuro_tipas}. Max. {guolis.max_greitis} km/h")
+# Volkswagen Golf, 2023 m. pilka. Variklis: 1.6ti benzinas. Max. 200 km/h
+astra = Automobilis("Opel", "Astra", kuro_tipas="benzinas", variklis="1.6", max_greitis=160)
+print(f"{astra.marke} {astra.modelis}, {astra.metai} m. {astra.spalva}. Variklis: {astra.variklis} {astra.kuro_tipas}. Max. {astra.max_greitis} km/h")
+# Opel Astra, 2023 m. pilka. Variklis: 1.6 benzinas. Max. 160 km/h
+```
+
+Čia atkreipkite dėmesį, kad numatytą reikšmę galima pakeisti per kwargs, jeigu kwargs apdorojimas vyksta po numatytos reikšmės nustatymo.
+
+## Abstrakti funkcija informacijos apie klasės objektą spausdinimui
+
+```Python
+def informacija(obj):
+    print(f"{obj.marke} {obj.modelis}, {obj.metai} m. {obj.spalva}. Variklis: {obj.variklis} {astra.kuro_tipas}. Max. {obj.max_greitis} km/h")    
+
+informacija(guolis)
+informacija(astra)
+```
+
+Rezultatas:
+
+```Text
+Volkswagen Golf, 2023 m. pilka. Variklis: 1.6ti benzinas. Max. 200 km/h
+Opel Astra, 2023 m. pilka. Variklis: 1.6 benzinas. Max. 160 km/h
 ```
 
 ## Užduotys
