@@ -61,3 +61,121 @@ print(trecias_automobilis.gauti_spalva()) # raudona
 ```
 
 ## Užduotys
+
+### Pirma užduotis
+
+- Sukurkite banko sąskaitos klasę, kuri turėtų kintamuosius: saskaitos numeris, savininkas, balansas ir pin kodas. Pastarieji du kintamieji turėtų būti privatūs.
+- Sukurkite metodą, kuris leistų nuskaityti pinigus nuo sąskaitos, tačiau norint atlikti šį veiksmą reikalingas slaptažodis, kuris turėtų būti žinomas tik klasės viduje.
+- Padarykite taip, kad būtų galima papildyti sąskaitą.
+
+### Antra užduotis
+
+- Sukurkite knygų klasę, kuri turėtų kintamuosius: pavadinimas, autorius, buklė ir puslapių skaičius.
+- Sukurkite privatų metodą, kuris leistų pakeisti knygos būklę.
+- Sukurkite privatų metodą, kuris leistų sumažinti knygos puslapių skaičių.
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+class BankoSaskaita:
+    def __init__(self, saskaitos_numeris, savininkas, balansas, pin_kodas):
+        self.saskaitos_numeris = saskaitos_numeris
+        self.savininkas = savininkas
+        self.__balansas = balansas
+        self.__pin_kodas = pin_kodas
+
+    def nuskaityti(self, suma, pin_kodas):
+        if pin_kodas == self.__pin_kodas:
+            self.__balansas -= suma
+            print(f'{suma} € sėkmingai nuskaityta. Dabartinis saskaitos likutis: {self.__balansas} €')
+        else:
+            print('Neteisingas slaptažodis. Nuskaitymas negalimas.')
+
+    def papildyti(self, suma, pin_kodas):
+        if pin_kodas == self.__pin_kodas:
+            self.__balansas += suma
+            print(f'{suma} € sėkmingai papildyta. Dabartinis saskaitos likutis: {self.__balansas} €')
+        else:
+            print('Neteisingas slaptažodis. Papildymas negalimas.')
+
+saskaita = BankoSaskaita('LT123456789', 'Jonas Jonaitis', 1000, 1234)
+
+saskaita.nuskaityti(100, 1122)
+saskaita.nuskaityti(200, 1234)
+saskaita.nuskaityti(100, 1234)
+saskaita.papildyti(500, 1234)
+```
+
+Rezultatas:
+
+```Text
+Netinkamas slaptažodis. Nuskaitymas negalimas.
+200 € sėkmingai nuskaityta. Dabartinis saskaitos likutis: 800 €
+100 € sėkmingai nuskaityta. Dabartinis saskaitos likutis: 700 €
+500 € sėkmingai papildyta. Dabartinis saskaitos likutis: 1200 €
+```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+```Python
+class Knyga:
+    def __init__(self, pavadinimas, autorius, bukle, puslapiai):
+        self.__pavadinimas = pavadinimas
+        self.__autorius = autorius
+        self.__bukle = bukle
+        self.__puslapiai = puslapiai
+
+    def gauti_pavadinima(self):
+        return self.__pavadinimas
+
+    def gauti_autoriu(self):
+        return self.__autorius
+
+    def gauti_bukle(self):
+        return self.__bukle
+
+    def gauti_puslapius(self):
+        return self.__puslapiai
+
+    def __nauja_bukle(self, bukle):
+        self.__bukle = bukle
+
+    def __naujas_puslapiu_skaicius(self, puslapiai):
+        self.__puslapiai -= puslapiai
+
+    def pakeisti_bukle(self, bukle):
+        self.__nauja_bukle(bukle)
+
+    def pakites_puslapiu_skaicius(self, puslapiai):
+        self.__naujas_puslapiu_skaicius(puslapiai)
+
+knyga = Knyga("Python programavimo kalba", "Guido van Rossum", 'nauja', 400)
+
+knyga.pakeisti_bukle('patenkinama')
+knyga.pakites_puslapiu_skaicius(50)
+print(knyga.gauti_pavadinima())
+print(knyga.gauti_autoriu())
+print(knyga.gauti_bukle())
+print(knyga.gauti_puslapius())
+```
+
+Rezultatas:
+
+```Text
+Python programavimo kalba
+Guido van Rossum
+patenkinama
+350
+```
+
+</details>
+</details>
