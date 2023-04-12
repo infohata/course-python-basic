@@ -118,7 +118,8 @@ class Vadovas(Darbuotojas):
         self.premija = premija
 
     def info(self):
-        print(f'{self.vardas} {self.pavarde}, atlyginimas: {self.atlyginimas + self.premija} € (su premija)')
+        super().info()
+        print(f'Premija: {self.premija} €')
 
 
 darbuotojas1 = Darbuotojas('Jonas', 'Jonaitis')
