@@ -125,7 +125,7 @@ Jei norite pamatyti visus Unicode simbolius, galite naudoti Unicode kodo lentel�
 
 ### Ketvirta užduotis
 
-- Sukurkite programą, kuri leidžia vartotojui įvesti du skirtingus žodžius ir atspausdina kiekvieno žodžio pirmuosius simbolius, atskirtus brūkšneliu. Pvz., "Labas vakaras" ir "geros dienos" -> "L-v", "g-d".
+- Sukurkite programą, kuri leidžia vartotojui įvesti du skirtingus žodžius ir atspausdina kiekvieno žodžio pirmuosius simbolius, atskirtus brūkšneliu. Pvz., "Labas vakaras" ir "geros dienos" -> "L-v", "g-d". Naudokite du kintamuosius įvedimui.
 
 ## Simbolių eilučių metodai
 

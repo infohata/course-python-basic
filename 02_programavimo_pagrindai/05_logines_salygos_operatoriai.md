@@ -117,6 +117,8 @@ print(f"teiginys: {teiginys}")
 
 Šiame pavyzdyje if sąlyginis saknis naudoja boolean tipo kintamąjį, kad nustatytų, ar kintamasis a yra didesnis už kintamąjį b. Jei sąlyga yra tenkinama, išvedamas pranešimas "a yra didesnis už b". Jei sąlyga netenkinama, išvedamas pranešimas "a yra mažesnis arba lygus b".
 
+## Loginiai operatoriai
+
 Boolean tipo kintamieji taip pat gali būti sujungti su loginiais operatoriais `and`, `or` ir `not`, kad būtų sudarytos sudėtingesnės sąlygos.
 
 Pavyzdys:
@@ -131,8 +133,6 @@ print(not x) # išvestų "False"
 ```
 
 Šiame pavyzdyje and operatorius tikrina, ar abu boolean tipo kintamieji yra `True`, ir grąžina `True`, jei abu yra `True`. or operatorius tikrina, ar bent vienas boolean tipo kintamasis yra `True`, ir grąžina `True`, jei bent vienas yra `True`. not operatorius grąžina priešingą boolean tipo kintamojo reikšmę.
-
-## Loginiai operatoriai
 
 1. "Ir" operatorius (`and`) - naudojamas patikrinti, ar abu teiginiai yra tiesa:
 
@@ -160,6 +160,7 @@ b = False
 c = a or b
 print(c) # spausdina True
 ```
+
 ```Python
 a = 10
 b = 5
@@ -194,6 +195,7 @@ d = a > b and b < c or c == 20
 print(d) # spausdina True
 ```
 
+<!-- perdedam į 6/stringus -->
 ## Įvadas į užduotis
 
 ```Python
@@ -214,6 +216,7 @@ print("Jūsų įvestas skaičius yra:", skaicius)
 ```
 
 ## Užduotys
+<!-- perrašyti kad nereikėtų naudoti input -->
 
 ### Pirma užduotis
 
@@ -231,8 +234,8 @@ print("Jūsų įvestas skaičius yra:", skaicius)
 
 - Parašykite programą, kuri nustatytų, ar bent vienas duotų skaičių yra lyginis, naudodami "arba" operatorių. Jei bent vienas skaičius yra lyginis, turi būti spausdinamas pranešimas "Bent vienas skaičius yra lyginis", o jei ne - "Abu skaičiai yra nelyginiai".
 
+## Atsakymai į užduotis
 
-# Atsakymai į užduotis
 <details><summary>❗Rodyti atsakymus</summary>
 <br>
 <details>

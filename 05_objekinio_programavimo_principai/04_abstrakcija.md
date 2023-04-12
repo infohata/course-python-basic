@@ -133,3 +133,68 @@ Opel Astra, 2023 m. pilka. Variklis: 1.6 benzinas. Max. 160 km/h
 ```
 
 ## Užduotys
+
+### Pirma užduotis
+
+- Parašykite klasę "Baseinas", kuri saugo informaciją apie vandens talpą ir dabartinį kiekį baseine.
+- Klasė turi turėti metodus vandens papildymui ir nuleidimui bei esamo vandens kiekio patikrinimui. Vandens kiekio keitimui panaudokite abstraktų metodą.
+- Sukurkite objektą ir kelis kartus iškvieskite klasės metodus.
+
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+class Baseinas:
+
+  def __init__(self, talpa, dabartinis_kiekis):
+    self.__talpa = talpa
+    self.__dabartinis_kiekis = dabartinis_kiekis
+
+  def __keitimas(self, kiekis):
+    self.__dabartinis_kiekis += kiekis
+
+  def pilamas_vanduo(self, kiekis):
+    if self.__dabartinis_kiekis + kiekis <= self.__talpa:
+      self.__keitimas(kiekis)
+      print(f'Įpilta {kiekis} litrų vandens')
+    else:
+      print(f'Negalima įpilti {kiekis} litrų vandens, nes viršytų talpą')
+
+  def nuleisti_vandeni(self, kiekis):
+    if self.__dabartinis_kiekis - kiekis >= 0:
+      self.__keitimas(-kiekis)
+      print(f'Išpilta {kiekis} litrų vandens')
+    else:
+      print(
+        f'Negalima išpilti {kiekis} litrų vandens, nes dabar yra tik {self.__dabartinis_kiekis} litrų'
+      )
+
+  def get_talpa(self):
+    return self.__talpa
+  
+  def get_dabartinis_kiekis(self):
+    return self.__dabartinis_kiekis
+
+
+baseinas = Baseinas(1000, 300)
+print(f'Baseino talpa: {baseinas.get_talpa()} litrų, šiuo metu baseinas užpildytas: {baseinas.get_dabartinis_kiekis()} litrais')
+
+baseinas.nuleisti_vandeni(50)
+baseinas.pilamas_vanduo(480)
+print(baseinas.get_dabartinis_kiekis())
+```
+
+Rezultatas:
+
+```Text
+Baseino talpa: 1000 litrų, šiuo metu baseinas užpildytas: 300 litrais
+Išpilta 50 litrų vandens
+Įpilta 480 litrų vandens
+730
+```

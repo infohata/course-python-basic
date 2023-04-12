@@ -12,11 +12,9 @@ Metodų perrašymas leidžia mums turėti specializuotas klases, kurios gali kei
 
 ```Python
 class Automobilis:
-    def __init__(self, marke, modelis, metai=2023, spalva='pilka'):
+    def __init__(self, marke, modelis):
         self.marke = marke
         self.modelis = modelis
-        self.__metai = metai
-        self.__spalva = spalva
 
     def greitis(self):
         print('Šis automobilis važiuoja leistinu greičiu')
@@ -39,8 +37,8 @@ def informacija(automobilis):
 Iškvietę sukurtą funkciją su skirtingoms klasės priklausančiais objektais, gausime skirtingą rezultatą:
 
 ```Python
-ferrari = SportinisAutomobilis('Ferrari', '458 Italia', metai=2021, spalva='raudona')
-ford = IstorinisAutomobilis('Ford', 'Model T', 1927, spalva='juoda')
+ferrari = SportinisAutomobilis('Ferrari', '458 Italia')
+ford = IstorinisAutomobilis('Ford', 'Model T')
 audi = Automobilis("Audi", "A4")
 
 informacija(ferrari) # Šis automobilis gali važiuoti iki 300 km/h
@@ -54,11 +52,9 @@ Kai norite panaudoti paveldėtus tėvinės klasės metodus ir savybes, tačiau t
 
 ```Python
 class Automobilis:
-    def __init__(self, marke, modelis, metai=2023, spalva='pilka'):
+    def __init__(self, marke, modelis):
         self.marke = marke
         self.modelis = modelis
-        self.__metai = metai
-        self.__spalva = spalva
 
     def greitis(self):
         print('Šis automobilis važiuoja leistinu greičiu')
@@ -77,10 +73,74 @@ def informacija(automobilis):
 Iškvietę sukurtą funkciją su objektu, kuris paveldi tėvinės klasės metodą, gausime toki rezultatą:
 
 ```Python
-ferrari = SportinisAutomobilis('Ferrari', '458 Italia', metai=2021, spalva='raudona')
+ferrari = SportinisAutomobilis('Ferrari', '458 Italia')
 
 informacija(ferrari)    # Šis automobilis važiuoja leistinu greičiu
                         # Šis automobilis gali važiuoti iki 300 km/h
 ```
 
 ## Užduotys
+
+### Pirma užduotis
+
+- Sukurkite darbuotojų klasę su savybėmis vardas, pavarde ir atlyginimas, kuri turėtų metodą atspausdinantį darbuotojo informaciją.
+- Sukurkite administratoriaus klasę, kuri paveldėtų savybes iš darbuotojo klasės.
+- Sukurkite vadovo klasę, kuri paveldėtų savybes iš darbuotojo klasės ir turėtų papildomą savybę "premija" bei metodą, kuris atspausdins darbuotojo informaciją.
+- Sukurkite kelis kiekvienos klasės objektus ir iškvieskite informacijos spausdinimo metodą.
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+class Darbuotojas:
+    def __init__(self, vardas, pavarde, atlyginimas=1000):
+        self.vardas = vardas
+        self.pavarde = pavarde
+        self.atlyginimas = atlyginimas
+
+    def info(self):
+        print(f'{self.vardas} {self.pavarde}, atlyginimas: {self.atlyginimas} €')
+
+
+class Administratorius(Darbuotojas):
+    def __init__(self, vardas, pavarde, atlyginimas):
+        super().__init__(vardas, pavarde, atlyginimas)
+
+
+class Vadovas(Darbuotojas):
+    def __init__(self, vardas, pavarde, atlyginimas, premija):
+        super().__init__(vardas, pavarde, atlyginimas)
+        self.premija = premija
+
+    def info(self):
+        super().info()
+        print(f'Premija: {self.premija} €')
+
+
+darbuotojas1 = Darbuotojas('Jonas', 'Jonaitis')
+darbuotojas2 = Darbuotojas('Petras', 'Petraitis', 1200)
+darbuotojas3 = Administratorius('Juozas', 'Juozaitis', 900)
+vadovas1 = Vadovas('Antanas', 'Antanaitis', 1500, 500)
+
+darbuotojai = [darbuotojas1, darbuotojas2, darbuotojas3, vadovas1]
+
+for darbuotojas in darbuotojai:
+    darbuotojas.info()
+```
+
+Rezultatas:
+
+```Text
+Jonas Jonaitis, atlyginimas: 1000 €
+Petras Petraitis, atlyginimas: 1200 €
+Juozas Juozaitis, atlyginimas: 900 €
+Antanas Antanaitis, atlyginimas: 2000 € (su premija)
+```
+
+</details>
+</details>
