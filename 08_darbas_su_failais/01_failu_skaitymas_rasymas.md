@@ -28,9 +28,9 @@ Kai baigsite darbą su failu, reikia jį uždaryti naudojant close() funkciją:
 failas.close()
 ```
 
-## `with`, `open()`
+## `with` `open()`
 
-`with`  yra naujesnis ir rekomenduojamas būdas atlikti failų operacijas. Jis yra paprastesnis ir saugesnis nei `open()` ir `close()`funkcijos. `with` užtikrina, kad failas automatiškai bus uždarytas, kai bus baigtas jo naudojimas. Tai leidžia išvengti potencialių nuostolių ir sumažinti programos apkrovą.
+`with` `open()`  yra naujesnis ir rekomenduojamas būdas atlikti failų operacijas. Jis yra paprastesnis ir saugesnis nei `open()` ir `close()`funkcijos. `with` užtikrina, kad failas automatiškai bus uždarytas, kai bus baigtas jo naudojimas. Tai leidžia išvengti potencialių nuostolių ir sumažinti programos apkrovą.
 Štai kaip galite naudoti `with` kartu su `open()` funkcija:
 
 ```Python
