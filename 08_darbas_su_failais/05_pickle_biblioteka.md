@@ -20,7 +20,7 @@ with open('variable.pickle', 'rb') as file:
 print(ikeltas_kintamasis)  # Išveda: 42
 ```
 
-Naudojame `pickle.dump()` funkciją, kad išsaugotume (serializuotume) kintamąjį some_variable į atidarytą failą. Serializavimas konvertuoja objektą į baitų seką, kad galėtumėte jį saugoti diske.
+Naudojame `pickle.dump()` funkciją, kad išsaugotume (serializuotume) kintamąjį "kintamasis" į atidarytą failą. Serializavimas konvertuoja objektą į baitų seką, kad galėtumėte jį saugoti diske.
 
 Tada naudojame `pickle.load()` funkciją, kad nuskaitytume (deserializuotume) kintamąjį iš atidaryto failo. Deserializavimas konvertuoja baitų seką atgal į objektą.
 
