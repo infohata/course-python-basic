@@ -24,21 +24,6 @@ except ZeroDivisionError:
     print("Negalima dalinti iš nulio!") # Negalima dalinti iš nulio!
 ```
 
-Galima keisti išimčių pavadinimus naudojant `as` raktažodį tam, kad sutrumpinti ilgą klaidos pavadinimą į trumpesnį arba lengviau suprantamą pavadinimą. Pavyzdžiui nurodytas kintamasis gali būti naudojamas kaip argumentas, kuriuo remiantis spausdinamas klaidos pranešimas:
-
-```Python
-try:
-    x = 5 / 0
-except ZeroDivisionError as klaida:
-    print("Negalima dalinti iš nulio! Klaidos tipas:", klaida)
-```
-
-Rezultatas:
-
-```Text
-Negalima dalinti iš nulio! Klaidos tipas: division by zero
-```
-
 ## Ignoruojam klaidą su `except: pass`
 
 Kartais nereikia daryti jokio veiksmo, kai tam tikra klaida atsiranda. Tokiu atveju galima naudoti `except: pass` konstrukciją, kuri tiesiog praleidžia klaidos apdorojimą ir tęsia programos vykdymą, pvz.:
