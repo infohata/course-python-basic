@@ -39,7 +39,7 @@ for time_zone in available_timezones():
 
 ## `datetime.tzinfo`
 
-`datetime.tzinfo` yra abstrakti klasė, skirta laiko zonos informacijai saugoti. Galite naudoti `zoneinfo` `modulio funkcijas, kad užpildytumėte tzinfo atributą, kai kuriate naują "aware" datetime objektą:
+`datetime.tzinfo` yra abstrakti klasė, skirta laiko zonos informacijai saugoti. Galite naudoti `zoneinfo` modulio funkcijas, kad užpildytumėte tzinfo atributą, kai kuriate naują "aware" datetime objektą:
 
 ```Python
 from datetime import datetime
