@@ -148,10 +148,6 @@ Netinkamas skaičiaus formatas
 Rezultatas yra: 3.3333333333333335
 ```
 
-Šis metodas turi privalumų ir trūkumų. Vienas privalumas yra tai, kad jis gali būti paprastesnis nei `try except` metodas, ypač jei norime apdoroti tik vieną klaidą. Taip pat, naudojant `if else` sąlygas, mes galime tiksliai nurodyti, ką norime padaryti su skirtingomis klaidomis.
-
-<!-- Ar aukščiau esantis paskutinis sakinys tikrai teisingas? -->
-
-Tačiau, šis metodas turi trūkumų, kai turime apdoroti daug klaidų. Pavyzdžiui, jei turime apdoroti penkis skirtingus klaidų tipus, mes turime rašyti penkias atskiras sąlygas, kas gali padaryti kodą pernelyg ilgą ir neskaitomą.
+Šis metodas turi privalumų ir trūkumų. Vienas privalumas yra tai, kad jis gali būti paprastesnis nei `try except` metodas, ypač jei norime apdoroti tik vieną klaidą. Tačiau, kai turime apdoroti daug klaidų, pavyzdžiui, jei turime apdoroti penkis skirtingus klaidų tipus, mes turime rašyti penkias atskiras sąlygas, kas gali padaryti kodą pernelyg ilgą ir neskaitomą.
 
 ## Užduotys

@@ -34,13 +34,11 @@ print(binary_data)  # Išveda: b'Hello, World!'
 Štai paprasta funkcija, kuri kopijuoja dvejetainį failą iš vienos vietos į kitą:
 
 ```Python
-def copy_binary_file(input_file_path, output_file_path):
+def copy_image_file(input_file_path, output_file_path):
     with open(input_file_path, 'rb') as input_file:
         binary_data = input_file.read()
-
     with open(output_file_path, 'wb') as output_file:
         output_file.write(binary_data)
-
-# Kopijuoti dvejetainį failą naudojant funkciją
-copy_binary_file('input.bin', 'output.bin')
+# Kopijuoti paveikslėlio failą naudojant funkciją
+copy_image_file('input.png', 'output.png')
 ```
