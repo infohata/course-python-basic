@@ -151,3 +151,47 @@ Rezultatas yra: 3.3333333333333335
 Šis metodas turi privalumų ir trūkumų. Vienas privalumas yra tai, kad jis gali būti paprastesnis nei `try except` metodas, ypač jei norime apdoroti tik vieną klaidą. Tačiau, kai turime apdoroti daug klaidų, pavyzdžiui, jei turime apdoroti penkis skirtingus klaidų tipus, mes turime rašyti penkias atskiras sąlygas, kas gali padaryti kodą pernelyg ilgą ir neskaitomą.
 
 ## Užduotys
+
+### Pirma užduotis
+
+- Parašykite programą, kuri leidžia vartotojui įvesti du skaičius ir atspausdina jų dalmenį.
+- Jei vartotojas įveda tekstą arba dalina iš nulio, programa turi sugauti klaidą ir atspausdinti klaidos pranešimą.
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+try:
+    x = int(input("Įveskite pirmąjį skaičių: "))
+    y = int(input("Įveskite antrąjį skaičių: "))
+    rezultatas = x / y
+    print("Rezultatas:", rezultatas)
+except ValueError:
+    print("Įvestas neteisingas skaičius")
+except ZeroDivisionError:
+    print("Negalima dalinti iš nulio")
+```
+
+Rezultatas:
+
+```Text
+Įveskite pirmąjį skaičių: 15
+Įveskite antrąjį skaičių: trys
+Įvestas neteisingas skaičius
+
+Įveskite pirmąjį skaičių: 10
+Įveskite antrąjį skaičių: 0
+Negalima dalinti iš nulio
+
+Įveskite pirmąjį skaičių: 8
+Įveskite antrąjį skaičių: 5
+Rezultatas: 1.6
+```
+
+</details>
+</details>
