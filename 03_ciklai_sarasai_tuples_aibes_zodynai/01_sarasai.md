@@ -63,6 +63,24 @@ sarasas = ['obuolys', 'kriaušė', 'bananas', 'apelsinas', 'persimonas']
 print(sarasas[::2])   # ['obuolys', 'bananas', 'persimonas']
 ```
 
+## Sąrašų elementų keitimas
+
+Sąrašo elementus galima keisti priskiriant naują reikšmę konkrečiam indeksui. Pvz.:
+
+```Python
+sarasas = ['obuolys', 'kriaušė', 'bananas']
+sarasas[1] = 'avokadas'
+print(sarasas)   # ['obuolys', 'avokadas', 'bananas']
+```
+
+Taip pat galima keisti daugiau nei vieną elementą vienu metu, naudojant dalijimą. Pvz.:
+
+```Python
+sarasas = ['obuolys', 'kriaušė', 'bananas', 'apelsinas', 'persimonas']
+sarasas[1:4] = ['ananasas', 'mangas']
+print(sarasas)   # ['obuolys', 'ananasas', 'mangas', 'persimonas']
+```
+
 ## Sąrašų metodai
 
 Sąrašų metodai leidžia manipuliuoti sąrašais ir atlikti įvairias operacijas, tokiu būdu keičiant sąrašų turinį.
