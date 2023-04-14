@@ -4,13 +4,13 @@ Klaidos iššaukimas yra svarbi programavimo koncepcija, kuri leidžia programuo
 
 ## Klaidos iššaukimas su `raise`
 
-`raise` komanda leidžia iškelti klaidą programos vykdymo metu. Tai yra paprasta funkcija, kuri sukelia klaidą su nurodytu pranešimu. Pvz.:
+`raise` komanda leidžia iškelti klaidą programos vykdymo metu. Tai yra paprasta komanda, kuri sukelia klaidą su nurodytu pranešimu. Pvz.:
 
 ```Python
 raise ValueError("Blogas argumentas") # raise ValueError("Blogas argumentas")
 ```
 
-Kadangi `raise` yra funkcija, galima ją panaudoti bet kurioje vietoje programos, kurioje reikalinga klaidos iššaukimas. Taip pat galima iškelti klaidų klases, panaudodami `raise`. Pvz.:
+`raise` komandą galima panaudoti bet kurioje programos vietoje, kurioje reikalinga klaidos iššaukimas. Taip pat galima iškelti klaidų klases. Pvz.:
 
 ```Python
 class ManoKlaida(Exception):
@@ -19,17 +19,17 @@ class ManoKlaida(Exception):
 raise ManoKlaida("Nepavyko atidaryti failo") # __main__.ManoKlaida: Nepavyko atidaryti failo
 ```
 
-Įprastai klaidas iškelia funkcijos, kurios jas grąžina `return` su pranešimu, kuris informuoja apie klaidą. Pvz.:
+Įprastai klaidas iškelia funkcijos ir jas grąžina per `return` su pranešimu, kuris informuoja apie klaidą. Pvz.:
 
 ```Python
 def padalinimas(x, y):
     if y == 0:
-        raise ValueError("Dalyba iš nulio negalima")
+        raise ZeroDivisionError("Dalyba iš nulio negalima")
     return x / y
 
 try:
     rezultatas = padalinimas(10, 0)
-except ValueError as e:
+except ZeroDivisionError as e:
     print(e) # Dalyba iš nulio negalima
 else:
     print(rezultatas)
@@ -37,13 +37,13 @@ else:
 
 ## Klaidos iššaukimas su `raise Exception`
 
-`raise` funkcija gali būti naudojama su bet kokia klaidų klase, tačiau rekomenduojama naudoti `Exception` klasę, kadangi ji yra bendra klaidų klasė ir paprastesnė apdorojimui. Pvz.:
+`raise` komanda gali būti naudojama su bet kokia klaidų klase, pvz.:
 
 ```Python
 raise Exception('Klaidos pranešimas') # Exception: Klaidos pranešimas
 ```
 
-Galima perrrašyti aukščiau minėtą pavyzdį:
+Aukščiau minėtas `ZeroDivisionError` klaidos pavyzdys veiks ir su `Exception`:
 
 ```Python
 def padalinimas(x, y):
@@ -58,6 +58,8 @@ except Exception as e:
 else:
     print(rezultatas)
 ```
+
+Rekomenduojama naudoti specializuotas klaidų klases, tai gali pagerinti klaidos apdorojimą ir suprantamumą, nes skirtingi klaidų tipai gali būti apdorojami skirtingai. Tačiau, jei nėra aiškių pritaikymo atvejų, geriau naudoti bendrą `Exception` klasę. Tai daryti yra saugu, bet nebūtinai efektyvu arba patogu, jei yra daug klaidų, kurios turėtų būti apdorojamos skirtingai.
 
 ## Klaidos iššaukimas su `raise ValueError`
 
