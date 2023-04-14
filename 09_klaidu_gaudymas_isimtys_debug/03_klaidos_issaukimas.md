@@ -80,3 +80,43 @@ else:
 ```
 
 ## Užduotys
+
+### Pirma užduotis
+
+- Parašykite programą, kuri leistų vartotojui įvesti teigiamą skaičių.
+- Programa turi sugauti galimas klaidas.
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+while True:
+    try:
+        skaicius = float(input("Įveskite teigiamą skaičių: "))
+        if skaicius < 0:
+            raise ValueError("Įvestas skaičius yra neigiamas")
+        else:
+            print("Ačiū, jūs įvedėte:", skaicius)
+            break
+    except ValueError as error:
+        print("Klaida:", error)
+```
+
+Rezultatas:
+
+```Text
+Įveskite teigiamą skaičių: nulis
+Klaida: could not convert string to float: 'nulis'
+Įveskite teigiamą skaičių: -5
+Klaida: Įvestas skaičius yra neigiamas
+Įveskite teigiamą skaičių: 1.3
+Ačiū, jūs įvedėte: 1.3
+```
+
+</details>
+</details>
