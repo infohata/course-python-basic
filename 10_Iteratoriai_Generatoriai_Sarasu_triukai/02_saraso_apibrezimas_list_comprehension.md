@@ -1,6 +1,6 @@
 # Sąrašo apibrėžimas (List comprehension)
 
-List comprehension yra trumpas būdas kurti sąrašus naudojant for ciklą ir galimą sąlygą. 
+List comprehension yra trumpas būdas kurti sąrašus naudojant `for` ciklą ir galimą sąlygą.
 
 ## Sąrašo kėlimas laipsniu
 
