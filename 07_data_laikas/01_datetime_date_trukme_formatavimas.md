@@ -1,6 +1,6 @@
 # Data ir laikas, formatavimas
 
-`datetime` yra standartinis Python modulis,kuris apima daugybę funkcijų ir klasių, kurios leidžia kurti, pakeisti, formatuoti ir manipuliuoti datomis ir laiku.
+`datetime` yra standartinis Python modulis apimantis daugybę funkcijų ir klasių, kurios leidžia kurti, pakeisti, formatuoti ir manipuliuoti datomis ir laiku.
 
 ## `datetime` klasė
 

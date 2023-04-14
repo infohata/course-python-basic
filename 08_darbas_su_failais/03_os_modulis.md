@@ -85,8 +85,11 @@ import os
 katalogo_kelias = 'naujas_katalogas'
 
 if os.path.exists(katalogo_kelias):
-    os.rmdir(katalogo_kelias)
-    print(f"Katalogas '{katalogo_kelias}' ištrintas.")
+    if not os.listdir(katalogo_kelias):
+        os.rmdir(katalogo_kelias)
+        print(f"Katalogas '{katalogo_kelias}' ištrintas.")
+    else:
+        print(f"Katalogas '{katalogo_kelias}' nėra tuščias.")
 else:
     print(f"Katalogas '{katalogo_kelias}' neegzistuoja.")
 ```
