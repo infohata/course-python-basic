@@ -176,6 +176,8 @@ Kaip matote, `while` cikle naudojame `len()` funkciją, kad sužinotume, kiek `t
 
 ### Bonus užduotis
 
+<!-- TODO: permesti prie set'ų arba visai išmesti -->
+
 - Atspausdinkite grupes atskirose eilutėse taip, kad pavadinimai nesidubliuotų.
 
 ## Atsakymai į užduotis
@@ -280,7 +282,7 @@ False
 unikalios_grupes = tuple(set(visos_grupes))
 
 for grupe in unikalios_grupes:
-  print(grupe)
+    print(grupe)
 ```
 
 Rezultatas:
