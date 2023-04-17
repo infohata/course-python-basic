@@ -224,7 +224,7 @@ def rinkti_lyginio_ilgio_zodzius(tekstas):
 
 tekstas = "Labas Vakare, kaip sekasi?"
 lyginio_ilgio_zodziai = rinkti_lyginio_ilgio_zodzius(tekstas)
-print(lyginio_ilgio_zodziai)  # išvestų: ['Vakare,', 'kaip']
+print(lyginio_ilgio_zodziai)  # išvestų: ['kaip']
 ```
 
 </details>
