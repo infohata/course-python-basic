@@ -89,7 +89,7 @@ Sukurkite funkciją, kuri priima sąrašą ir grąžina naują sąrašą atvirk�
 
 ### Antra užduotis
 
-Sukurkite funkciją, kuri apskaičiuoja trikampio plotą pagal kraštinių ilgius ir grąžina jį.
+Sukurkite funkciją, kuri apskaičiuoja stačiojo trikampio plotą pagal kraštinių ilgius ir grąžina jį.
 
 ### Trečia užduotis
 
@@ -224,7 +224,7 @@ def rinkti_lyginio_ilgio_zodzius(tekstas):
 
 tekstas = "Labas Vakare, kaip sekasi?"
 lyginio_ilgio_zodziai = rinkti_lyginio_ilgio_zodzius(tekstas)
-print(lyginio_ilgio_zodziai)  # išvestų: ['Vakare,', 'kaip']
+print(lyginio_ilgio_zodziai)  # išvestų: ['kaip']
 ```
 
 </details>

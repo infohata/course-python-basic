@@ -145,6 +145,9 @@ Rezultatas:
 3
 ```
 
+<!-- TODO: pridėti aibių operatorius, 
+pvz. aibe1 ^ aibe2, aibe1 & aibe2, aibe1 | aibe2 ir t.t. -->
+
 ## Užduotys
 
 ### Pirma užduotis
