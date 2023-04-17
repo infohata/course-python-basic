@@ -1,4 +1,4 @@
-# Iteratoriai
+# Iteratoriai ir Generatoriai
 
 Iteratorius yra objektas, kuris palaiko iteraciją (kartojimą) per elementus arba reikšmes.
 
@@ -120,43 +120,60 @@ while True:
         break
 ```
 
-## Iteratoriaus funkcija
+## Generatoriai
 
-Iteratoriaus funkcija gali būti naudinga, jei norite padaryti savo kodą daugkartinio naudojimo arba perpanaudojimo. Jūs galite naudoti iteratoriaus funkciją, kad sukurtumėte naują iteratoriaus objektą su reikiamomis savybėmis.
+Generatoriai yra specialūs Python objektai, kurie leidžia efektyviau atlikti iteracijas.
 
-Sukurkime iteratoriaus funkciją, kuri gražina iteratoriaus objektą, kuris iteruoja per intervalą nuo 0 iki n:
+## Generatoriaus funkcija su `yield`
+
+Generatoriaus funkcijos yra funkcijos, kurios naudoja `yield` sakinį vietoj `return`. `yield` leidžia funkcijai grąžinti vertę ir užšaldyti jos vykdymą, kol bus vėl iškviesta.
+
+Pavyzdys:
 
 ```Python
-def mano_iteratoriaus_funkcija(n):
+def skaiciai_iki_n(n):
     i = 0
     while i < n:
         yield i
         i += 1
 
-# Sukuriame iteratoriaus objektą su mano_iteratoriaus_funkcija funkcija
-mano_iteratorius = mano_iteratoriaus_funkcija(5)
+# Sukuriamas generatorius, kuris generuoja skaičius nuo 0 iki 9
+generatorius = skaiciai_iki_n(10)
 
-# Iteruojame per iteratoriaus elementus su for ciklu
-for elementas in mano_iteratorius:
-    print(elementas)
+for skaicius in generatorius:
+    print(skaicius)
 ```
 
-Ši programa naudoja "mano_iteratoriaus_funkcija" funkciją, kad sukurtų iteratoriaus objektą, kuris iteruoja per intervalą nuo 0 iki n. Mes naudojame `yield` raktažodį(naudojamas funkcijose kaip alternatyva `return`), kad galėtume grąžinti reikšmę. Tada mes iteruojame per iteratoriaus elementus su `for` ciklu ir išvedame kiekvieną elementą.
+## Generatorius su `next()`
 
-Sukurkime iteratoriaus funkciją, kuri gražina iteratoriaus objektą, kuris iteruoja per tekstinę eilutę požodžiui:
+Pavyzdys:
 
 ```Python
-def mano_iteratoriaus_funkcija(eilute):
-    zodziai = eilute.split()
-    for zodis in zodziai:
-        yield zodis
+def skaiciai_iki_n(n):
+    i = 0
+    while i < n:
+        yield i
+        i += 1
 
-# Sukuriame iteratoriaus objektą su mano_iteratoriaus_funkcija funkcija
-mano_iteratorius = mano_iteratoriaus_funkcija("Labas, pasauli!")
+generatorius = skaiciai_iki_n(3)
 
-# Iteruojame per iteratoriaus elementus su for ciklu
-for zodis in mano_iteratorius:
-    print(zodis)
+print(next(generatorius))  # 0
+print(next(generatorius))  # 1
+print(next(generatorius))  # 2
+print(next(generatorius))  # Sukels StopIteration klaidą
 ```
 
-Ši programa naudoja "mano_iteratoriaus_funkcija" funkciją, kad sukurtų iteratoriaus objektą, kuris iteruoja per tekstinę eilutę požodžiui. Mes naudojame `split()` metodą, kad padalintume eilutę į žodžius ir tada iteruojame per kiekvieną žodį su `yield` raktažodžiu, kad grąžintume reikšmę. Tada mes iteruojame per iteratoriaus elementus su `for` ciklu ir išvedame kiekvieną žodį.
+`next()` funkcija leidžia gauti sekantį elementą iš generatoriaus. Jei generatorius baigė generuoti visas vertes, `next()` išmes `StopIteration` klaidą.
+
+## Generatoriaus deklaracija su `()`
+
+Galite deklaruoti generatorių naudodami generatoriaus išraišką, kuri yra panaši į sąrašo išraišką (list comprehension), bet naudojate `()` vietoj `[]`.
+
+Pavyzdys:
+
+```Python
+skaiciai = (x for x in range(10))
+
+for skaicius in skaiciai:
+    print(skaicius)
+```
