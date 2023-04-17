@@ -1,4 +1,4 @@
-# Sąrašų pagalbinės funkcjios
+# Sąrašų pagalbinės funkcjios, Sąrašo apibrėžimas
 
 ## `lambda`
 
@@ -200,3 +200,159 @@ for studentas in rūšiuoti_studentai:
 ```
 
 `attrgetter()` funkcija rūšiuos studentus pagal pavardę, o tada pagal vardą, kadangi `key` funkcija rūšiuoja elementus nuo kairės į dešinę.
+
+## Sąrašo apibrėžimas (List comprehension)
+
+List comprehension yra trumpas būdas kurti sąrašus naudojant `for` ciklą ir galimą sąlygą.
+
+## Sąrašo kėlimas laipsniu
+
+```Python
+skaiciai = [1, 2, 3, 4, 5]
+laipsniai = 3
+pakelta_skaiciai = [x ** laipsniai for x in skaiciai]
+print(pakelta_skaiciai)  # Rezultatas: [1, 8, 27, 64, 125]
+```
+
+## Sąrašo filtravimas pagal loginę sąlygą
+
+```Python
+skaiciai = [1, 2, 3, 4, 5]
+salyga = lambda x: x % 2 == 0
+filtruoti_skaiciai = [x for x in skaiciai if salyga(x)]
+print(filtruoti_skaiciai)  # Rezultatas: [2, 4]
+```
+
+## Sąrašo apibrėžimas pritaikant lambda funkciją
+
+```Python
+skaiciai = [1, 2, 3, 4, 5]
+dvigubas_skaiciai = [(lambda x: x * 2)(x) for x in skaiciai]
+print(dvigubas_skaiciai)  # Rezultatas: [2, 4, 6, 8, 10]
+```
+
+## Sąrašo apibrėžimo pakeitimas generatoriaus apibrėžimu
+
+```Python
+skaiciai = [1, 2, 3, 4, 5]
+laipsniai = 3
+pakelta_skaiciai_gen = (x ** laipsniai for x in skaiciai)
+
+for pakeltas in pakelta_skaiciai_gen:
+    print(pakeltas)
+
+# Rezultatas:
+# 1
+# 8
+# 27
+# 64
+# 125
+```
+
+## Užduotys
+
+### Pirma užduotis
+
+Sukurkite programą, kuri naudoja `lambda`, `map()` ir `filter()` funkcijas, kad atrinktų sąrašo elementus, didesnius už 10, ir padidintų juos dvigubai. Palyginkite šį rezultatą su tuo, ką gautumėte naudodami "list comprehension".
+
+### Antra užduotis
+
+Parašykite programą, kuri naudoja `reduce()` funkciją, kad rastų sąrašo elementų sandaugą.
+
+### Trečia užduotis
+
+Naudodamiesi `statistics` moduliu, apskaičiuokite ir išveskite sąrašo elementų sumą, vidurkį, medianą, mažiausią ir didžiausią elementą.
+
+### Ketvirta užduotis
+
+Sukurkite programą, kuri naudoja `sort()` arba `sorted()` funkcijas, kad rūšiuotų sąrašą skaičių pagal jų liekanas dalinant iš 3 (atsižvelgiant į key parametrą).
+
+### Penkta užduotis
+
+Sukurkite programą, kuri naudoja `lambda`, `filter()` ir `reduce()` funkcijas, kad apskaičiuotų vidurkį tų sąrašo skaičių, kurie yra lyginiai. Palyginkite šį rezultatą su tuo, ką gautumėte naudodami "list comprehension".
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+sarasas = [5, 12, 7, 18, 4, 15]
+
+# Atrinkti ir padidinti dvigubai skaičius, didesnius už 10
+result = map(lambda x: x * 2, filter(lambda x: x > 10, sarasas))
+print(list(result))  # [24, 36, 30]
+
+# Su paprastomis funkcijomis ir `for` ciklais
+result = [x * 2 for x in sarasas if x > 10]
+print(result)  # [24, 36, 30]
+
+```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+```Python
+from functools import reduce
+
+sarasas = [1, 2, 3, 4, 5]
+
+# Rasti sandaugą
+sandauga = reduce(lambda x, y: x * y, sarasas)
+print(sandauga)  # 120
+```
+
+</details>
+<details>
+<summary>Trečia užduotis</summary>
+<hr>
+
+```Python
+import statistics
+
+sarasas = [1, 2, 3, 4, 5]
+
+print(sum(sarasas))  # 15
+print(statistics.mean(sarasas))  # 3.0
+print(statistics.median(sarasas))  # 3
+print(min(sarasas))  # 1
+print(max(sarasas))  # 5
+```
+
+</details>
+<details>
+<summary>Ketvirta užduotis</summary>
+<hr>
+
+```Python
+sarasas = [3, 1, 4, 1, 5, 9, 2]
+
+result = sorted(sarasas, key=lambda x: x % 3)
+print(result)  # [3, 9, 1, 4, 1, 5, 2]
+```
+
+</details>
+<details>
+<summary>Penkta užduotis</summary>
+<hr>
+
+```Python
+from functools import reduce
+
+sarasas = [1, 2, 3, 4, 5]
+
+result = reduce(lambda x, y: x + y, filter(lambda x: x % 2 == 0, sarasas)) / len(list(filter(lambda x: x % 2 == 0, sarasas)))
+print(result)  # 3.0
+
+# Su paprastomis funkcijomis ir `for` ciklais
+result = sum(x for x in sarasas if x % 2 == 0) / len([x for x in sarasas if x % 2 == 0])
+print(result)  # 3.0
+```
+
+</details>
+</details>
