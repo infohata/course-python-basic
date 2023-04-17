@@ -89,7 +89,7 @@ Sukurkite funkciją, kuri priima sąrašą ir grąžina naują sąrašą atvirk�
 
 ### Antra užduotis
 
-Sukurkite funkciją, kuri apskaičiuoja trikampio plotą pagal kraštinių ilgius ir grąžina jį.
+Sukurkite funkciją, kuri apskaičiuoja stačiojo trikampio plotą pagal kraštinių ilgius ir grąžina jį.
 
 ### Trečia užduotis
 
