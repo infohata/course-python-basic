@@ -177,3 +177,91 @@ skaiciai = (x for x in range(10))
 for skaicius in skaiciai:
     print(skaicius)
 ```
+
+## Užduotys
+
+### Pirma užduotis
+
+Sukurkite iteratorių, kuris iteruoja per pateiktą sąrašą ir atspausdina visus lyginius skaičius.
+
+### Antra užduotis
+
+Iteruokite per žodyną, kurio raktai yra raidės, o reikšmės yra skaičiai, ir atspausdinkite tik tas raides, kurių reikšmės yra didesnės nei 4.
+
+### Trečia užduotis
+
+Parašykite programą, kuri naudoja generatorių, generuojantį kiekvieno žodžio ilgį iš teksto.
+
+### Ketvirta užduotis
+
+Sukurkite generatorių, kuris generuoja visus pirminius skaičius iki nurodyto skaičiaus n.
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+sarasas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for skaicius in sararas:
+    if skaicius % 2 == 0:
+        print(skaicius)
+```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+```Python
+zodynas = {"A": 3, "B": 5, "C": 1, "D": 6, "E": 4}
+
+for raide, skaicius in zodynas.items():
+    if skaicius > 4:
+        print(raide)
+```
+
+</details>
+<details>
+<summary>Trečia užduotis</summary>
+<hr>
+
+```Python
+tekstas = "Labas pasauli čia yra pavyzdinis tekstas"
+zodziu_ilgiai = (len(zodis) for zodis in tekstas.split())
+
+for ilgis in zodziu_ilgiai:
+    print(ilgis)
+```
+
+</details>
+<details>
+<summary>Ketvirta užduotis</summary>
+<hr>
+
+```Python
+def ar_pirminis(skaicius):
+    if skaicius < 2:
+        return False
+    for i in range(2, skaicius):
+        if skaicius % i == 0:
+            return False
+    return True
+
+def pirminiai_iki_n(n):
+    for skaicius in range(2, n + 1):
+        if ar_pirminis(skaicius):
+            yield skaicius
+
+pirminiai_generatorius = pirminiai_iki_n(30)
+
+for skaicius in pirminiai_generatorius:
+    print(skaicius)
+```
+
+</details>
+</details>
