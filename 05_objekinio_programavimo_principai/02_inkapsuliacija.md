@@ -72,7 +72,7 @@ print(trecias_automobilis.gauti_spalva()) # raudona
 
 - Sukurkite knygų klasę, kuri turėtų privačius kintamuosius: pavadinimas, autorius, buklė ir puslapių skaičius, ir metodus jiems gauti.
 - Sukurkite metodą, kuris leistų pakeisti knygos būklę, kur galimos reikšmės yra tik 'patenkinama', 'prasta', 'atnaujinta', 'sugadinta'.
-- Sukurkite metodą, kuris leistų sumažinti knygos puslapių skaičių, naudodamas sukurtą vidinį privatų metodą, perrašantį tą reikšmę. Turi neigi padidinti puslapių skaičiaus.
+- Sukurkite metodą, kuris leistų sumažinti knygos puslapių skaičių, naudojant privatų metodą, perrašantį tą reikšmę. Turi neigi padidinti puslapių skaičiaus.
 
 ## Atsakymai į užduotis
 
