@@ -70,9 +70,9 @@ print(trecias_automobilis.gauti_spalva()) # raudona
 
 ### Antra užduotis
 
-- Sukurkite knygų klasę, kuri turėtų kintamuosius: pavadinimas, autorius, buklė ir puslapių skaičius.
-- Sukurkite privatų metodą, kuris leistų pakeisti knygos būklę.
-- Sukurkite privatų metodą, kuris leistų sumažinti knygos puslapių skaičių.
+- Sukurkite knygų klasę, kuri turėtų privačius kintamuosius: pavadinimas, autorius, buklė ir puslapių skaičius, ir metodus jiems gauti.
+- Sukurkite metodą, kuris leistų pakeisti knygos būklę, kur galimos reikšmės yra tik 'patenkinama', 'prasta', 'atnaujinta', 'sugadinta'.
+- Sukurkite metodą, kuris leistų sumažinti knygos puslapių skaičių, naudodamas sukurtą vidinį privatų metodą, perrašantį tą reikšmę. Turi neigi padidinti puslapių skaičiaus.
 
 ## Atsakymai į užduotis
 
@@ -146,22 +146,25 @@ class Knyga:
     def gauti_puslapius(self):
         return self.__puslapiai
 
-    def __nauja_bukle(self, bukle):
-        self.__bukle = bukle
+    def pakeisti_bukle(self, bukle):
+        if bukle in ('patenkinama', 'prasta', 'atnaujinta', 'sugadinta'):
+            self.__bukle = bukle
+        else:
+            print(f'negalima pakeisti būklės į {bukle}.')
 
     def __naujas_puslapiu_skaicius(self, puslapiai):
-        self.__puslapiai -= puslapiai
+        self.__puslapiai = puslapiai
 
-    def pakeisti_bukle(self, bukle):
-        self.__nauja_bukle(bukle)
-
-    def pakites_puslapiu_skaicius(self, puslapiai):
-        self.__naujas_puslapiu_skaicius(puslapiai)
+    def isplesti_puslapius(self, puslapiai):
+        if abs(puslapiai) <= self.__puslapiai:
+            self.__naujas_puslapiu_skaicius(self.__puslapiai - abs(puslapiai))
+        else:
+            self.__puslapiai = 0
 
 knyga = Knyga("Python programavimo kalba", "Guido van Rossum", 'nauja', 400)
 
-knyga.pakeisti_bukle('patenkinama')
-knyga.pakites_puslapiu_skaicius(50)
+knyga.isplesti_puslapius(50)
+knyga.pakeisti_bukle('prasta')
 print(knyga.gauti_pavadinima())
 print(knyga.gauti_autoriu())
 print(knyga.gauti_bukle())
@@ -173,7 +176,7 @@ Rezultatas:
 ```Text
 Python programavimo kalba
 Guido van Rossum
-patenkinama
+prasta
 350
 ```
 
