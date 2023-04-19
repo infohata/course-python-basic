@@ -284,8 +284,9 @@ Anatanas: Audi A6: 2023 metai, spalva balta
 ### Antra užduotis
 
 - Sukurkite klasę "Gyvūnas" su savybėmis: vardas, amžius ir svoris.
-- Sukurkite metodus, kurie apskaičiuos padidėjusį arba sumažėjusį svorį.
-- Sukurkite metodą, kuris apskaičiuotų padidėjusį amžių.
+- Sukurkite `__str__` metodą patogiam informacijos apie gyvūną grąžinimui
+- Sukurkite metodus padidinti ir sumažinti svorį.
+- Sukurkite metodą `gimtadienis`, padidinantį amžių.
 - Sukurkite objektą su jūsų pasirinktomis reikšmėmis.
 - Atspausdinkite objektą.
 - Pakeiskite kelis kartus gyvūno svorį ir amžių naudojant sukurtus metodus ir po kiekvieno pakeitimo atspausdinkite.
@@ -345,7 +346,7 @@ class Gyvunas:
     def sumazinti_svori(self, kiek):
         self.svoris -= kiek
 
-    def pasikeites_amzius(self):
+    def gimtadienis(self):
         self.amzius += 1
         
     def __str__(self):
@@ -357,7 +358,7 @@ print(gyvunas)
 gyvunas.padidinti_svori(5)
 print(gyvunas)
 
-gyvunas.pasikeites_amzius()
+gyvunas.gimtadienis()
 print(gyvunas)
 
 gyvunas.sumazinti_svori(3)
