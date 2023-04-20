@@ -150,51 +150,39 @@ Opel Astra, 2023 m. pilka. Variklis: 1.6 benzinas. Max. 160 km/h
 <hr>
 
 ```Python
-class Baseinas:
-
+class Baseinas():
     def __init__(self, talpa, dabartinis_kiekis):
-        self.__talpa = talpa
+        self.talpa = talpa
         self.__dabartinis_kiekis = dabartinis_kiekis
 
-    def __keitimas(self, kiekis):
-        self.__dabartinis_kiekis += kiekis
-
-    def ipilti_vandens(self, kiekis):
-        if self.__dabartinis_kiekis + kiekis <= self.__talpa:
-            self.__keitimas(kiekis)
-            print(f'Įpilta {kiekis} L vandens')
+    def __keisti_kieki(self, naujas_kiekis):
+        if naujas_kiekis <= self.talpa and naujas_kiekis >= 0:
+            self.__dabartinis_kiekis = naujas_kiekis
         else:
-            print(f'Negalima įpilti {kiekis} L vandens, nes viršytų talpą')
+            print('Kiekis nepakeistas')
 
-    def nuleisti_vandeni(self, kiekis):
-        if self.__dabartinis_kiekis - kiekis >= 0:
-            self.__keitimas(-kiekis)
-            print(f'Išpilta {kiekis} L vandens')
-        else:
-            print(
-                f'Negalima išpilti {kiekis} L vandens, nes dabar yra tik {self.__dabartinis_kiekis} L'
-            )
+    def didinti_kieki(self, keiciamas_kiekis):
+        self.__keisti_kieki(self.__dabartinis_kiekis + abs(keiciamas_kiekis))
+        return self.__dabartinis_kiekis
 
-    def get_talpa(self):
-        return self.__talpa
-  
-    def get_dabartinis_kiekis(self):
+    def mazinti_kieki(self, keiciamas_kiekis):
+        self.__keisti_kieki(self.__dabartinis_kiekis - abs(keiciamas_kiekis))
+        return self.__dabartinis_kiekis
+
+    def gauti_dabartini_kieki(self):
         return self.__dabartinis_kiekis
 
 
-baseinas = Baseinas(1000, 300)
-print(f'Baseino talpa: {baseinas.get_talpa()} L, šiuo metu baseinas užpildytas: {baseinas.get_dabartinis_kiekis()} L')
-
-baseinas.nuleisti_vandeni(50)
-baseinas.ipilti_vandens(480)
-print(baseinas.get_dabartinis_kiekis())
+vichy = Baseinas(500, 200)
+print(f"Baseino talpa: {vichy.talpa}, dabartinis kiekis: {vichy.gauti_dabartini_kieki()}")
+print(f"Baseino kiekis: {vichy.didinti_kieki(300)}")
+print(f"Sumazintas kiekis: {vichy.mazinti_kieki(500)}")
 ```
 
 Rezultatas:
 
 ```Text
-Baseino talpa: 1000 L, šiuo metu baseinas užpildytas: 300 L
-Išpilta 50 litrų vandens
-Įpilta 480 litrų vandens
-730
+Baseino talpa: 500, dabartinis kiekis: 200
+Baseino kiekis: 500
+Sumazintas kiekis: 0
 ```
