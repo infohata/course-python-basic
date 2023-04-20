@@ -1,5 +1,7 @@
 # Komandinis darbas - biudžeto programėlė
 
+Parašykite biudžeto valdymo programą, kurios pagrindas - pajamų ir išlaidų žurnalas. Į žurnalą turi būti galima pridėti naujų įrašų, spausdinti jų ataskaita (išklotinę) ir gauti einamąjį balansą. Siūloma struktūra:
+
 ## Klasės
 
 Irasas (abstraktus)
