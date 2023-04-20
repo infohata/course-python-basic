@@ -119,7 +119,7 @@ print(f"{astra.marke} {astra.modelis}, {astra.metai} m. {astra.spalva}. Variklis
 
 ```Python
 def informacija(obj):
-    print(f"{obj.marke} {obj.modelis}, {obj.metai} m. {obj.spalva}. Variklis: {obj.variklis} {astra.kuro_tipas}. Max. {obj.max_greitis} km/h")    
+    print(f"{obj.marke} {obj.modelis}, {obj.metai} m. {obj.spalva}. Variklis: {obj.variklis} {obj.kuro_tipas}. Max. {obj.max_greitis} km/h")    
 
 informacija(guolis)
 informacija(astra)
@@ -152,48 +152,48 @@ Opel Astra, 2023 m. pilka. Variklis: 1.6 benzinas. Max. 160 km/h
 ```Python
 class Baseinas:
 
-  def __init__(self, talpa, dabartinis_kiekis):
-    self.__talpa = talpa
-    self.__dabartinis_kiekis = dabartinis_kiekis
+    def __init__(self, talpa, dabartinis_kiekis):
+        self.__talpa = talpa
+        self.__dabartinis_kiekis = dabartinis_kiekis
 
-  def __keitimas(self, kiekis):
-    self.__dabartinis_kiekis += kiekis
+    def __keitimas(self, kiekis):
+        self.__dabartinis_kiekis += kiekis
 
-  def pilamas_vanduo(self, kiekis):
-    if self.__dabartinis_kiekis + kiekis <= self.__talpa:
-      self.__keitimas(kiekis)
-      print(f'Įpilta {kiekis} litrų vandens')
-    else:
-      print(f'Negalima įpilti {kiekis} litrų vandens, nes viršytų talpą')
+    def ipilti_vandens(self, kiekis):
+        if self.__dabartinis_kiekis + kiekis <= self.__talpa:
+            self.__keitimas(kiekis)
+            print(f'Įpilta {kiekis} L vandens')
+        else:
+            print(f'Negalima įpilti {kiekis} L vandens, nes viršytų talpą')
 
-  def nuleisti_vandeni(self, kiekis):
-    if self.__dabartinis_kiekis - kiekis >= 0:
-      self.__keitimas(-kiekis)
-      print(f'Išpilta {kiekis} litrų vandens')
-    else:
-      print(
-        f'Negalima išpilti {kiekis} litrų vandens, nes dabar yra tik {self.__dabartinis_kiekis} litrų'
-      )
+    def nuleisti_vandeni(self, kiekis):
+        if self.__dabartinis_kiekis - kiekis >= 0:
+            self.__keitimas(-kiekis)
+            print(f'Išpilta {kiekis} L vandens')
+        else:
+            print(
+                f'Negalima išpilti {kiekis} L vandens, nes dabar yra tik {self.__dabartinis_kiekis} L'
+            )
 
-  def get_talpa(self):
-    return self.__talpa
+    def get_talpa(self):
+        return self.__talpa
   
-  def get_dabartinis_kiekis(self):
-    return self.__dabartinis_kiekis
+    def get_dabartinis_kiekis(self):
+        return self.__dabartinis_kiekis
 
 
 baseinas = Baseinas(1000, 300)
-print(f'Baseino talpa: {baseinas.get_talpa()} litrų, šiuo metu baseinas užpildytas: {baseinas.get_dabartinis_kiekis()} litrais')
+print(f'Baseino talpa: {baseinas.get_talpa()} L, šiuo metu baseinas užpildytas: {baseinas.get_dabartinis_kiekis()} L')
 
 baseinas.nuleisti_vandeni(50)
-baseinas.pilamas_vanduo(480)
+baseinas.ipilti_vandens(480)
 print(baseinas.get_dabartinis_kiekis())
 ```
 
 Rezultatas:
 
 ```Text
-Baseino talpa: 1000 litrų, šiuo metu baseinas užpildytas: 300 litrais
+Baseino talpa: 1000 L, šiuo metu baseinas užpildytas: 300 L
 Išpilta 50 litrų vandens
 Įpilta 480 litrų vandens
 730
