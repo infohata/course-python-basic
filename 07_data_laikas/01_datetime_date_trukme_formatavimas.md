@@ -55,11 +55,11 @@ dabar = datetime.now()
 print("Dabar:", dabar)
 
 # Pridėti 5 dienas prie dabartinės datos
-po_5_dienu = now + timedelta(days=5)
+po_5_dienu = dabar + timedelta(days=5)
 print("Po 5 dienų:", po_5_dienu)
 
 # Atimti 2 valandas nuo dabartinio laiko
-pries_2_valandas = now - timedelta(hours=2)
+pries_2_valandas = dabar - timedelta(hours=2)
 print("Prieš 2 valandas:", pries_2_valandas)
 
 # Skirtumas tarp dviejų datų
