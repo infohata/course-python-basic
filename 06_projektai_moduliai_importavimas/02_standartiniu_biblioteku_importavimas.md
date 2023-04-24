@@ -85,7 +85,7 @@ Sukurkite kauliukų žaidimą, kuris:
 - Sugeneruotų tris atsitiktinius skaičius nuo 1 iki 6
 - Jei vienas iš šių skaičių yra 5, atspausdinti „Pralaimėjai...“
 - Kitu atveju atspausdinti „Laimėjai!“
-- Patarimas: Naudoti while ciklą
+- Patarimas: Naudoti ciklą
 
 ### Trečia užduotis
 
@@ -123,9 +123,9 @@ import random
 print('Bus sugeneruoti 3 skaičiai')
 print('Jei vienas iš jų – 5, tu pralaimėjai!')
 
-for skaicius in range(3):
-    skaiciai = random.randint(1, 6)
-    print(skaiciai)
+for bandymas in range(3):
+    skaicius = random.randint(1, 6)
+    print(skaicius)
     if skaicius == 5:
         print('Pralaimėjai...')
         break
