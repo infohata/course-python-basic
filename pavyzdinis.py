@@ -1,32 +1,17 @@
-class Darbuotojas:
-    def __init__(self, vardas, pavarde, atlyginimas=1000):
-        self.vardas = vardas
-        self.pavarde = pavarde
-        self.atlyginimas = atlyginimas
+import calendar
 
-    def info(self):
-        print(f'---\n{self.vardas} {self.pavarde}, atlyginimas: {self.atlyginimas} €')
+def spausdinti_menesio_kalendoriu_suskaiciuojant_savaitgalius(metai, menesis):
+    print(calendar.month(metai, menesis))
 
-class Administratorius(Darbuotojas):
-    pass
+    _, menesio_ilgis = calendar.monthrange(metai, menesis)
 
+    savaitgalio_dienos = 0
+    for diena in range(1, menesio_ilgis + 1):
+        savaites_diena = calendar.weekday(metai, menesis, diena)
+        if savaites_diena == 5 or savaites_diena == 6:
+            savaitgalio_dienos += 1
 
-class Vadovas(Darbuotojas):
-    def __init__(self, vardas, pavarde, atlyginimas, premija):
-        super().__init__(vardas, pavarde, atlyginimas)
-        self.premija = premija
+    print(f"Savaitgalio dienų skaičius šiame mėnesyje: {savaitgalio_dienos}")
 
-    def info(self):
-        super().info()
-        print(f'Premija: {self.premija} €')
-
-
-darbuotojas1 = Darbuotojas('Jonas', 'Jonaitis')
-darbuotojas2 = Darbuotojas('Petras', 'Petraitis', 1200)
-darbuotojas3 = Administratorius('Juozas', 'Juozaitis', 900)
-vadovas1 = Vadovas('Antanas', 'Antanaitis', 1500, 500)
-
-darbuotojai = [darbuotojas1, darbuotojas2, darbuotojas3, vadovas1]
-
-for darbuotojas in darbuotojai:
-    darbuotojas.info()
+# Pavyzdys su 2023-ųjų balandžio mėnesiu
+spausdinti_menesio_kalendoriu_suskaiciuojant_savaitgalius(2023, 4)
