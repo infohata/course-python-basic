@@ -4,7 +4,7 @@
 
 Docstrings yra eilutės, kurios rašomos virš modulio, klasės, funkcijos ar metodo ir aprašo jų paskirtį, veikimą, parametrus ir grąžinamas reikšmes. Docstrings rašomi tarp trijų kabučių (t.y. '''docstring''' arba """docstring"""), kai modulio, klasės, funkcijos ar metodo apibrėžimo eilutės prasideda nuo naujos eilutės.
 
-Docstrings yra galingas dokumentavimo įrankis, kuris padeda kitoms programavimo kalboms ir programuotojams suprasti jūsų kodo veikimą. Be to, docstrings yra labai naudingi, kai naudojate interaktyvią Python aplinką arba automatinį dokumentavimą.
+Docstrings yra galingas dokumentavimo įrankis, kuris padeda kitiems programuotojams suprasti jūsų kodo veikimą. Be to, docstrings yra labai pasiteisina, kai naudojate interaktyvią Python aplinką arba automatinį dokumentavimą.
 
 Štai keli pavyzdžiai, kaip galite naudoti docstrings Python programavimo kalboje:
 
@@ -162,6 +162,9 @@ class Person:
 Metodo anotacija su keliomis reikšmėmis grąžinimo tipui ir parametramis:
 
 ```Python
+import math
+
+
 class Circle:
     def __init__(self, radius: float) -> None:
         self.radius = radius

@@ -85,11 +85,11 @@ Sukurkite kauliukų žaidimą, kuris:
 - Sugeneruotų tris atsitiktinius skaičius nuo 1 iki 6
 - Jei vienas iš šių skaičių yra 5, atspausdinti „Pralaimėjai...“
 - Kitu atveju atspausdinti „Laimėjai!“
-- Patarimas: Naudoti while ciklą
+- Patarimas: Naudoti ciklą
 
 ### Trečia užduotis
 
-Parašykite Python funkciją, kuri priima metus ir mėnesį, o tada atspausdina šio mėnesio kalendorių bei parodo, kiek savaitgalių (šeštadienių ir sekmadienių) yra tame mėnesyje.
+Parašykite Python funkciją, kuri priima metus ir mėnesį, o tada atspausdina šio mėnesio kalendorių bei parodo, kiek savaitgalio dienų (šeštadienių ir sekmadienių) yra tame mėnesyje.
 
 ## Atsakymai į užduotis
 
@@ -123,9 +123,9 @@ import random
 print('Bus sugeneruoti 3 skaičiai')
 print('Jei vienas iš jų – 5, tu pralaimėjai!')
 
-for skaicius in range(3):
-    skaiciai = random.randint(1, 6)
-    print(skaiciai)
+for bandymas in range(3):
+    skaicius = random.randint(1, 6)
+    print(skaicius)
     if skaicius == 5:
         print('Pralaimėjai...')
         break
@@ -141,21 +141,21 @@ else:
 ```Python
 import calendar
 
-def spausdinti_menesio_kalendoriu_ir_savaitgaliu_skaiciu(metai, menesis):
+def spausdinti_menesio_kalendoriu_suskaiciuojant_savaitgalius(metai, menesis):
     print(calendar.month(metai, menesis))
 
     _, menesio_ilgis = calendar.monthrange(metai, menesis)
 
-    savaitgaliu_skaicius = 0
+    savaitgalio_dienos = 0
     for diena in range(1, menesio_ilgis + 1):
         savaites_diena = calendar.weekday(metai, menesis, diena)
         if savaites_diena == 5 or savaites_diena == 6:
-            savaitgaliu_skaicius += 1
+            savaitgalio_dienos += 1
 
-    print(f"Savaitgalių skaičius šiame mėnesyje: {savaitgaliu_skaicius}")
+    print(f"Savaitgalio dienų skaičius šiame mėnesyje: {savaitgalio_dienos}")
 
 # Pavyzdys su 2023-ųjų balandžio mėnesiu
-spausdinti_menesio_kalendoriu_ir_savaitgaliu_skaiciu(2023, 4)
+spausdinti_menesio_kalendoriu_suskaiciuojant_savaitgalius(2023, 4)
 ```
 
 </details>
