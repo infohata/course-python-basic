@@ -83,6 +83,10 @@ Abu šie pavyzdžiai pirmiausia sukuria `datetime.datetime` objektą, atspindint
 
 Parašykite programą, kuri išvestų sąrašą visų laiko zonų, kurių pavadinime yra "America".
 
+### Antra užduotis
+
+Parašykite programą, kuri iš vartotojo paprašytų laiko HH:MM(:SS) formatu, kur sekundės nėra būtinos. Tada paprašykite įvesti laiko zoną. Išspausdinkite įvestą laiką šiomis laiko zonomis: Sydney'aus, Dubai'aus, Vilniaus, London'o, New York'o ir Los Angeles.
+
 ## Atsakymai į užduotis
 
 <details><summary>❗Rodyti atsakymus</summary>
