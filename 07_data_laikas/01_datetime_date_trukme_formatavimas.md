@@ -69,23 +69,7 @@ skirtumas = date2 - date1
 print("Skirtumas tarp datų:", skirtumas)  # Išves: 30 days, 0:00:00
 ```
 
-## Datos ir laiko išvedimo formatavimas su `strptime`
-
-Python kalboje funkcija strptime priklauso datetime moduliui, kuris leidžia formatuoti stringą į datetime objektą. Štai kaip galite naudoti šią funkciją:
-
-```Python
-from datetime import datetime
-
-date_string = "2023-04-12 18:30:00"
-format_string = "%Y-%m-%d %H:%M:%S"
-
-date_object = datetime.strptime(date_string, format_string)
-print(date_object)
-```
-
-Čia %Y, %m, %d, %H, %M ir %S yra formatavimo kodo simboliai, atitinkantys metus, mėnesius, dienas, valandas, minutes ir sekundes.
-
-## Datos ir laiko formavimas iš stringo su strftime
+## Datos ir laiko išvedimo formatavimas su `strftime`
 
 Funkcija strftime taip pat priklauso datetime moduliui ir leidžia formatuoti datetime objektą į stringą.
 
@@ -97,6 +81,24 @@ format_string = "%Y-%m-%d %H:%M:%S"
 
 date_string = date_object.strftime(format_string)
 print(date_string)
+```
+
+Čia %Y, %m, %d, %H, %M ir %S yra formatavimo kodo simboliai, atitinkantys metus, mėnesius, dienas, valandas, minutes ir sekundes.
+
+Daugiau formatavimo galimybių: <https://strftime.org/>
+
+## Datos ir laiko formavimas iš stringo su `strptime`
+
+Python kalboje funkcija strptime priklauso datetime moduliui, kuris leidžia formatuoti stringą į datetime objektą. Štai kaip galite naudoti šią funkciją:
+
+```Python
+from datetime import datetime
+
+date_string = "2023-04-12 18:30:00"
+format_string = "%Y-%m-%d %H:%M:%S"
+
+date_object = datetime.strptime(date_string, format_string)
+print(date_object)
 ```
 
 ## Datos ir laiko išraiška skaičiumi per timestamp
@@ -133,7 +135,7 @@ Parašykite programą, kuri pateiktų dabartinį laiką, bet tik minutes ir seku
 
 ### Antra užduotis
 
-Sukurkite funkciją, kuri priimtų gimimo datą kaip stringą (formatu "%Y-%m-%d") ir grąžintų, kiek dienų liko iki jūsų gimtadienio šiais metais
+Sukurkite funkciją, kuri priimtų gimimo datą kaip stringą (formatu "%Y-%m-%d") ir grąžintų, kiek dienų liko iki jūsų gimtadienio
 
 ### Trečia užduotis
 
