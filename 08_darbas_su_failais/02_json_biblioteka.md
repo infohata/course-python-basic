@@ -78,3 +78,11 @@ json_eilute = '{"vardas": "Jonas", "amžius": 30}'
 data = json.loads(json_eilute)
 print(data)  # {"vardas": "Jonas", "amžius": 30}
 ```
+
+## Užduotis
+
+Patobulinkite prieš tai kurso metu vystytą savo šaldytuvo programą audojant json:
+
+paleidus programą, jeigu randamas šaldytuvo json failas, jį nuskaityti ir užpildyti šaldytuvą jo turiniu.
+
+Uždarant programą, įrašyti šaldytuvo turinį į json failą.
