@@ -134,17 +134,17 @@ for elementas in turinys:
 Tai yra kita funkcija iš `os` modulio, kuri naudojama failo ar katalogo būsenai (pvz., dydis, paskutinė modifikavimo data ir kt.) gauti. Ji grąžina `os.stat_result` objektą, kuris turi daug naudingų savybių, tokių kaip:
 
 - `st_mode`: Tai yra failo apsaugos bitai, kurie nurodo failo tipą ir jo teises. Jis naudojamas, norint nustatyti failo tipą (pvz., paprastas failas, katalogas, simbolinė nuoroda) ir teises (skaitymo, rašymo, vykdymo).
-- `st_ino`: Failo inode numeris. Jis yra unikalus skaičius, identifikuojantis failą sistemoje.
+- `st_ino`: Inode numeris yra unikalus failo identifikatorius failų sistemoje, naudojamas tik Unix tipo sistemose. Windows šios savybės nepalaiko, bet `os.stat` grąžina šią savybę su reikšme 0.
 - `st_dev`: Įrenginio identifikatorius, kuriame yra failas.
 - `st_nlink`: Tai yra failo ar katalogo nuorodų skaičius. Paprastai failo atveju šis skaičius yra 1, o katalogo atveju jis gali būti didesnis.
-- `st_uid`: Failo ar katalogo savininko vartotojo ID.
-- `st_gid`: Failo ar katalogo savininko grupės ID.
+- `st_uid`: Vartotojo ID yra naudojamas Unix tipo sistemose nurodyti failo ar katalogo savininką. Windows šios savybės nepalaiko, bet `os.stat` grąžina šią savybę su reikšme 0.
+- `st_gid`: Grupės ID yra naudojamas Unix tipo sistemose nurodyti failo ar katalogo savininko grupę. Windows šios savybės nepalaiko, bet `os.stat` grąžina šią savybę su reikšme 0.
 - `st_size`: Failo dydis baitais. Šis dydis nėra taikomas katalogams.
 - `st_atime`: Paskutinio failo ar katalogo prieigos laikas, t. y., kada failas ar katalogas buvo paskutinį kartą perskaitytas. Laikas pateikiamas sekundėmis nuo epochos (1970-01-01 00:00:00 UTC).
 - `st_mtime`: Paskutinio failo ar katalogo modifikavimo laikas, t. y., kada failas ar katalogas buvo paskutinį kartą pakeistas. Laikas pateikiamas sekundėmis nuo epochos (1970-01-01 00:00:00 UTC).
 - `st_ctime`: Failo ar katalogo būsenos pakeitimo laikas, t. y., kada failo ar katalogo teisės, nuorodos ar dydis buvo paskutinį kartą pakeisti. Laikas pateikiamas sekundėmis nuo epochos (1970-01-01 00:00:00 UTC).
-- `st_blksize`: Bloko dydis baitais failo ar katalogo saugojimui. Šis dydis yra nustatytas sistemos administratoriaus ir naudojamas efektyviam saugojimui.
-- `st_blocks`: Failo ar katalogo užimamų blokų skaičius. Kiekvienas blokas yra dydžio st_blksize.
+- `st_blksize`: Bloko dydis baitais yra naudojamas tik Linux sistemoje failo ar katalogo saugojimui efektyviau valdyti. macOS ir Windows šių savybių nepalaiko.
+- `st_blocks`: Užimamų blokų skaičius yra naudojamas tik Linux sistemoje failo ar katalogo saugojimui efektyviau valdyti. macOS ir Windows šių savybių nepalaiko.
 
 Pavyzdys:
 
