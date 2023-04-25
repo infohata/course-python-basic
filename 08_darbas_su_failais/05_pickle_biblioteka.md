@@ -79,3 +79,7 @@ with open('zmogus.pickle', 'rb') as failas:
 
 print(ikeltas_zmogus)  # Išveda: Jonas, 30 metų
 ```
+
+## Užduotis
+
+Patobulinkite biudžeto programą, kad pajamų/išlaidų žurnalą atidarant programai nuskaitytų iš pickle failo, o uždarant - perrašytų žurnalo pickle failą atnaujinta informacija. Atkreipkite dėmesį, kad žurnalo įrašai yra objektai - jų sąrašo tiesiogiai json faile išsaugoti neitų.
