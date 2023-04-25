@@ -17,4 +17,7 @@ if os.path.exists("saldytuvas.json"):
     os.remove("saldytuvas.json")
     print("deleted.")
 
-print(os.listdir(os.getcwd()))
+# print(os.listdir(os.getcwd()))
+from pprint import pprint
+pprint(os.stat('saldytuvas/saldytuvas.json'))
+

@@ -112,6 +112,8 @@ else:
     print(f"Katalogų medis '{katalogu_medzio_kelias}' neegzistuoja.")
 ```
 
+<!-- TODO: os.stat ir os.listdir -->
+
 ## Užduotys
 
 ### Pirma užduotis
