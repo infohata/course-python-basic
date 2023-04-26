@@ -155,6 +155,8 @@ Rezultatas:
 2023-04-14 08:31:17,279 - root - INFO - Programa veikia
 ```
 
+Daugiau formatavimo parametrų čia: <https://docs.python.org/3/library/logging.html#logrecord-attributes>
+
 ## Loginimas su objektais
 
 Logerio pranešimas gali būti ne tik paprastas tekstas, tačiau į jį galima įtraukti pvz. objektus:
