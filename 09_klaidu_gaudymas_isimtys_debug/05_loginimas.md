@@ -318,8 +318,17 @@ ZeroDivisionError: division by zero
 
 ## Užduotys
 
+### Pirma užduotis
+
 Patobulinkite savo šaldytuvo programą:
 
 - Gaudykite visas galimas vartotojo sąsajos klaidos, ypač įvedant kiekius.
 - Šaldytuvo saugojimo į failą/ištraukimo iš failo klaidų gaudymą galite įgyvendinti per `try` `except`.
 - Sukurkite loggerį, kuris į failą kauptų informaciją apie įdėtus ir išimtus produktus su kiekiais, ir veiksmo data/laiku.
+
+### Antra užduotis
+
+Patobulinkite savo biudžeto programą:
+
+- gaudykite klaidą, vartotojui įvedant neteisingus parametrus kuriant pajamų arba išlaidų įrašus.
+- sukurkite loggerį, kuris logintų, kada vartotojas bando išleisti daugiau pinigų, negu turi.
