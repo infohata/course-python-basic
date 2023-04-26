@@ -49,6 +49,8 @@ print(lyginiai_skaiciai) # išveda [2, 4, 6, 8, 10]
 
 Ši anoniminė funkcija `lambda` yra naudojama kartu su `filter` funkcija, kad gautų visus sąrašo lyginius skaičius.
 
+
+
 Anoniminės funkcijos yra dažnai naudojamos kartu su kitomis funkcijomis, kaip argumentai arba grąžinamos reikšmės. Jos yra lengvai skaitytos ir suprantamos, todėl yra labai naudingos Python programavimo kalboje.
 
 ## Užduotys

@@ -1,54 +1,5 @@
 # Sąrašų pagalbinės funkcjios, Sąrašo apibrėžimas
 
-## `lambda`
-
-Tai specialus žodis Python programavimo kalboje, leidžiantis greitai ir paprastai sukurti anonimines funkcijas. Anoniminės funkcijos yra tokios, kurios neturi vardo ir dažniausiai naudojamos tik kartą kode.
-
-## `map()`
-
-Tai funkcija, kuri taiko nurodytą funkciją kiekvienam sąrašo elementui.
-
-Pavyzdys:
-
-```Python
-sarasas = [1, 2, 3, 4, 5]
-rezultatas = map(lambda x: x ** 2, sarasas)
-print(list(rezultatas))  # [1, 4, 9, 16, 25]
-
-def kvadratas(x):
-    return x ** 2
-
-rezultatas = map(kvadratas, sarasas)
-print(list(rezultatas))  # [1, 4, 9, 16, 25]
-```
-
-Pavyzdys, kai naudojami keli kintamieji:
-
-```Python
-sarasas1 = [1, 2, 3, 4, 5]
-sarasas2 = [5, 4, 3, 2, 1]
-rezultatas = map(lambda x, y: x + y, sarasas1, sarasas2)
-print(list(rezultatas))  # [6, 6, 6, 6, 6]
-
-def sudetis(x, y):
-    return x + y
-
-rezultatas = map(sudetis, sarasas1, sarasas2)
-print(list(rezultatas))  # [6, 6, 6, 6, 6]
-```
-
-## `filter()`
-
-Funkcija, leidžianti atrinkti sąrašo elementus pagal nurodytą sąlygą.
-
-Pavyzdys:
-
-```Python
-sarasas = [1, 2, 3, 4, 5]
-rezultatas = filter(lambda x: x % 2 == 0, sarasas)
-print(list(rezultatas))  # [2, 4]
-```
-
 ## `reduce()`
 
 Ši funkcija yra iš `functools` modulio, ir ji leidžia sukaupti sąrašo elementus, taikant nurodytą funkciją. Kitaip tariant, `reduce()` pereina per sąrašą, naudodamas funkciją, kuri priima du argumentus, paeiliui pritaikydama funkciją elementams ir kaupiant rezultatą.
@@ -73,6 +24,8 @@ sarasas = [1, 2, 3, 4, 5]
 maksimalus = reduce(lambda x, y: x if x > y else y, sarasas)
 print(maksimalus)  # 5
 ```
+
+💡 _`map()` ir `filter()` taip pat yra pagalbinės fukcijos, jas  prisiminti galite [čia](https://github.com/eglemot/course-python-basic/blob/3bcc9234f71c0782e83dec76239de7490b3986ab/04_funkcijos/06_anonimines_funkcijos.md)_
 
 ## Statistinės funkcijos
 
