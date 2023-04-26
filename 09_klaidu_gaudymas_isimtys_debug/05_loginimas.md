@@ -317,3 +317,9 @@ ZeroDivisionError: division by zero
 ```
 
 ## Užduotys
+
+Patobulinkite savo šaldytuvo programą:
+
+- Gaudykite visas galimas vartotojo sąsajos klaidos, ypač įvedant kiekius.
+- Šaldytuvo saugojimo į failą/ištraukimo iš failo klaidų gaudymą galite įgyvendinti per `try` `except`.
+- Sukurkite loggerį, kuris į failą kauptų informaciją apie įdėtus ir išimtus produktus su kiekiais, ir veiksmo data/laiku.
