@@ -106,8 +106,8 @@ studentai = [
     Studentas("Ona", "Onaitė", [6, 8, 7]),
 ]
 
-rūšiuoti_studentai = sorted(studentai, key=lambda x: x.vidurkis(), reverse=True)
-for studentas in rūšiuoti_studentai:
+rusiuoti_studentai = sorted(studentai, key=lambda x: x.vidurkis(), reverse=True)
+for studentas in rusiuoti_studentai:
     print(f"{studentas.vardas} {studentas.pavarde} - {studentas.vidurkis()}")
 ```
 
