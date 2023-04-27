@@ -249,3 +249,54 @@ print(result)  # Output: 8
 ```
 
 Šiame pavyzdyje `add_numbers` funkcija yra dekoruota dviem dekoratoriais: `print_before_decorator` ir `print_after_decorator`.
+
+## Užduotys
+
+### Pirma užduotis
+
+Sukurkite klasę Studentas su atributais vardas, pavarde ir amzius. Pridėkite tris metodus:
+
+- pilnas_vardas(): Grąžina pilną studento vardą, naudojant @property dekoratorių.
+- ar_pilnametis(): Grąžina True, jei studento amžius yra didesnis arba lygus 18, ir False, jei ne. Naudokite @staticmethod dekoratorių.
+- sukurti_studenta(cls, vardas: str, pavarde: str, amzius: int): Grąžina naują Studentas objektą. Naudokite @classmethod dekoratorių.
+- Sukurkite keletą studentų objektų, naudojant klasės metodą sukurti_studenta(), ir išbandykite visus metodus.
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```Python
+class Studentas:
+    def __init__(self, vardas, pavarde, amzius):
+        self.vardas = vardas
+        self.pavarde = pavarde
+        self.amzius = amzius
+
+    @property
+    def pilnas_vardas(self):
+        return f"{self.vardas} {self.pavarde}"
+
+    @staticmethod
+    def ar_pilnametis(amzius):
+        return amzius >= 18
+
+    @classmethod
+    def sukurti_studenta(cls, vardas: str, pavarde: str, amzius: int):
+        return cls(vardas, pavarde, amzius)
+
+
+# Sukurkite keletą studentų objektų, naudojant klasės metodą sukurti_studenta()
+studentas1 = Studentas.sukurti_studenta("Jonas", "Jonaitis", 20)
+studentas2 = Studentas.sukurti_studenta("Petras", "Petraitis", 17)
+
+# Išbandykite visus metodus
+print(studentas1.pilnas_vardas)  # Output: "Jonas Jonaitis"
+print(studentas2.pilnas_vardas)  # Output: "Petras Petraitis"
+
+print(Studentas.ar_pilnametis(studentas1.amzius))  # Output: True
+print(Studentas.ar_pilnametis(studentas2.amzius))  # Output: False
+```
