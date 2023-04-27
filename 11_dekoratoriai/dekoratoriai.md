@@ -21,15 +21,15 @@ def dekoratorius(funkcija):
 Dekoratoriaus pavyzdys:
 
 ```Python
-def sveikinimas(funkcija):
+def pasisveikinimas(funkcija):
     def wrapper(vardas):
         print(f"Sveiki, {vardas}!")
         funkcija(vardas)
     return wrapper
 
-@sveikinimas
+@pasisveikinimas
 def atsisveikinimas(vardas):
-    print(f"Atsisveikiname, {vardas}!")
+    print(f"Viso gero, {vardas}!")
 
 atsisveikinimas("Jonas")
 ```
@@ -94,7 +94,7 @@ print(rezultatas)
 
 ## @classmethod dekoratorius
 
-`@classmethod` dekoratorius leidžia apibrėžti klasės metodus, kurie priima klasę kaip pirmąjį argumentą, vadinamą "cls". Klasės metodai gali būti naudojami klasės ar objekto lygmeniu.
+`@classmethod` dekoratorius leidžia apibrėžti klasės metodus, kurie priima klasę kaip pirmąjį argumentą, vadinamą "cls". Klasės metodai gali būti naudojami klasės ar objekto lygmeniu, bet visada gražina klasės atributus.
 
 ```Python
 class Automobilis:
