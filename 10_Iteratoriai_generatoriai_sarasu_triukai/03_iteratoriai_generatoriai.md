@@ -206,10 +206,15 @@ Sukurkite generatorių, kuris generuoja visus pirminius skaičius iki nurodyto s
 
 ```Python
 sarasas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-for skaicius in sararas:
-    if skaicius % 2 == 0:
-        print(skaicius)
+iteruotas_sarasas = iter(sarasas)
+while True:
+    try:
+        skaicius = next(iteruotas_sarasas)
+        if skaicius % 2 == 0:
+            print(skaicius)
+    except StopIteration:
+        print("Skaičiai baigėsi")
+        break
 ```
 
 </details>
@@ -218,11 +223,15 @@ for skaicius in sararas:
 <hr>
 
 ```Python
-zodynas = {"A": 3, "B": 5, "C": 1, "D": 6, "E": 4}
-
-for raide, skaicius in zodynas.items():
-    if skaicius > 4:
-        print(raide)
+zodynas = {"A":1, "B":2, "C":3, "D":4, "E":5, "F":6 }
+iter_zodynas = iter(zodynas.items())
+while True:
+    try:
+        key, value = next(iter_zodynas)
+        if value > 4:
+            print(key)
+    except StopIteration:
+        break
 ```
 
 </details>
