@@ -27,6 +27,54 @@ Duomenų bazių kūrimui ir valdymui SQL kalba naudojamos užklausos, kurios siu
 Norėdami valdyti savo duomenų bazę, turite paspausti dešinį pelės klavišą ant savo susikurto failo ".db" ir pasirinkti "New Query". Jums atsidarys naujas SQLite langas, kuriame galėsite kurti bei valdyti savo duomenų bazę. Taip pat galite susikurti ir naują failą, kurio formatas privalo būtų ".sql"
 ![New Query](/images/db/naujaquery.png)
 
+## Duomenų tipai
+
+SQL duomenų tipai gali šiek tiek skirtis tarp skirtingų duomenų bazių sistemų, tačiau štai pagrindiniai duomenų tipai, kuriuos galima rasti daugelyje sistemų
+
+### Tekstas
+
+- CHAR(n): Fiksuoto dydžio tekstas, kur n yra simbolių skaičius.
+- VARCHAR(n): Kintamo dydžio tekstas, kur n yra maksimalus simbolių skaičius.
+- TEXT: Kintamo dydžio tekstas, kurio ilgis gali būti labai didelis.
+
+### Sveikieji skaičiai
+
+- TINYINT: Mažas sveikasis skaičius.
+- SMALLINT: Vidutinio dydžio sveikasis skaičius.
+- INT: Didelis sveikasis skaičius.
+- BIGINT: Labai didelis sveikasis skaičius.
+
+### Skaičiai su kableliu
+
+- FLOAT(n, d): Aproksimacija realaus skaičiaus su n skaitmenimis ir d dešimtainiais skaitmenimis.
+- REAL: Realus skaičius su 7 skaitmenimis tikslumu.
+- DOUBLE: Realus skaičius su 15 skaitmenimis tikslumu.
+- DECIMAL(n, d): Tikslus realus skaičius su n skaitmenimis ir d dešimtainiais skaitmenimis.
+- NUMERIC(n, d): Panašus į DECIMAL, bet skiriasi kai kuriuose aspektuose.
+
+### Datos ir laiko
+
+- DATE: Data (metai, mėnesiai, dienos).
+- TIME: Laikas (valandos, minutės, sekundės).
+- TIMESTAMP: Data ir laikas.
+- DATETIME: Data ir laikas (skirtumas tarp TIMESTAMP ir DATETIME gali būti sistemose).
+- INTERVAL: Laiko tarpas tarp dviejų datų ar laikų.
+
+### Loginiai
+
+- BOOLEAN: Loginis tipas, kuris gali turėti reikšmes TRUE, FALSE arba NULL.
+
+### Binariniai
+
+- BINARY(n): Fiksuoto dydžio dvejetainiai duomenys, kur n yra baitų skaičius.
+VARBINARY(n): Kintamo dydžio dvejetainiai duomenys, kur n yra maksimalus baitų skaičius.
+- BLOB: Didelis dvejetainių duomenų objektas, skirtas saugoti didelius dvejetainius duomenis.
+
+### ENUM ir SET
+
+- ENUM: Leidžia nurodyti konkretų iš anksto apibrėžtų reikšmių sąrašą.
+- SET: Leidžia nurodyti konkretų iš anksto apibrėžtų reikšmių sąrašą, bet skirtingai nei ENUM, galima saugoti kelias reikšmes viename įraše.
+
 ## CREATE TABLE
 
 Ši užklausa naudojama sukurti naują lentelę duomenų bazeje. Kuriant ar valdant duomenis pirmą kartą ir norint, kad duomenų bazė veiktų, gali reikti ją išsaugoti savo kompiuteryje.
@@ -84,3 +132,87 @@ Pavyzdys
 ```sql
 DROP TABLE klientai;
 ```
+
+## Užduotys
+
+### Pirma užduotis
+
+- Sukurkite lentelę pavadinimu "studentai", kuri turės šiuos stulpelius:
+
+```text
+studento_id: sveikas skaičius, PRIMARY KEY
+vardas: tekstas, maksimalus ilgis - 50 simbolių
+pavardė: tekstas, maksimalus ilgis - 50 simbolių
+studijų_programa: tekstas, maksimalus ilgis - 100 simbolių
+el_paštas: tekstas, maksimalus ilgis - 50 simbolių
+```
+
+- Modifikuokite lentelę "studentai" - prie "studentai" lentelės pridėkite naują stulpelį "gimimo_data" su datos tipu.
+- Pakeiskite "studijų_programa" stulpelio tipą į TEXT.
+- Pašalinkite lentelę "studentai"
+
+Pašalinkite "studentai" lentelę iš duomenų bazės.
+
+### Antra užduotis
+
+- Sukurkite lentelę "dėstytojai", kuri turės šiuos stulpelius:
+
+```textdėstytojo_id: sveikas skaičius, PRIMARY KEY
+vardas: tekstas, maksimalus ilgis - 50 simbolių
+pavardė: tekstas, maksimalus ilgis - 50 simbolių
+skyrius: tekstas, maksimalus ilgis - 100 simbolių
+el_paštas: tekstas, maksimalus ilgis - 50 simbolių
+```
+
+- Prie "dėstytojai" lentelės pridėkite naują stulpelį "kabineto_nr" su sveiko skaičiaus tipu.
+
+- Pašalinkite "dėstytojai" lentelę iš duomenų bazės.
+
+## Atsakymai į užduotis
+
+<details><summary>❗Rodyti atsakymus</summary>
+<br>
+<details>
+<summary>Pirma užduotis</summary>
+<hr>
+
+```sql
+CREATE TABLE studentai (
+  studento_id INT PRIMARY KEY,
+  vardas VARCHAR(50),
+  pavardė VARCHAR(50),
+  studijų_programa VARCHAR(100),
+  el_paštas VARCHAR(50)
+);
+
+ALTER TABLE studentai
+ADD gimimo_data DATE;
+
+ALTER TABLE studentai
+ALTER COLUMN studijų_programa TEXT;
+
+DROP TABLE studentai;
+```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+```sql
+CREATE TABLE dėstytojai (
+  dėstytojo_id INT PRIMARY KEY,
+  vardas VARCHAR(50),
+  pavardė VARCHAR(50),
+  skyrius VARCHAR(100),
+  el_paštas VARCHAR(50)
+);
+
+ALTER TABLE dėstytojai
+ADD kabineto_nr INT;
+
+DROP TABLE dėstytojai;
+```
+
+</details>
+</details>
