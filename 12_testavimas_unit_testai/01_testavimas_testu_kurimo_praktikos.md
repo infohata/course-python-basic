@@ -216,3 +216,11 @@ class Calculator:
 Šiame pavyzdyje reikalavimas buvo įgyvendinti sudėties funkcija. Jei būtų papildomų reikalavimų (pvz., atimties, daugybos ir dalybos funkcijos), turėtumėte pakartoti TDD proceso etapus kiekvienam iš jų.
 
 TDD procesas padeda užtikrinti, kad funkcijos veikia teisingai ir, kad jūsų kodas yra tvarkingas bei lengvai suprantamas. Be to, jis padeda išvengti galimų klaidų ir palengvina programos priežiūrą.
+
+## Užduotys
+
+TDD principu parašykite programą "paskolos kalkuliatorius".
+
+- sukurkite testą paskolos kalkuliatoriaus programai, kur paskolos objektui galima nustatyti paskolos dydį, metines palūkanas ir terminą. Testavimo scenarijus turi patikrinti kelis teisingus paskolos palūkanų, pabrangimo, mokėjimo grafiko scenarijus.
+
+- sukurkite programą, kuri veikia su aukščiau įgyvendintu testu.
