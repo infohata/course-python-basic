@@ -59,8 +59,6 @@ Norėdami paleisti kodą galite naudoti "Shift + Command + P" (arba "Shift + Ctr
 Arba pažymėkite kodą, kurį norite paleisti, spauskite dešinį pelės klavišą ir pasirinkite "Run Query"
 ![Paleisti kodą](/images/db/paleistikoda2.png)
 
-
-
 ## ALTER TABLE
 
 Ši užklausa naudojama modifikuoti esamą lentelę, pvz., pridėti naują stulpelį ar pakeisti esamo stulpelio tipą.
