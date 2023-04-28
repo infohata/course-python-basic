@@ -261,6 +261,13 @@ Sukurkite klasę Studentas su atributais vardas, pavarde ir amzius. Pridėkite t
 - sukurti_studenta(cls, vardas: str, pavarde: str, amzius: int): Grąžina naują Studentas objektą. Naudokite @classmethod dekoratorių.
 - Sukurkite keletą studentų objektų, naudojant klasės metodą sukurti_studenta(), ir išbandykite visus metodus.
 
+### Antra užduotis
+
+Parašykite dekoratorių, kuris:
+
+- visus dekoruotos funkcijos tekstinius argus ir kwargus paverčia didžiosiomis raidėmis.
+- visus funkcijos teksinius rezultatus paverčia didžiosiomis raidėmis.
+
 ## Atsakymai į užduotis
 
 <details><summary>❗Rodyti atsakymus</summary>
@@ -300,3 +307,40 @@ print(studentas2.pilnas_vardas)  # Output: "Petras Petraitis"
 print(Studentas.ar_pilnametis(studentas1.amzius))  # Output: True
 print(Studentas.ar_pilnametis(studentas2.amzius))  # Output: False
 ```
+
+</details>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
+
+```Python
+from functools import wraps
+def make_upper(func):
+    """ This decorator makes all function arguments and keyword arguments upper case if they are text, then makes the result upper case if it is text """
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        for arg in args:
+            if type(arg) == str:
+                arg = arg.upper()
+        for kwarg in kwargs:
+            if type(kwarg) == str:
+                kwargs[kwarg] = kwargs[kwarg].upper()
+        result = func(*args, **kwargs)
+        if type(result) == str:
+            result = result.upper()
+        return result
+    return wrapper
+
+# testing the above decorator with function, which makes text lowecase, with a debug print
+@make_upper
+def make_lower(string="Hello World"):
+    print(f"making '{string}' lowercase")
+    return string.lower()
+
+# testing of the decorated function
+print(make_lower())
+print(make_lower("it works!"))
+```
+
+</details>
+</details>
