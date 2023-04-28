@@ -101,12 +101,12 @@ Pavyzdys su klaidinga logika:
 import unittest
 
 def is_prime(n):
-    if n <= 1: # Klaidinga logika
+    if n <= 1: 
         return False
     for i in range(2, n):
         if n % i == 0:
             return False
-    return True
+    return True # Klaidinga logika bes range(2, 2) negražina nieko. Tada kodas tiesiog praleidžia 2 kaip pirminį.
 
 class TestIsPrimeFunction(unittest.TestCase):
     def test_prime(self):
