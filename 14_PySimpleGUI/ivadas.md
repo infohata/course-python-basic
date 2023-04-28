@@ -160,7 +160,7 @@ event, values = sg.Window('List Comprehensions', layout).read(close=True)
 
 ## Kodo perkeliamumas (angl. code portability)
 
-PySimpleGUI dabar gali veikti keturiuose Python GUI karkasuose. Naudojamas karkasas nurodomas naudojant `import`. Kai kurioms programoms, norint jas paleisti kitame GUI karkase, nereikia papildomų pakeitimų. Keičiant iš PySimpleGUI į PySimpleGUIQt, PySimpleGUIWx, PySimpleGUIWeb, keičiamas karkasas taip: 
+PySimpleGUI dabar gali veikti keturiuose Python GUI karkasuose. Naudojamas karkasas nurodomas naudojant `import`. Kai kurioms programoms, norint jas paleisti kitame GUI karkase, nereikia papildomų pakeitimų. Keičiant iš PySimpleGUI į PySimpleGUIQt, PySimpleGUIWx, PySimpleGUIWeb, keičiamas karkasas taip:
 
 ![Keičiant į kitą karkasą](/images/pysimple/03.png)
 
@@ -171,9 +171,7 @@ import PySimpleGUI as sg
 
 """
     Demo - Element List
-
     All elements shown in 1 window as simply as possible.
-
     Copyright 2022 PySimpleGUI
 """
 
@@ -181,9 +179,7 @@ import PySimpleGUI as sg
 use_custom_titlebar = True if sg.running_trinket() else False
 
 def make_window(theme=None):
-
     NAME_SIZE = 23
-
 
     def name(name):
         dots = NAME_SIZE-len(name)-2
@@ -248,7 +244,6 @@ def make_window(theme=None):
     window['-GRAPH-'].draw_image(data=sg.EMOJI_BASE64_HAPPY_JOY, location=(0,50))   # Draw something in the Graph Element
 
     return window
-
 
 window = make_window()
 
