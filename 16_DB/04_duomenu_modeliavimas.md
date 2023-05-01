@@ -1,4 +1,8 @@
-<!-- ```sql
+# Duomenų modeliavimas
+
+Duomenų modeliavimas - tai procesas, kurio metu sudaromas duomenų struktūros planas, leidžiantis efektyviai saugoti ir valdyti informaciją. Duomenų modelis susideda iš lentelių, kuriose saugomi susiję duomenys, pvz., studentai, mokytojai, klasės, pažymiai ir dalykai. Kiekvienoje lentelėje yra stulpeliai, atitinkantys duomenų tipus (pvz., vardas, pavardė, gimimo_metai). Lentelės yra sujungtos per pirminius (PRIMARY KEY) ir svetimuosius raktus (FOREIGN KEY), kurie leidžia atspindėti ryšius tarp duomenų objektų.
+
+```sql
 -- Sukuriame "studentai" lentelę
 CREATE TABLE studentai (
   id INT PRIMARY KEY,
@@ -117,49 +121,49 @@ VALUES (1, 9, '2023-04-01', 1, 1),
        (30, 6, '2023-04-15', 10, 4);
 ```
 
-## studentai lentelė
+## "studentai" lentelė
 
 - Pirminis raktas (PRIMARY KEY): `id` stulpelis, kuriame saugomi unikalūs studentų identifikatoriai.
 - Svetimasis raktas (FOREIGN KEY): `fk_klase_id` stulpelis, kuris nurodo, kuriai klasei priklauso studentas. Šis raktas yra susijęs su "klases" lentelės `id` stulpeliu.
 
-## mokytojai lentelė
+## "mokytojai" lentelė
 
 - Pirminis raktas: `id` stulpelis, kuriame saugomi unikalūs mokytojų identifikatoriai.
 - Svetimasis raktas: `fk_dalykas_id` stulpelis, kuris nurodo, kokį dalyką moko mokytojas. Šis raktas yra susijęs su "dalykai" lentelės `id` stulpeliu.
 
-## klases lentelė
+## "klases" lentelė
 
 - Pirminis raktas: `id` stulpelis, kuriame saugomi unikalūs klasės identifikatoriai.
 - Svetimasis raktas: `fk_mokytojas_id` stulpelis, kuris nurodo, kuris mokytojas yra klasės vadovas. Šis raktas yra susijęs su "mokytojai" lentelės `id` stulpeliu.
 
-## pazymiai lentelė
+## "pazymiai" lentelė
 
 - Pirminis raktas: `id` stulpelis, kuriame saugomi unikalūs pažymių identifikatoriai.
 - Svetimieji raktai:
 `fk_studentas_id` stulpelis, kuris nurodo, kuriam studentui priklauso pažymys. Šis raktas yra susijęs su "studentai" lentelės `id` stulpeliu.
 `fk_dalykas_id` stulpelis, kuris nurodo, iš kurio dalyko yra pažymys. Šis raktas yra susijęs su "dalykai" lentelės `id` stulpeliu.
 
-## dalykai lentelė
+## "dalykai" lentelė
 
-Pirminis raktas: `id` stulpelis, kuriame saugomi unikalūs dalykų identifikatoriai.
+- Pirminis raktas: `id` stulpelis, kuriame saugomi unikalūs dalykų identifikatoriai.
 Šioje lentelėje nėra svetimųjų raktų, tačiau ji turi ryšius su kitomis lentelėmis per savo `id` stulpelį, kuris yra naudojamas kaip svetimasis raktas kitose lentelėse.
 
-### studentai ir klasės
+### "studentai" ir "klases"
 
-Viena klasė gali turėti daug studentų, o kiekvienas studentas priklauso tik vienai klasei. "studentai" lentelėje yra foreign key laukas "fk_klase_id", kuris rodo į "klases" lentelės "id".
+Viena klasė gali turėti daug studentų, o kiekvienas studentas priklauso tik vienai klasei. "studentai" lentelėje yra foreign key laukas `fk_klase_id`, kuris rodo į "klases" lentelės `id`.
 
-### mokytojai ir dalykai
+### "mokytojai" ir "dalykai"
 
-Kiekvienas mokytojas moko vieno dalyko, bet kiekvienas dalykas gali būti mokomas kelių mokytojų. "mokytojai" lentelėje yra foreign key laukas "fk_dalykas_id", kuris rodo į "dalykai" lentelės "id".
+Kiekvienas mokytojas moko vieno dalyko, bet kiekvienas dalykas gali būti mokomas kelių mokytojų. "mokytojai" lentelėje yra foreign key laukas `fk_dalykas_id`, kuris rodo į "dalykai" lentelės `id`.
 
-### klases ir mokytojai
+### "klases" ir "mokytojai"
 
-Kiekvienai klasei yra priskirtas vienas mokytojas kaip klasės vadovas, bet kiekvienas mokytojas gali būti vadovu kelioms klasėms. "klases" lentelėje yra foreign key laukas "fk_mokytojas_id", kuris rodo į "mokytojai" lentelės "id".
+Kiekvienai klasei yra priskirtas vienas mokytojas kaip klasės vadovas, bet kiekvienas mokytojas gali būti vadovu kelioms klasėms. "klases" lentelėje yra foreign key laukas `fk_mokytojas_id`, kuris rodo į "mokytojai" lentelės `id`.
 
-### pazymiai ir studentai
+### "pazymiai" ir "studentai"
 
-Kiekvienas studentas gali turėti daug įvertinimų (pazymiai), bet kiekvienas įvertinimas yra priskirtas tik vienam studentui. "pazymiai" lentelėje yra foreign key laukas "fk_studentas_id", kuris rodo į "studentai" lentelės "id".
+Kiekvienas studentas gali turėti daug įvertinimų (pazymiai), bet kiekvienas įvertinimas yra priskirtas tik vienam studentui. "pazymiai" lentelėje yra foreign key laukas `fk_studentas_id`, kuris rodo į "studentai" lentelės `id`.
 
-### pazymiai ir dalykai
+### "pazymiai" ir "dalykai"
 
-Kiekvienas dalykas gali turėti daug įvertinimų (pazymiai), bet kiekvienas įvertinimas yra priskirtas tik vienam dalykui. "pazymiai" lentelėje yra foreign key laukas "fk_dalykas_id", kuris rodo į "dalykai" lentelės "id". -->
+Kiekvienas dalykas gali turėti daug įvertinimų (pazymiai), bet kiekvienas įvertinimas yra priskirtas tik vienam dalykui. "pazymiai" lentelėje yra foreign key laukas `fk_dalykas_id`, kuris rodo į "dalykai" lentelės `id`.
