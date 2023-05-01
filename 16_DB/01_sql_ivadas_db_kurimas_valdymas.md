@@ -79,6 +79,8 @@ VARBINARY(n): Kintamo dydžio dvejetainiai duomenys, kur n yra maksimalus baitų
 
 Ši užklausa naudojama sukurti naują lentelę duomenų bazeje. Kuriant ar valdant duomenis pirmą kartą ir norint, kad duomenų bazė veiktų, gali reikti ją išsaugoti savo kompiuteryje.
 
+Duomenų bazės lentelėse saugomi įrašai, kurie atspindi tam tikrus objektus ar dalykus. Kiekviena lentelė turi stulpelius (laukus) ir eilutes (įrašus). Stulpeliai aprašo kiekvieno įrašo savybes, o eilutėse saugomi faktiniai duomenys.
+
 Pavyzdys
 
 ```sql
