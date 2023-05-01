@@ -77,12 +77,12 @@ Sukurkite lentelę "mokytojai" su šiais stulpeliais: "id", "vardas", "pavarde",
 Įterpkite šiuos įrašus į sukurtą lentelę "mokytojai":
 
 ```text
-Mokytojas su ID 1, vardu Petras, pavarde Petraitis, specialybe Matematika ir 10 metų patirtimi.
-Mokytojas su ID 2, vardu Ona, pavarde Onaitė, specialybe Fizika ir 11 metų patirtimi.
-Mokytojas su ID 3, vardu Marius, pavarde Marijus, specialybe Biologija ir 8 metų patirtimi.
-Mokytojas su ID 4, vardu Rasa, pavarde Rasaitė, specialybe Anglų kalba ir 12 metų patirtimi.
-Mokytojas su ID 5, vardu Aurimas, pavarde Aurimaitis, specialybe Lietuvių kalba ir 5 metų patirtimi.
-Mokytojas su ID 6, vardu Gintare, pavarde Gintarėlė, specialybe Istorija ir 3 metų patirtimi.
+Mokytojas su ID 1, vardu Petras, pavarde Petraitis, specialybe Matematika ir dirba nuo 2013 metų.
+Mokytojas su ID 2, vardu Ona, pavarde Onaitė, specialybe Fizika ir dirba nuo 2012 metų.
+Mokytojas su ID 3, vardu Marius, pavarde Marijus, specialybe Biologija ir dirba nuo 2015 metų.
+Mokytojas su ID 4, vardu Rasa, pavarde Rasaitė, specialybe Anglų kalba ir dirba nuo 2011 metų.
+Mokytojas su ID 5, vardu Aurimas, pavarde Aurimaitis, specialybe Lietuvių kalba ir dirba nuo 2018 metų.
+Mokytojas su ID 6, vardu Gintare, pavarde Gintarėlė, specialybe Istorija ir dirba nuo 2020 metų.
 ```
 
 ### Trečia užduotis
@@ -91,11 +91,15 @@ Parodykite visus įrašus iš lentelės "mokytojai", kurių specialybė yra "Mat
 
 ### Ketvirta užduotis
 
-Atnaujinkite visus įrašus lentelėje "mokytojai", kurių patirtis_metais yra mažesnė nei 6, padidindami jų patirties metų skaičių vienetu
+Raskite visus mokytojus, kurių stažas yra ilgesnis nei 8 arba 9 metai, ir atvaizduokite tik jų vardą, pavardę bei specialybę.
 
 ### Penkta užduotis
 
-Pašalinkite visus įrašus iš lentelės "mokytojai", kurių specialybė yra "Fizika" ir patirtis_metais yra daugiau nei 10.
+Pakeiskite mokytojos, vardu Rasa ir pavarde Rasaitė, pavardę į "Žolienė".
+
+### Šešta užduotis
+
+Ištrinkite iš lentelės "mokytojai" mokytoją, kurio ID yra 4.
 
 ## Atsakymai į užduotis
 
@@ -111,7 +115,7 @@ CREATE TABLE mokytojai (
   vardas VARCHAR(255) NOT NULL,
   pavarde VARCHAR(255) NOT NULL,
   specialybe VARCHAR(255) NOT NULL,
-  patirtis_metais INT
+  nuo_kada_dirba_metais INT
 );
 ```
 
@@ -121,29 +125,13 @@ CREATE TABLE mokytojai (
 <hr>
 
 ```sql
--- Įterpiame pirmąjį mokytoją
-INSERT INTO mokytojai (id, vardas, pavarde, specialybe, patirtis_metais)
-VALUES (1, 'Petras', 'Petraitis', 'Matematika', 10);
-
--- Įterpiame antrąjį mokytoją
-INSERT INTO mokytojai (id, vardas, pavarde, specialybe, patirtis_metais)
-VALUES (2, 'Ona', 'Onaitė', 'Fizika', 11);
-
--- Įterpiame trečiąjį mokytoją
-INSERT INTO mokytojai (id, vardas, pavarde, specialybe, patirtis_metais)
-VALUES (3, 'Marius', 'Marijus', 'Biologija', 8);
-
--- Įterpiame ketvirtąjį mokytoją
-INSERT INTO mokytojai (id, vardas, pavarde, specialybe, patirtis_metais)
-VALUES (4, 'Rasa', 'Rasaitė', 'Anglų kalba', 12);
-
--- Įterpiame penktąjį mokytoją
-INSERT INTO mokytojai (id, vardas, pavarde, specialybe, patirtis_metais)
-VALUES (5, 'Aurimas', 'Aurimaitis', 'Lietuvių kalba', 5);
-
--- Įterpiame šeštąjį mokytoją
-INSERT INTO mokytojai (id, vardas, pavarde, specialybe, patirtis_metais)
-VALUES (6, 'Gintare', 'Gintarėlė', 'Istorija', 3);
+INSERT INTO mokytojai (id, vardas, pavarde, specialybe, nuo_kada_dirba_metais)
+VALUES (1, 'Petras', 'Petraitis', 'Matematika', 2013),
+       (2, 'Ona', 'Onaitė', 'Fizika', 2012),
+       (3, 'Marius', 'Marijus', 'Biologija', 2015),
+       (4, 'Rasa', 'Rasaitė', 'Anglų kalba', 2011),
+       (5, 'Aurimas', 'Aurimaitis', 'Lietuvių kalba', 2018),
+       (6, 'Gintare', 'Gintarėlė', 'Istorija', 2020);
 ```
 
 </details>
@@ -161,7 +149,8 @@ SELECT * FROM mokytojai WHERE specialybe = 'Matematika';
 <hr>
 
 ```sql
-UPDATE mokytojai SET patirtis_metais = patirtis_metais + 1 WHERE patirtis_metais < 6;
+SELECT vardas, pavarde, specialybe FROM mokytojai
+WHERE (2023 - nuo_kada_dirba_metais) > 8 OR (2023 - nuo_kada_dirba_metais) > 9;
 ```
 
 </details>
@@ -170,7 +159,18 @@ UPDATE mokytojai SET patirtis_metais = patirtis_metais + 1 WHERE patirtis_metais
 <hr>
 
 ```sql
-DELETE FROM mokytojai WHERE specialybe = 'Fizika' AND patirtis_metais > 10;
+UPDATE mokytojai
+SET pavarde = 'Žolienė'
+WHERE vardas = 'Rasa' AND pavarde = 'Rasaitė';
+```
+
+</details>
+<details>
+<summary>Šešta užduotis</summary>
+<hr>
+
+```sql
+DELETE FROM mokytojai WHERE id = 4;
 ```
 
 </details>
