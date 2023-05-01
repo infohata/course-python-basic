@@ -55,7 +55,7 @@ CREATE TABLE darbuotojai (
   id INTEGER PRIMARY KEY,
   vardas TEXT NOT NULL,
   pavarde TEXT NOT NULL,
-  fk_adresas_id INTEGER REFERENCES adresai(id) -- foreign key laukas, kuris rodo į "adresai" lentelės `id`.
+  fk_adresas_id INTEGER UNIQUE REFERENCES adresai(id) -- foreign key laukas, kuris rodo į "adresai" lentelės `id`.
 );
 
 -- Sukuriame "adresai" lentelę
