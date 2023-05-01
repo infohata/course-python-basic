@@ -34,7 +34,7 @@ CREATE TABLE pazymiai (
   pazymys INT NOT NULL,
   pazymio_data DATE NOT NULL,
   fk_studentas_id INT REFERENCES studentai (id),
-  fk_dalykas_id INT, REFERENCES dalykai (id)
+  fk_dalykas_id INT REFERENCES dalykai (id)
 );
 
 -- Sukuriame "dalykai" lentelę
@@ -85,7 +85,7 @@ VALUES (1, 'Jonas', 'Jonaitis', '2010-01-01', 1),
        (17, 'Paulius', 'Paukštaitis', '2006-03-28', 6);
 
 -- Įterpiame duomenis į "pazymiai" lentelę
-INSERT INTO pazymiai (id, pazymys, data, fk_studentas_id, fk_dalykas_id)
+INSERT INTO pazymiai (id, pazymys, pazymio_data, fk_studentas_id, fk_dalykas_id)
 VALUES (1, 9, '2023-04-01', 1, 1),
        (2, 8, '2023-04-05', 1, 2),
        (3, 10, '2023-04-08', 2, 1),
