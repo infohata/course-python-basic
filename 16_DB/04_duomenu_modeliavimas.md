@@ -9,8 +9,7 @@ CREATE TABLE studentai (
   vardas VARCHAR(255) NOT NULL,
   pavarde VARCHAR(255) NOT NULL,
   gimimo_metai DATE,
-  fk_klase_id INT,
-  FOREIGN KEY (fk_klase_id) REFERENCES klases (id)
+  fk_klase_id INT REFERENCES klases (id)
 );
 
 -- Sukuriame "mokytojai" lentelę
@@ -19,27 +18,23 @@ CREATE TABLE mokytojai (
   vardas VARCHAR(255) NOT NULL,
   pavarde VARCHAR(255) NOT NULL,
   dirba_nuo DATE,
-  fk_dalykas_id INT,
-  FOREIGN KEY (fk_dalykas_id) REFERENCES dalykai (id)
+  fk_dalykas_id INT REFERENCES dalykai (id)
 );
 
 -- Sukuriame "klases" lentelę
 CREATE TABLE klases (
   id INT PRIMARY KEY,
   pavadinimas VARCHAR(255) NOT NULL,
-  fk_mokytojas_id INT,
-  FOREIGN KEY (fk_mokytojas_id) REFERENCES mokytojai (id)
+  fk_mokytojas_id INT REFERENCES mokytojai (id)
 );
 
 -- Sukuriame "pazymiai" lentelę
 CREATE TABLE pazymiai (
   id INT PRIMARY KEY,
   pazymys INT NOT NULL,
-  data DATE NOT NULL,
-  fk_studentas_id INT,
-  fk_dalykas_id INT,
-  FOREIGN KEY (fk_studentas_id) REFERENCES studentai (id),
-  FOREIGN KEY (fk_dalykas_id) REFERENCES dalykai (id)
+  pazymio_data DATE NOT NULL,
+  fk_studentas_id INT REFERENCES studentai (id),
+  fk_dalykas_id INT, REFERENCES dalykai (id)
 );
 
 -- Sukuriame "dalykai" lentelę
@@ -48,6 +43,8 @@ CREATE TABLE dalykai (
   pavadinimas VARCHAR(255) NOT NULL
 );
 ```
+
+![Modeliavimas](/images/db/modeliavimas.png)
 
 ```sql
 -- Įterpiame duomenis į "dalykai" lentelę
