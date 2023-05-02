@@ -6,12 +6,18 @@ Pillow yra populiari Python biblioteka, leidžianti atlikti įvairias paveikslė
 pip install pillow
 ```
 
+<!-- TODO: flow -->
+<!-- Pademonstruojam kaip atsidaro img -->
+<!-- Pabandom image.show() -->
+<!-- Pabandom resized img uzseivint -->
+
 ## Paveikslėlio dydžio keitimas (Resize)
 
 ```Python
 from PIL import Image
 
 image = Image.open("paveiksliukas.jpg")
+width, height = (400, 300)
 new_size = (width, height) # vietoje "width" ir "height" įrašykite norimus parametrus, pvz.: (60, 80)
 resized_image = image.resize(new_size)
 resized_image.save("paveiksliukas_resized.jpg")
@@ -19,11 +25,13 @@ resized_image.save("paveiksliukas_resized.jpg")
 
 ## Paveikslėlio apkarpymas (Crop)
 
+Atkreipkite dėmesį, kad taškų koordinatės skaičiuojamos iš kairės į dešinę X, iš viršaus į apačią Y.
+
 ```Python
 from PIL import Image
 
 image = Image.open("paveiksliukas.jpg")
-crop_area = (left, upper, right, lower) # įrašykite norimus parametrus, pvz.: (100, 100, 300, 200)
+crop_area = (top_left_x, top_left_y, bottom_right_x, bottom_right_y) # įrašykite norimus parametrus, pvz.: (100, 100, 300, 200)
 cropped_image = image.crop(crop_area)
 cropped_image.save("paveiksliukas_cropped.jpg")
 ```
@@ -130,3 +138,9 @@ image = Image.open("paveiksliukas.jpg")
 # Išsaugokite paveikslėlį nurodytu pavadinimu ir formatu
 image.save("paveiksliukas_edited.png", "PNG")
 ```
+
+## Užduotys
+
+1. Paimkite savo portreto nuotrauką, ją apkarpyti ir sumažinti taip, kad liktų graži maža kvadratinė ikonėlė 128x128.
+1. Padarykite savo ikėlę juodai baltą
+1. Ant savo portreto dešinėje viršuje uždėkite permatomą png logotipą kompanijos, kuri Jums patinka.
