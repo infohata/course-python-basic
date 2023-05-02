@@ -1,6 +1,10 @@
 # Pillow biblioteka
 
-Pillow yra populiari Python biblioteka, leidžianti atlikti įvairias paveikslėlių manipuliacijas.
+Pillow yra populiari Python biblioteka, leidžianti atlikti įvairias paveikslėlių manipuliacijas. Ji nėra instaliuota pagal nutylėjimą, todėl mes ją turime susiinstaliuoti. Terminale įvykdome komandą:
+
+```bash
+pip install pillow
+```
 
 ## Paveikslėlio dydžio keitimas (Resize)
 
