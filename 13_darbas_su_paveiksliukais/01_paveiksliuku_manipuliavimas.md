@@ -142,5 +142,5 @@ image.save("paveiksliukas_edited.png", "PNG")
 ## Užduotys
 
 1. Paimkite savo portreto nuotrauką, ją apkarpyti ir sumažinti taip, kad liktų graži maža kvadratinė ikonėlė 128x128.
-1. Padarykite savo ikėlę juodai baltą
+1. Padarykite savo anksčiau sukurtą ikonėlę juodai baltą.
 1. Ant savo portreto dešinėje viršuje uždėkite permatomą png logotipą kompanijos, kuri Jums patinka.
