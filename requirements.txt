@@ -1,7 +1,2 @@
-altgraph==0.17.3
-macholib==1.16.2
 Pillow==9.5.0
-pygame==2.3.0
-pyinstaller==5.10.1
-pyinstaller-hooks-contrib==2023.2
 PySimpleGUI==4.60.4

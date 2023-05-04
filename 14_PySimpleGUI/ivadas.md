@@ -122,13 +122,13 @@ window["-OUTPUT-"].update(
 
 ## 💡 Elementų parametrai
 
-Kiekvienam elementui galimi parametrai yra aprašyti šioje **[dokumentacijoje](https://www.pysimplegui.org/en/latest/call%20reference/)**. Jei ieškosite `Text` elemento `update` metodo, rasite šį apibrėžimą:
+Kiekvienam elementui galimi parametrai yra aprašyti šioje [dokumentacijoje](https://www.pysimplegui.org/en/latest/call%20reference/). Jei ieškosite `Text` elemento `update` metodo, rasite šį apibrėžimą:
 
 ![Update](/images/pysimple/02.jpeg)
 
-## Išdėstymas
+## Procedūrinis elementų kūrimas ir išdėstymas
 
-Jūsų lango išdėstymas yra "sąrašas iš sąrašų". Langai yra suskaidomi į "eilutes". Kiekviena eilutė jūsų lange tampa sąrašu jūsų išdėstyme. Sujungę visus sąrašus, turite išdėstymą... sąrašą iš sąrašų.
+Lango išdėstymas yra "sąrašas iš sąrašų". Langai yra suskaidomi į "eilutes". Kiekviena eilutė jūsų lange tampa sąrašu išdėstyme. Sujungę visus sąrašus, turite išdėstymą... sąrašą iš sąrašų.
 
 ```Python
 import PySimpleGUI as sg
@@ -148,7 +148,7 @@ while True:
 window.close()
 ```
 
-Taip pat galite naudoti list comprehension, kad sukurtumėte mygtukų tinklelį vienoje kodo eilutėje:
+Taip pat galite naudoti ciklus arba net list comprehension, kad sukurtumėte mygtukų tinklelį vienoje kodo eilutėje:
 
 ```Python
 import PySimpleGUI as sg
@@ -163,6 +163,10 @@ event, values = sg.Window('List Comprehensions', layout).read(close=True)
 PySimpleGUI dabar gali veikti keturiuose Python GUI karkasuose. Naudojamas karkasas nurodomas naudojant `import`. Kai kurioms programoms, norint jas paleisti kitame GUI karkase, nereikia papildomų pakeitimų. Keičiant iš PySimpleGUI į PySimpleGUIQt, PySimpleGUIWx, PySimpleGUIWeb, keičiamas karkasas taip:
 
 ![Keičiant į kitą karkasą](/images/pysimple/03.png)
+
+## Programa su keliais langais
+
+<!-- TODO: programa su lentele, CRUD veiksmais jos turiniui -->
 
 ## Visi elementai viename lange
 
