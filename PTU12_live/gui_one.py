@@ -16,7 +16,7 @@ while True:
     window["-OUTPUT-"].update(
         f'Supratom, kad jums sekasi {values["-INPUT-"]}',
         background_color="black",
-        text_color="green",
+        text_color="white",
     )
     # print(f"Supratom, kad jums sekasi {values[0]}")
 
