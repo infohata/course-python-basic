@@ -2,7 +2,7 @@
 
 ## Raktai (keys)
 
-- Pirminis raktas (Primary key): Kiekvienoje lentelėje turėtų būti unikalus identifikatorius, vadinamas pirminiu raktu. Jis naudojamas nustatyti konkretų įrašą ir užtikrinti, kad nėra dubliuojamų duomenų. Paprastai pirminis raktas yra AUTO_INCREMENT(stulpelio reikšmė automatiškai didinama (inkrementuojama) kiekvieną kartą, kai į lentelę įrašomas naujas įrašas.) tipo stulpelis arba UUID(naudojamas, kai reikia sukurti unikalų identifikatorių, kuris būtų unikalus tarp visų sistemos komponentų arba tarp daugelio sistemų).
+- Pirminis raktas (Primary key): Kiekvienoje lentelėje turėtų būti unikalus identifikatorius, vadinamas pirminiu raktu. Jis naudojamas nustatyti konkretų įrašą ir užtikrinti, kad nėra dubliuojamų duomenų. Paprastai pirminis raktas yra AUTO_INCREMENT - stulpelio reikšmė automatiškai didinama (inkrementuojama) kiekvieną kartą, kai į lentelę įrašomas naujas įrašas. Pirminio rakto stulpelis dar gali būti UUID tipo, kuris yra naudojamas, kai reikia sukurti unikalų identifikatorių tarp visų sistemos komponentų arba tarp daugelio sistemų.
 - Svetimasis raktas (Foreign key): Tai raktas, naudojamas siejant dvi skirtingas lenteles pagal jų pirminius raktus. Svetimas raktas leidžia sukurti ryšį tarp lentelių, kad būtų galima atlikti užklausas tarp jų.
 
 Pavyzdys:
