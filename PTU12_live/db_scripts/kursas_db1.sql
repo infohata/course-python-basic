@@ -1,3 +1,5 @@
+-- db1/person.db
+
 SELECT * FROM person;
 SELECT first_name, gender FROM person;
 SELECT first_name, gender FROM person ORDER BY gender, first_name;
