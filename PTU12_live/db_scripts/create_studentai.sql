@@ -8,3 +8,6 @@ CREATE TABLE IF NOT EXISTS students (
 ALTER TABLE students ADD COLUMN phone VARCHAR(20);
 ALTER TABLE students ADD COLUMN address TEXT(200);
 -- DROP TABLE students;
+
+ALTER TABLE students ADD COLUMN 
+    subject_id INTEGER REFERENCES dalykai(id);

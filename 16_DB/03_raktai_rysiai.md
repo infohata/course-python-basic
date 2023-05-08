@@ -79,7 +79,7 @@ Vienas su daug ryšys reiškia, kad vienas įrašas iš vienos lentelės gali b�
 ```sql
 -- Sukuriame "Klientai" lentelę
 CREATE TABLE Klientai (
-  id INTEGER PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   vardas TEXT,
   pavarde TEXT,
   el_pastas TEXT,
@@ -88,7 +88,7 @@ CREATE TABLE Klientai (
 
 -- Sukuriame "Užsakymai" lentelę
 CREATE TABLE Uzsakymai (
-  id INTEGER PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   uzsakymo_data DATE,
   kiekis INTEGER,
   suma FLOAT,
@@ -111,22 +111,22 @@ Tarkime, turime duomenų bazę, kuri saugo informaciją apie knygas ir autorių 
 ```sql
 -- Sukuriame "knygos" lentelę
 CREATE TABLE knygos (
-  id INT PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   pavadinimas VARCHAR(255) NOT NULL
 );
 
 -- Sukuriame "autoriai" lentelę
 CREATE TABLE autoriai (
-  id INT PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   vardas VARCHAR(255) NOT NULL,
   pavarde VARCHAR(255) NOT NULL
 );
 
 -- Sukuriame "knygos_autoriai" lentelę
 CREATE TABLE knygos_autoriai (
-  id INT PRIMARY KEY,
-  fk_knyga_id INT REFERENCES knygos (id),
-  fk_autorius_id INT, REFERENCES autoriai (id)
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  fk_knyga_id INTEGER REFERENCES knygos(id),
+  fk_autorius_id INTEGER REFERENCES autoriai(id)
 );
 ```
 
@@ -163,24 +163,23 @@ Sukurkite duomenų bazę, kurioje saugosite informaciją apie skelbimus ir jų k
 ```sql
 -- Sukuriame "Studentai" lentelę
 CREATE TABLE Studentai (
-  id INTEGER PRIMARY KEY,
-  vardas TEXT,
-  pavarde TEXT,
-  el_pastas TEXT,
-  telefonas TEXT
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  vardas VARCHAR(50),
+  pavarde VARCHAR(50),
+  el_pastas VARCHAR(100),
+  telefonas VARCHAR(20)
 );
 
 -- Sukuriame "Kursai" lentelę
 CREATE TABLE Kursai (
   id INTEGER PRIMARY KEY,
-  pavadinimas TEXT,
+  pavadinimas VARCHAR(50),
   aprasymas TEXT
 );
 
 -- Sukuriame "StudentuKursai" lentelę, kuri susieja "Studentai" ir "Kursai" lentelės Many-to-Many ryšiu
 CREATE TABLE StudentuKursai (
   id INTEGER PRIMARY KEY,
-  kurso_id INTEGER,
   studento_id INTEGER REFERENCES Studentai(id),
   kurso_id INTEGER REFERENCES Kursai(id)
 );
@@ -194,13 +193,13 @@ CREATE TABLE StudentuKursai (
 ```sql
 -- Sukuriame "Kategorijos" lentelę
 CREATE TABLE Kategorijos (
-  id INTEGER PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   pavadinimas TEXT
 );
 
 -- Sukuriame "Prekes" lentelę
 CREATE TABLE Prekes (
-  id INTEGER PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   pavadinimas TEXT,
   aprasymas TEXT,
   kategorijos_id INTEGER REFERENCES Kategorijos(id)
@@ -215,13 +214,13 @@ CREATE TABLE Prekes (
 ```sql
 -- Sukuriam duomenų bazės schemą
 CREATE TABLE vadovai (
-  id INT PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   vardas VARCHAR(255) NOT NULL,
   pavarde VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE darbuotojai (
-  id INT PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   vardas VARCHAR(255) NOT NULL,
   pavarde VARCHAR(255) NOT NULL,
   fk_vadovas_id INT REFERENCES vadovai(id)
@@ -237,18 +236,18 @@ CREATE TABLE darbuotojai (
 ```sql
 -- Sukuriam duomenų bazės schemą
 CREATE TABLE skelbimai (
-  id INT PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   pavadinimas VARCHAR(255) NOT NULL,
   turinys TEXT NOT NULL
 );
 
 CREATE TABLE kategorijos (
-  id INT PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   pavadinimas VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE skelbimu_kategorijos (
-  id INT PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   fk_skelbimo_id INT REFERENCES skelbimai(id),
   fk_kategorijos_id INT REFERENCES kategorijos(id)
 );
