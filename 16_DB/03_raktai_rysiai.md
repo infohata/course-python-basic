@@ -24,7 +24,7 @@ CREATE TABLE Uzsakymai (
   id INTEGER PRIMARY KEY,
   data TEXT,
   kiekis INTEGER,
-  suma REAL,
+  suma DECIMAL(10,2),
   kliento_id INTEGER REFERENCES Klientai(id) -- svetimasis raktas, siejantis šią lentelę su "Klientai" lentelės pirminiu raktu "id".
 );
 ```
