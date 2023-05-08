@@ -5,13 +5,16 @@ SQL (Structured Query Language) yra programavimo kalba, skirta valdyti duomenų 
 Pradžiai, pasiruošime aplinką darbui su SQL "Visual Studio Code" platformoje.
 
 1. Įdiekite "SQLite" plėtinį
+
 Atidarykite VSCode ir pasirinkite "Extensions" iš esančių meniu juostų. Įrašykite "SQLite" paieškos laukelyje ir pasirinkite "SQLite" plėtinį. Spustelėkite "Install", kad įdiegtumėte plėtinį.
 ![Plėtinys](/images/db/pletinys.png)
 
 2. Sukurkite naują SQLite duomenų bazę
+
 Norėdami sukurti naują SQLite duomenų bazę, pasirinkite "Explorer" iš esančių meniu juostų, spustelėkite dešinįjį pelės klavišą ir pasirinkite "New File". Pavadinkite failą "test.db" arba kaip norite ir įrašykite ".db" formatą.
 
 3. Atidarykite duomenų bazę
+
 Spustelėkite dešinį pelės klavišą ant duomenų bazės failo ir pasirinkite "Open Database".
 ![Atidaryti DB](/images/db/opendb1.png)
 
@@ -41,7 +44,7 @@ SQL duomenų tipai gali šiek tiek skirtis tarp skirtingų duomenų bazių siste
 
 - TINYINT: Mažas sveikasis skaičius.
 - SMALLINT: Vidutinio dydžio sveikasis skaičius.
-- INT: Didelis sveikasis skaičius.
+- INTEGER arba INT: Didelis sveikasis skaičius.
 - BIGINT: Labai didelis sveikasis skaičius.
 
 ### Skaičiai su kableliu
@@ -85,7 +88,7 @@ Pavyzdys
 
 ```sql
 CREATE TABLE klientai (
-id INT PRIMARY KEY,
+id INTEGER PRIMARY KEY AUTOINCREMENT,
 vardas VARCHAR(50),
 pavardė VARCHAR(50),
 adresas VARCHAR(100),
@@ -180,7 +183,7 @@ el_paštas: tekstas, maksimalus ilgis - 50 simbolių
 
 ```sql
 CREATE TABLE studentai (
-  studento_id INT PRIMARY KEY,
+  studento_id INTEGER PRIMARY KEY,
   vardas VARCHAR(50),
   pavardė VARCHAR(50),
   studijų_programa VARCHAR(100),
@@ -203,7 +206,7 @@ DROP TABLE studentai;
 
 ```sql
 CREATE TABLE dėstytojai (
-  dėstytojo_id INT PRIMARY KEY,
+  dėstytojo_id INTEGER PRIMARY KEY,
   vardas VARCHAR(50),
   pavardė VARCHAR(50),
   skyrius VARCHAR(100),

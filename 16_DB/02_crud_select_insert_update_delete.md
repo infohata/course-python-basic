@@ -111,7 +111,7 @@ Ištrinkite iš lentelės "mokytojai" mokytoją, kurio ID yra 4.
 
 ```sql
 CREATE TABLE mokytojai (
-  id INT PRIMARY KEY,
+  id INTEGER PRIMARY KEY,
   vardas VARCHAR(255) NOT NULL,
   pavarde VARCHAR(255) NOT NULL,
   specialybe VARCHAR(255) NOT NULL,
