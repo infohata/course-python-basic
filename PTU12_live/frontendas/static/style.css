@@ -1,0 +1,25 @@
+body {
+    padding: 0; margin: 0;
+}
+header {
+    background-color: lightblue; padding: 2rem;    
+}
+footer {
+    background-color: darkgray; padding: 2rem;
+}
+header nav {
+    display: flex;
+    flex-direction: row;
+}
+img.logo {
+    max-height: 2rem;
+}
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding-inline-start: 0;
+}
+header nav ul li {
+    padding: 0 0.5rem;
+}
