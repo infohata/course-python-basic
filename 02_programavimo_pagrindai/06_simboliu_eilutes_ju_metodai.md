@@ -566,11 +566,11 @@ Paprašykite vartotojo įvesti savo vardą ir amžių. Tada išveskite pranešim
 
 ### Septinta užduotis
 
-Parašykite programą, kuri paprašytų vartotojo įvesti savo ūgį centimetrais. Tada programą turi paversti vartotojo ūgį metrais ir išvesti pranešimą su vartotojo ūgiu abiejomis matavimo vienetų.
+Parašykite programą, kuri paprašytų vartotojo įvesti savo ūgį centimetrais. Tada programą turi paversti vartotojo ūgį metrais ir išvesti pranešimą su vartotojo ūgiu abejais matavimo vienetais.
 
 ### Aštunta užduotis
 
-Paprašykite vartotojo įvesti savo atlyginimą ir taikomą mokesčio procentą. Tada apskaičiuokite, kiek vartotojas gaus mėnesio pabaigoje, kai nuo atlyginimo bus nuskaičiuotas mokesčio procentas.
+Paprašykite vartotojo įvesti savo atlyginimą ir taikomą mokesčio procentą. Tada apskaičiuokite, kiek vartotojas gaus mėnesio pabaigoje, kai nuo atlyginimo bus nuskaičiuoti mokesčiai.
 
 ### Devinta užduotis
 
