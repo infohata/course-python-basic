@@ -285,6 +285,10 @@ Sukurti programą, kuri:
 
 - Perdaryti trečią užduoti taip, kad programa atspausdintų visus keliamuosius metus, nuo 1900 iki 2100 metų.
 
+### Penkta užduotis
+
+- Išnaudojant ciklą cikle, išspausdinkite visą šaldytuvo skyrių turinį. Šaldytuvas yra skyrių žodynas, kur skyrius yra produktų žodynas. Produkto reikįmė yra kiekis.
+
 ## Atsakymai į užduotis
 
 <details><summary>❗ Rodyti atsakymus</summary>
