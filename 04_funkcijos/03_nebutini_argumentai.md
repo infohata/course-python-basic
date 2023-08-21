@@ -90,6 +90,10 @@ Funkcija turėtų grąžinti šią informaciją:
 
 Funkcija turi grąžinti šią informaciją kaip žodyną.
 
+### Trečia užduotis
+
+Sukurkite funkciją, kuri mažina skaičių nurodyta nebūtino argumento reikšme, ir jeigu skaičius yra vis dar didesnis negu nebūtino ribos argumento reikšmė, kviesti save dar kartą. Tarpinis rezultatas yra spausdinamas, galutinis rezultatas grąžinamas.
+
 # Atsakymai į užduotis
 
 <details><summary>❗Rodyti atsakymus</summary>
@@ -122,5 +126,22 @@ def keliones_informacija(keliones_trukme, greitis, vartojimas=7, kuro_kaina=1.2)
     }
 ```
 
+</details>
+<details>
+  <summary>Trečia užduotis</summary>
+  <hr>
+
+```Python
+def mazinti_iki(skaicius, po=10, iki=0):
+    skaicius -= po
+    if skaicius >= iki:
+        print(skaicius)
+        return mazinti_iki(skaicius, po, iki)
+    else:
+        return skaicius
+
+print(mazinti_iki(101))
+print(mazinti_iki(33, 3, 23))
+```
 </details>
 </details>
