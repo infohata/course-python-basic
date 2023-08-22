@@ -154,7 +154,7 @@ Parašykite funkciją, kuri grąžina didžiausią *args elemento reikšmę.
 
 ### Antra užduotis
 
-Parašykite funkciją, kuri grąžina tik **kwargs elemento raktus, kurie yra nurodyti šiame funkcijos kvietime:
+Parašykite funkciją, kuri grąžina tik **kwargs elemento raktus ir jų reikšmes, kurie yra nurodyti šiame funkcijos kvietime:
 
 ```Python
 print(raktai(vardas="Jonas", amzius=30, miestas="Vilnius"))  
