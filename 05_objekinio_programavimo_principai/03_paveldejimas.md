@@ -46,7 +46,7 @@ print(isinstance(tesla_sp, Elektromobilis)) # True
 
 ### Pirma užduotis
 
-- Sukurkite klasę "Gyvunas" ir klases "Kate" ir "Suo", kurios paveldi tėvų klasės metodus.
+- Sukurkite klasę "Gyvunas" ir klases "Kate" ir "Suo", kurios paveldi tėvin4s klasės atributus ir metodus.
 - Kiekviena paveldinti klasė turi turėti savo unikalų "balsas" ir "judeti" metodą.
 - Sukurkite kelis skirtingoms klasėms priklausančius objektus, priskirkite jiems vardus ir iškvieskite jų metodus.
 

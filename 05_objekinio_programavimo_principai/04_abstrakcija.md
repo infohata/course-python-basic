@@ -27,9 +27,9 @@ class Automobilis:
     def vaziuoti(self):
         greitis = self.__greitis
         if greitis > 0:
-            print(f"važiuoju {self.__greitis} km/h greičiu")
+            print(f"važiuoju {greitis} km/h greičiu")
         elif greitis < 0:
-            print(f"važiuoju {abs(self.__greitis)} km/h greičiu atgal")
+            print(f"važiuoju {abs(greitis)} km/h greičiu atgal")
         else:
             print("stoviu")
 
