@@ -123,7 +123,7 @@ class Automobilis:
 
 Kaip matote, docstrings yra naudingas dokumentavimo įrankis, kuris padeda kitiems programuotojams suprasti jūsų kodo veikimą. Juos rekomenduojama naudoti kiekvienoje Python programoje.
 
-❗ Svarbu pastebėti, kad docstring formatas nėra standartizuotas. Dažniausiai naudojamas formatas yra PEP 257, kuris aprašo, kaip turėtų būti struktūruojamas docstring tekstas. Tačiau galite naudoti bet kokį savo pasirinktą formatą, kuris atitinka jūsų poreikius ir yra lengvai suprantamas kitų programuotojų.
+❗ Svarbu pastebėti, kad docstring formatas nėra standartizuotas. Dažniausiai naudojamas formatas yra [PEP 257](https://peps.python.org/pep-0257/), kuris aprašo, kaip turėtų būti struktūruojamas docstring tekstas. Tačiau galite naudoti bet kokį savo pasirinktą formatą, kuris atitinka jūsų poreikius ir yra lengvai suprantamas kitų programuotojų.
 
 ## Anotacijos
 
