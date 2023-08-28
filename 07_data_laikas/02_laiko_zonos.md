@@ -107,6 +107,7 @@ for tz in available_timezones():
 for time_zone in america_time_zones:
     print(time_zone)
 ```
+</details>
 <br>
 <details>
 <summary>Antra užduotis</summary>
@@ -136,5 +137,4 @@ Londono laikas: {london.time()}, Europe/London
 New Yorko laikas: {new_york.time()}, America/New York
 Los Angeles laikas: {los_angeles.time()}, America/ Los Angeles""")
 ```
-</details>
 </details>
