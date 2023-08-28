@@ -114,6 +114,9 @@ for time_zone in america_time_zones:
 <hr>
 
 ```Python
+from datetime import datetime
+from zoneinfo import ZoneInfo
+
 ivestas_laikas = input("Iveskite laika formatu HH:MM(:SS), sekundes nera butinos")
 formatas = "%H:%M"
 vartotojo_laiko_zona = input("iveskite laiko zona pvz.:\"America/Barbados\"")
