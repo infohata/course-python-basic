@@ -107,6 +107,34 @@ for tz in available_timezones():
 for time_zone in america_time_zones:
     print(time_zone)
 ```
+<br>
+<details>
+<summary>Antra užduotis</summary>
+<hr>
 
+```Python
+ivestas_laikas = input("Iveskite laika formatu HH:MM(:SS), sekundes nera butinos")
+formatas = "%H:%M"
+vartotojo_laiko_zona = input("iveskite laiko zona pvz.:\"America/Barbados\"")
+
+if len(ivestas_laikas) > 5:
+    formatas = "%H:%M:%S"
+laikas = datetime.strptime(ivestas_laikas, formatas)
+
+sydney = laikas.replace(tzinfo=ZoneInfo(vartotojo_laiko_zona)).astimezone(ZoneInfo("Australia/Sydney"))
+dubai = laikas.replace(tzinfo=ZoneInfo(vartotojo_laiko_zona)).astimezone(ZoneInfo("Asia/Dubai"))
+vilnius = laikas.replace(tzinfo=ZoneInfo(vartotojo_laiko_zona)).astimezone(ZoneInfo("Europe/Vilnius"))
+london = laikas.replace(tzinfo=ZoneInfo(vartotojo_laiko_zona)).astimezone(ZoneInfo("Europe/London"))
+new_york = laikas.replace(tzinfo=ZoneInfo(vartotojo_laiko_zona)).astimezone(ZoneInfo("America/New_York"))
+los_angeles = laikas.replace(tzinfo=ZoneInfo(vartotojo_laiko_zona)).astimezone(ZoneInfo("America/Los_Angeles"))
+
+print(f"""Jusu laikas: {laikas.time()}, {vartotojo_laiko_zona}
+Sydnejaus laikas: {sydney.time()}, Australia/Sydney
+Dubajaus laikas: {dubai.time()}, Asia/Dubai
+Vilniaus laikas: {vilnius.time()}, Europe/Vilnius
+Londono laikas: {london.time()}, Europe/London
+New Yorko laikas: {new_york.time()}, America/New York
+Los Angeles laikas: {los_angeles.time()}, America/ Los Angeles""")
+```
 </details>
 </details>
