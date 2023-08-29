@@ -21,6 +21,7 @@ class Expense(Record):
         super().__init__(amount, message)
         self.receiver = receiver
 
+
 class Budget:
     def __init__(self, filename="budget.pickle") -> None:
         self.filename = filename
@@ -42,7 +43,7 @@ class Budget:
         income = Income(amount, message, sender)
         self.ledger.append(income)
         print(f"Added income of {income.amount} from {income.sender} with message {income.message}")
-    
+
     def add_expense(self):
         amount = float(input("Amount: "))
         receiver = input("Receiver: ")
@@ -83,7 +84,6 @@ menu = """
 4 - print balance
 _____________________________________
 Make a choice which matters: """
-
 while True:
     choice = input(menu)
     if choice == "0":
