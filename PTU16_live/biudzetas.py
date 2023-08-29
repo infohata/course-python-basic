@@ -31,20 +31,20 @@ class Budget:
         else:
             self.ledger = []
 
-    def save(self, new_filename: str|None = None):
+    def save(self, new_filename: str|None = None) -> None:
         filename = new_filename or self.filename
         with open(filename, "wb") as budget_file:
             pickle.dump(budget.ledger, budget_file)
 
-    def add_income(self):
+    def add_income(self) -> None:
         amount = float(input("Amount: "))
-        sender = input("sender: ")
+        sender = input("Sender: ")
         message = input("Message: ")
         income = Income(amount, message, sender)
         self.ledger.append(income)
         print(f"Added income of {income.amount} from {income.sender} with message {income.message}")
 
-    def add_expense(self):
+    def add_expense(self) -> None:
         amount = float(input("Amount: "))
         receiver = input("Receiver: ")
         message = input("Message: ")
@@ -53,8 +53,8 @@ class Budget:
         self.ledger.append(expense)
 
     @property
-    def balance(self):
-        total = 0
+    def balance(self) -> float:
+        total = 0.0
         for record in self.ledger:
             if type(record) == Income:
                 total += record.amount
@@ -62,10 +62,10 @@ class Budget:
                 total -= record.amount
         return total
     
-    def print_balance(self):
+    def print_balance(self) -> None:
         print(f"Total | {self.balance:11.2f}")
 
-    def print_ledger(self):
+    def print_ledger(self) -> None:
         for num, record in enumerate(self.ledger):
             if type(record) == Income:
                 print(f"{num+1:5d} | +{record.amount:>10.2f} | {record.created_at} | {record.sender}\n\t{record.message}")
