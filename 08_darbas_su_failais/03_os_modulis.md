@@ -143,7 +143,7 @@ Tai yra kita funkcija iš `os` modulio, kuri naudojama failo ar katalogo būsena
 - `st_atime`: Paskutinio failo ar katalogo prieigos laikas, t. y., kada failas ar katalogas buvo paskutinį kartą perskaitytas. Laikas pateikiamas sekundėmis nuo epochos (1970-01-01 00:00:00 UTC).
 - `st_mtime`: Paskutinio failo ar katalogo modifikavimo laikas, t. y., kada failas ar katalogas buvo paskutinį kartą pakeistas. Laikas pateikiamas sekundėmis nuo epochos (1970-01-01 00:00:00 UTC).
 - `st_ctime`: Failo ar katalogo būsenos pakeitimo laikas, t. y., kada failo ar katalogo teisės, nuorodos ar dydis buvo paskutinį kartą pakeisti. Laikas pateikiamas sekundėmis nuo epochos (1970-01-01 00:00:00 UTC).
-- `st_blksize`: Bloko dydis baitais yra naudojamas tik Linux sistemoje failo ar katalogo saugojimui efektyviau valdyti. macOS ir Windows šių savybių nepalaiko.
+- `st_blksize`: Bloko dydis bitais yra naudojamas tik Linux sistemoje failo ar katalogo saugojimui efektyviau valdyti. macOS ir Windows šių savybių nepalaiko.
 - `st_blocks`: Užimamų blokų skaičius yra naudojamas tik Linux sistemoje failo ar katalogo saugojimui efektyviau valdyti. macOS ir Windows šių savybių nepalaiko.
 
 Pavyzdys:
