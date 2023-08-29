@@ -2,7 +2,10 @@ class Fridge:
     contents = {}
 
     def add(self, product:str, quantity:float):
-        self.contents[product] = quantity
+        if product in self.contents:
+            self.contents[product] += quantity
+        else:    
+            self.contents[product] = quantity
 
     def remove(self, product:str, quantity:float):
         if self.check(product, quantity):
@@ -17,5 +20,6 @@ class Fridge:
                 return True
         return False
 
-    def list_products(self, ):
-        pass
+    def list_products(self):
+        for product, quantity in self.contents.items():
+            print(f"{product:30s} {quantity:>5g}")
