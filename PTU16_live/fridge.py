@@ -10,12 +10,14 @@ class Fridge:
     def remove(self, product:str, quantity:float):
         if self.check(product, quantity):
             self.contents[product] -= quantity
+            if self.contents[product] == 0:
+                del self.contents[product]
         else:
             print("No such product or quantity is not enough")
 
     def check(self, product:str, quantity:float):
         if product in self.contents:
-            print(f"{product} found")
+            print(f"{product} found {self.contents[product]}")
             if quantity <= self.contents[product]:
                 return True
         return False

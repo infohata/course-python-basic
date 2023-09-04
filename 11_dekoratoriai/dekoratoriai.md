@@ -268,6 +268,14 @@ Parašykite dekoratorių, kuris:
 - visus dekoruotos funkcijos tekstinius argus ir kwargus paverčia didžiosiomis raidėmis.
 - visus funkcijos teksinius rezultatus paverčia didžiosiomis raidėmis.
 
+### Trečia užduotis
+
+- Parašykite funkciją rasti pirminį skaičių
+- Parašykite neribotą pirminių skaičių generatorių
+- Parašykite dekoratorių matuoti funkcijos laikui
+- Padarykite funkciją, kuri turi ciklą printinimui pirminių skaičių sekos radimui iki tol, kol einamo pirminio sekos skaičiaus radimas tuks ilgiau negu 0,01 sekundės.
+- išspausdinkite viso proceso trukmę, panaudojant dekoratorių
+
 ## Atsakymai į užduotis
 
 <details><summary>❗Rodyti atsakymus</summary>
@@ -340,6 +348,54 @@ def make_lower(string="Hello World"):
 # testing of the decorated function
 print(make_lower())
 print(make_lower("it works!"))
+```
+</details>
+<details>
+<summary>Trečia užduotis</summary>
+<hr>
+
+```Python
+from time import time
+
+def rasti_pirmini(skaicius):
+    if skaicius < 2:
+        return False
+    for sk in range(2, skaicius):
+        if skaicius % sk == 0:
+            return False
+    return True
+
+def pirminiu_sk_generatorius():
+    skaicius = 2
+    while True:
+        if rasti_pirmini(skaicius):
+            yield skaicius
+        skaicius += 1
+
+def matuoti_laika(funkcija):
+    def wrapper(*args, **kwargs):
+        startas = time()
+        rezultatas = funkcija(*args, **kwargs)
+        pabaiga = time()
+        print(f"Vykdymo laikas: {pabaiga - startas} s..")
+        return rezultatas
+    return wrapper
+
+@matuoti_laika
+def pirminiu_seka_iki_laiko():
+    pirm_sk_gen = pirminiu_sk_generatorius()
+    sekantis_pirminis = next(pirm_sk_gen)
+    while True:
+        startas = time()
+        pirminis = sekantis_pirminis
+        sekantis_pirminis = next(pirm_sk_gen)
+        prabeges_laikas = time() - startas
+        print(prabeges_laikas)
+        if prabeges_laikas > 0.01:
+            break
+        print(pirminis)
+            
+pirminiu_seka_iki_laiko()
 ```
 
 </details>
