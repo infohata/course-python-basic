@@ -16,15 +16,15 @@ def main_window() -> None:
         [sg.Text("Total loan", size=20), sg.Text("", key="-TOTAL-", justification="right", size=15)],
     ]
     window = sg.Window("Loan Calculator", layout)
+    loan = None
     while True:
         event, values = window.read()
-        loan = None
         if event == sg.WIN_CLOSED:
             break
         if event == '-CALCULATE-':
             loan = calculate_loan(values, window)
         if event == '-SHOW-CHART-':
-            if loan:
+            if isinstance(loan, Loan):
                 chart_window(loan, window)
 
 def calculate_loan(values: Any, window: sg.Window) -> Loan:
