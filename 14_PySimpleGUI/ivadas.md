@@ -76,7 +76,7 @@ while True:
         break
     # Išvedame pranešimą į langą
     window["-OUTPUT-"].update(
-        "Sveiki " + values["-INPUT-"] + "! Nusišypsokite dienai :),text_color='#F7D060'"
+        "Sveiki " + values["-INPUT-"] + "! Nusišypsokite dienai :)", text_color='#F7D060'
     )
 
 # Baigiame darbą, pašalindami langą iš ekrano
