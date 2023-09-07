@@ -244,7 +244,7 @@ def make_window(theme=None):
 
     window = sg.Window('The PySimpleGUI Element List', layout, finalize=True, right_click_menu=sg.MENU_RIGHT_CLICK_EDITME_VER_EXIT, keep_on_top=True, use_custom_titlebar=use_custom_titlebar)
 
-    window['-PBAR-'].update(30)                                                     # Show 30% complete on ProgressBar
+    window['-PBAR-'].update(30) # Show 30% complete on ProgressBar
     window['-GRAPH-'].draw_image(data=sg.EMOJI_BASE64_HAPPY_JOY, location=(0,50))   # Draw something in the Graph Element
 
     return window
