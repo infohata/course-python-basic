@@ -27,3 +27,5 @@ INSERT INTO autoriai (vardas, pavarde) VALUES
 
 INSERT INTO knygos_autoriai (knyga_id, autorius_id) VALUES
     (1, 1), (2, 1), (3, 3), (3, 4), (3, 5);
+
+SELECT * FROM knygos_autoriai;

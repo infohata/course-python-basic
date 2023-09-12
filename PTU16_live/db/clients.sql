@@ -42,3 +42,14 @@ SELECT * FROM client;
 
 UPDATE client SET phone="+37069xxx411" WHERE id=1;
 DELETE FROM client WHERE first_name="Piktas";
+
+SELECT * FROM client, address WHERE client.address_id=address.id;
+SELECT first_name, last_name, street, city 
+    FROM client, address WHERE client.address_id=address.id;
+
+SELECT first_name, last_name, street, city 
+    FROM client, address WHERE client.address_id=address.id
+        AND city="Maukkula";
+SELECT first_name, last_name, street, city FROM client
+    JOIN address ON client.address_id=address.id
+        WHERE city="Maukkula";
