@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../kursas"
+		},
+		{
+			"path": "../../kursas.wiki"
+		},
+		{
+			"path": "../../CA_Python_PTUAS"
+		},
+		{
+			"path": "../../python1lygis.wiki"
+		},
+		{
+			"path": "../../Python-pamokos.wiki"
+		}
+	],
+	"settings": {}
+}
