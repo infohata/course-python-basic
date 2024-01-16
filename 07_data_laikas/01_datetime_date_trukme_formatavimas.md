@@ -173,11 +173,12 @@ print(laikas)
 <hr>
 
 ```Python
-from datetime import datetime, timedelta
+from datetime import datetime, date
 
 def dienos_iki_gimtadienio(gimimo_data):
     gimimo_data_format = datetime.strptime(gimimo_data, "%Y-%m-%d")
-    siandiena = datetime.now()
+    siandiena = date.today()
+    siandiena = datetime(siandiena.year, siandiena.month, siandiena.day)
     gimtadienio_data = gimimo_data_format.replace(year=siandiena.year)
 
     if gimtadienio_data < siandiena:
@@ -186,7 +187,7 @@ def dienos_iki_gimtadienio(gimimo_data):
     skirtumas = gimtadienio_data - siandiena
     return skirtumas.days
 
-gimimo_data = "2000-05-15"
+gimimo_data = "2000-01-17"
 print(f"Liko {dienos_iki_gimtadienio(gimimo_data)} dienos (-ų) iki gimtadienio.")
 ```
 
