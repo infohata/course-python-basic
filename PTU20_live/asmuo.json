@@ -1,0 +1,11 @@
+{
+    "vardas": "Jonas",
+    "amžius": 30,
+    "ar_studentas": false,
+    "pomėgiai": ["knygos", "filmai", "kelionės"],
+    "adresas": {
+        "gatvė": "Vytauto g. 10",
+        "miestas": "Vilnius",
+        "šalis": "Lietuva"
+    }
+}
