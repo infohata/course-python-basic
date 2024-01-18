@@ -10,11 +10,27 @@ class Zmogus:
         return f"{self.vardas}, {self.amzius} metų"
 
 
+class AgeError(ValueError):
+    pass
+
+
+def input_age(prompt="age: "):
+    amzius = int(input(prompt))
+    if amzius > 100:
+        raise AgeError('zmones tiek negyvena')
+    if amzius < 0:
+        raise AgeError('zmogus mire negimes')
+    return amzius
+
 if __name__ == "__main__":
-    zmogus = Zmogus(
-        input("vardas: "),
-        int(input("metai: ")),
-    )
+    try:
+        vardas = input("vardas: ")
+        amzius = input_age("metai: ")
+    except ValueError as error: ## arba Exception, arba AgeError
+        print(f'Klaida {error.__class__.__name__}: {error}')
+        exit()
+
+    zmogus = Zmogus(vardas,amzius)
     ZMONES_FILE = 'PTU20_live/zmones.pkl'
 
     if os.path.exists(ZMONES_FILE):
