@@ -12,10 +12,10 @@ def main_window() -> None:
         [sg.Text("", key="-ERRORS-", size=35, justification="center", text_color='#FF9999')],
         [sg.Text("Monthly Payment", size=20), sg.Text("", key="-MONTHLY-", justification="right", size=15)],
         [sg.Text("Price Increase", size=20), sg.Text("", key="-INCREASE-", justification="right", size=15)],
-        [sg.Text("Total Reoayment", size=20), sg.Text("", key="-REPAYABLE-", justification="right", size=15)],
+        [sg.Text("Total Repayment", size=20), sg.Text("", key="-REPAYABLE-", justification="right", size=15)],
         [sg.Text("Total loan", size=20), sg.Text("", key="-TOTAL-", justification="right", size=15)],
     ]
-    window = sg.Window("Loan Calculator", layout)
+    window = sg.Window("Loan Calculator", layout, font="Serif 30")
     loan = None
     while True:
         event, values = window.read()
@@ -57,11 +57,13 @@ def chart_window(loan: Loan, main_window: sg.Window) -> None:
             headings=['Month', 'Amount'], 
             key='-CHART-TABLE-', 
             col_widths=[5, 15], 
-            auto_size_columns=False
+            auto_size_columns=False,
+            expand_x=True,
+            expand_y=True,
         )],
         [sg.Button('Close', key='-CLOSE-')],
     ]
-    window = sg.Window('Payment Chart', layout)
+    window = sg.Window('Payment Chart', layout, resizable=True, font="Serif 30")
     while True:
         event, _ = window.read()
         if event in (sg.WIN_CLOSED, '-CLOSE-'):
