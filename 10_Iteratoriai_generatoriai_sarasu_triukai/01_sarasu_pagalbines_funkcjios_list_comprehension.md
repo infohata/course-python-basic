@@ -154,7 +154,9 @@ for studentas in rūšiuoti_studentai:
 
 `attrgetter()` funkcija rūšiuos studentus pagal pavardę, o tada pagal vardą, kadangi `key` funkcija rūšiuoja elementus nuo kairės į dešinę.
 
-## Sąrašo apibrėžimas (List comprehension)
+---
+
+# Sąrašo apibrėžimas (List comprehension)
 
 List comprehension yra trumpas būdas kurti sąrašus naudojant `for` ciklą ir galimą sąlygą.
 
