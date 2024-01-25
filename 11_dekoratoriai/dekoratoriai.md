@@ -251,7 +251,7 @@ print(result)  # Output: 8
 
 Šiame pavyzdyje `add_numbers` funkcija yra dekoruota dviem dekoratoriais: `print_before_decorator` ir `print_after_decorator`.
 
-## Setteriai ir Getteriai
+## `Setter`iai ir `Getter`iai
 
 Galime @property dekoruotiems metodams nustatyti @metodas.setter dekoruotą metodą, kuris valdys privačios reikšmės priskyrimo eigą. Labai praktiška naudoti sąlygų tikrinimui, cenzūrai, autokorekcijoms ir panašiai. Pavyzdys su žmogaus klase amžiaus ir vardo atributų priskyrimo valdymui:
 
