@@ -253,7 +253,7 @@ print(result)  # Output: 8
 
 ## Setteriai ir Getteriai
 
-
+Galime @property dekoruotiems metodams nustatyti @metodas.setter dekoruotą metodą, kuris valdys privačios reikšmės priskyrimo eigą. Labai praktiška naudoti sąlygų tikrinimui, cenzūrai, autokorekcijoms ir panašiai. Pavyzdys su žmogaus klase amžiaus ir vardo atributų priskyrimo valdymui:
 
 ```Python
 class Zmogus:
