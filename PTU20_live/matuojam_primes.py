@@ -1,4 +1,5 @@
 from datetime import datetime
+from collections.abc import Iterable
 
 def trukme(funkcija):
     def wrapper(*args, **kwargs):
@@ -8,9 +9,13 @@ def trukme(funkcija):
         end = datetime.now()
         duration = end - start
         if duration.seconds > 0:
-            print(f"funkcijos vykdymo trukme: {duration}")
-        elif duration.microseconds >= 1000:
-            print(f"funkcijos vykdymo trukme: {duration.microseconds} mikrosekundziu")
+            print(f"funkcijos vykdymo trukme: {duration}"
+                  f", args: {args}, rezultatas: "
+                  f"{rezultatas[:10]+['...'] if isinstance(rezultatas, Iterable) and len(rezultatas) > 10 else rezultatas}")
+        elif duration.microseconds >= 1200:
+            print(f"funkcijos vykdymo trukme: {duration.microseconds} mikrosekundziu"
+                  f", args: {args}, rezultatas: "
+                  f"{rezultatas[:10]+['...'] if isinstance(rezultatas, Iterable) and len(rezultatas) > 10 else rezultatas}")
         return rezultatas
     return wrapper
 
@@ -31,4 +36,4 @@ def generate_primes(end, start=1):
             primes.append(num)
     return primes
 
-print(len(generate_primes(1000000)))
+print(len(generate_primes(10000000)))
