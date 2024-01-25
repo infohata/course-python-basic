@@ -41,7 +41,8 @@ Dar vienas pavyzdys:
 ```Python
 def tikrinti_teigiamus(funkcija):
     def wrapper(*args, **kwargs):
-        if all(arg > 0 for arg in args):
+        if all(arg > 0 for arg in args) and \
+            all(kwarg > 0 for kwarg in kwargs.values()):
             rezultatas = funkcija(*args, **kwargs)
         else:
             rezultatas = "Klaida: visi argumentai turi būti teigiami"
@@ -249,6 +250,46 @@ print(result)  # Output: 8
 ```
 
 Šiame pavyzdyje `add_numbers` funkcija yra dekoruota dviem dekoratoriais: `print_before_decorator` ir `print_after_decorator`.
+
+## Setteriai ir Getteriai
+
+
+
+```Python
+class Zmogus:
+    def __init__(self, vardas, pavarde, amzius: int, *args, **kwargs) -> None:
+        self.vardas = vardas
+        self.pavarde = pavarde
+        self.amzius = amzius
+        self.savybes = args
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+    
+    @property
+    def amzius(self) -> int:
+        return self.__amzius
+    
+    @amzius.setter
+    def amzius(self, metai) -> None:
+        if type(metai) != int:
+            raise ValueError("Amzius turi buti sveikas skaicius")
+        elif metai < 0:
+            raise ValueError("Dar negyvena")
+        elif metai > 200:
+            raise ValueError("Jau nebegyvena")
+        self.__amzius = metai
+
+    @property
+    def vardas(self) -> str:
+        return self.__vardas
+    
+    @vardas.setter
+    def vardas(self, ivestas_vardas: str):
+        self.__vardas = ivestas_vardas.capitalize()
+    
+    def __str__(self) -> str:
+        return f"{self.vardas} {self.pavarde}, {self.amzius}"
+```
 
 ## Užduotys
 
