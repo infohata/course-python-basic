@@ -1,5 +1,3 @@
-from math import ceil
-
 class Loan():
     def __init__(
             self, 
