@@ -145,15 +145,14 @@ DROP TABLE klientai;
 - Sukurkite lentelę pavadinimu "studentai", kuri turės šiuos stulpelius:
 
 ```text
-studento_id: sveikas skaičius, PRIMARY KEY
+id: sveikas skaičius, PRIMARY KEY
 vardas: tekstas, maksimalus ilgis - 50 simbolių
-pavardė: tekstas, maksimalus ilgis - 50 simbolių
+pavarde: tekstas, maksimalus ilgis - 50 simbolių
 studijų_programa: tekstas, maksimalus ilgis - 100 simbolių
-el_paštas: tekstas, maksimalus ilgis - 50 simbolių
+el_pastas: tekstas, maksimalus ilgis - 50 simbolių
 ```
 
 - Modifikuokite lentelę "studentai" - prie "studentai" lentelės pridėkite naują stulpelį "gimimo_data" su datos tipu.
-- Pakeiskite "studijų_programa" stulpelio tipą į TEXT.
 - Pašalinkite lentelę "studentai"
 
 Pašalinkite "studentai" lentelę iš duomenų bazės.
@@ -162,9 +161,10 @@ Pašalinkite "studentai" lentelę iš duomenų bazės.
 
 - Sukurkite lentelę "dėstytojai", kuri turės šiuos stulpelius:
 
-```textdėstytojo_id: sveikas skaičius, PRIMARY KEY
+```text
+id: sveikas skaičius, PRIMARY KEY
 vardas: tekstas, maksimalus ilgis - 50 simbolių
-pavardė: tekstas, maksimalus ilgis - 50 simbolių
+pavarde: tekstas, maksimalus ilgis - 50 simbolių
 skyrius: tekstas, maksimalus ilgis - 100 simbolių
 el_paštas: tekstas, maksimalus ilgis - 50 simbolių
 ```
@@ -185,16 +185,13 @@ el_paštas: tekstas, maksimalus ilgis - 50 simbolių
 CREATE TABLE studentai (
   studento_id INTEGER PRIMARY KEY,
   vardas VARCHAR(50),
-  pavardė VARCHAR(50),
+  pavarde VARCHAR(50),
   studijų_programa VARCHAR(100),
-  el_paštas VARCHAR(50)
+  el_pastas VARCHAR(50)
 );
 
 ALTER TABLE studentai
 ADD gimimo_data DATE;
-
-ALTER TABLE studentai
-ALTER COLUMN studijų_programa TEXT;
 
 DROP TABLE studentai;
 ```
@@ -205,18 +202,18 @@ DROP TABLE studentai;
 <hr>
 
 ```sql
-CREATE TABLE dėstytojai (
-  dėstytojo_id INTEGER PRIMARY KEY,
+CREATE TABLE destytojai (
+  id INTEGER PRIMARY KEY,
   vardas VARCHAR(50),
-  pavardė VARCHAR(50),
+  pavarde VARCHAR(50),
   skyrius VARCHAR(100),
-  el_paštas VARCHAR(50)
+  el_pastas VARCHAR(50)
 );
 
-ALTER TABLE dėstytojai
+ALTER TABLE destytojai
 ADD kabineto_nr INT;
 
-DROP TABLE dėstytojai;
+DROP TABLE destytojai;
 ```
 
 </details>
