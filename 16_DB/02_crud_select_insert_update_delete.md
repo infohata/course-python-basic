@@ -4,7 +4,7 @@ Pirma, sukursime lentelę "studentai" su šiais stulpeliais: "id", "vardas", "pa
 
 ```sql
 CREATE TABLE studentai (
-  id INT PRIMARY KEY,
+  id INTEGER PRIMARY KEY,
   vardas VARCHAR(255) NOT NULL,
   pavarde VARCHAR(255) NOT NULL,
   gimimo_metai DATE,
@@ -111,11 +111,11 @@ Ištrinkite iš lentelės "mokytojai" mokytoją, kurio ID yra 4.
 
 ```sql
 CREATE TABLE mokytojai (
-  id INTEGER PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   vardas VARCHAR(255) NOT NULL,
   pavarde VARCHAR(255) NOT NULL,
   specialybe VARCHAR(255) NOT NULL,
-  nuo_kada_dirba_metais INT
+  nuo_kada_dirba_metais INTEGER
 );
 ```
 
@@ -150,7 +150,9 @@ SELECT * FROM mokytojai WHERE specialybe = 'Matematika';
 
 ```sql
 SELECT vardas, pavarde, specialybe FROM mokytojai
-WHERE (2023 - nuo_kada_dirba_metais) > 8 OR (2023 - nuo_kada_dirba_metais) > 9;
+WHERE (2023 - nuo_kada_dirba_metais) > 8; 
+SELECT vardas, pavarde, specialybe FROM mokytojai
+WHERE (2023 - nuo_kada_dirba_metais) > 9;
 ```
 
 </details>

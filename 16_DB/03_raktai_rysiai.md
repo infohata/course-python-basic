@@ -13,10 +13,10 @@ Turime duomenų bazę, kuriame saugome informaciją apie klientus ir jų užsaky
 -- Sukuriame "Klientai" lentelę
 CREATE TABLE Klientai (
   id INTEGER PRIMARY KEY,
-  vardas TEXT,
-  pavarde TEXT,
-  el_pastas TEXT,
-  telefonas TEXT
+  vardas VARCHAR(50),
+  pavarde VARCHAR(50),
+  el_pastas VARCHAR(100),
+  telefonas VARCHAR(15)
 );
 
 -- Sukuriame "Užsakymai" lentelę
@@ -125,12 +125,14 @@ CREATE TABLE autoriai (
 -- Sukuriame "knygos_autoriai" lentelę
 CREATE TABLE knygos_autoriai (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  fk_knyga_id INTEGER REFERENCES knygos(id),
-  fk_autorius_id INTEGER REFERENCES autoriai(id)
+  knyga_id INTEGER REFERENCES knygos(id),
+  autorius_id INTEGER REFERENCES autoriai(id)
 );
 ```
 
 ![Many-to-Many](/images/db/manytomany.png)
+
+Pastaba: nenaudokite `fk_` prefiksų. Paveiksliuke `fk_knyga_id` atitinka `knyga_id` kode.
 
 Šiuo atveju, "knygos_autoriai" lentelė yra trečioji lentelė, kuri saugo ryšius tarp "knygos" ir "autoriai" lentelių. Lentelėje yra du foreign key laukai: `fk_knyga_id`, kuris rodo į "knygos" lentelės `id`, ir `fk_autorius_id`, kuris rodo į "autoriai" lentelės `id`. Tai yra "daug su daug" ryšys, nes kiekviena knyga gali turėti daug autorių, ir kiekvienas autorius gali būti parašęs daug knygų.
 
@@ -223,7 +225,7 @@ CREATE TABLE darbuotojai (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   vardas VARCHAR(255) NOT NULL,
   pavarde VARCHAR(255) NOT NULL,
-  fk_vadovas_id INT REFERENCES vadovai(id)
+  fk_vadovas_id INTEGER REFERENCES vadovai(id)
 );
 
 ```
@@ -248,8 +250,8 @@ CREATE TABLE kategorijos (
 
 CREATE TABLE skelbimu_kategorijos (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  fk_skelbimo_id INT REFERENCES skelbimai(id),
-  fk_kategorijos_id INT REFERENCES kategorijos(id)
+  fk_skelbimo_id INTEGER REFERENCES skelbimai(id),
+  fk_kategorijos_id INTEGER REFERENCES kategorijos(id)
 );
 ```
 
