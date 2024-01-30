@@ -62,7 +62,30 @@ SELECT SUM(total), first_name, last_name
     GROUP BY client_id
     ORDER BY SUM(total) DESC;
 
-SELECT orders.id, product.name, quantity, product.price, product.price * quantity AS line_total
+SELECT orders.id, product.name, quantity, product.price, 
+    product.price * quantity AS line_total
     FROM order_line
     JOIN orders ON order_id = orders.id
     JOIN product ON product_id = product.id;
+
+SELECT orders.id, first_name, last_name,
+    orders.total || " €" AS order_total,
+    SUM(quantity * price) || " €" AS prod_total,
+    SUM(quantity) AS qty, 
+    (SUM(quantity * price) - orders.total) AS disc_eur,
+    ROUND((SUM(quantity * price) - orders.total) / 
+        SUM(quantity * price) * 100, 2) AS discount
+    FROM order_line 
+    JOIN orders ON order_id = orders.id
+    JOIN product ON product_id = product.id
+    JOIN clients ON client_id = clients.id
+    GROUP BY order_id
+    HAVING disc_eur > 0
+    ORDER BY discount DESC
+    ;
+
+SELECT * FROM order_line 
+    JOIN orders ON order_id = orders.id
+    JOIN product ON product_id = product.id
+    JOIN clients ON client_id = clients.id
+    ;
