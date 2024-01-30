@@ -5,41 +5,41 @@ Duomenų modeliavimas - tai procesas, kurio metu sudaromas duomenų struktūros 
 ```sql
 -- Sukuriame "studentai" lentelę
 CREATE TABLE studentai (
-  id INT PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   vardas VARCHAR(255) NOT NULL,
   pavarde VARCHAR(255) NOT NULL,
   gimimo_metai DATE,
-  fk_klase_id INT REFERENCES klases (id)
+  klase_id INTEGER REFERENCES klases (id)
 );
 
 -- Sukuriame "mokytojai" lentelę
 CREATE TABLE mokytojai (
-  id INT PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   vardas VARCHAR(255) NOT NULL,
   pavarde VARCHAR(255) NOT NULL,
   dirba_nuo DATE,
-  fk_dalykas_id INT REFERENCES dalykai (id)
+  dalykas_id INTEGER REFERENCES dalykai (id)
 );
 
 -- Sukuriame "klases" lentelę
 CREATE TABLE klases (
-  id INT PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   pavadinimas VARCHAR(255) NOT NULL,
-  fk_mokytojas_id INT REFERENCES mokytojai (id)
+  mokytojas_id INT REFERENCES mokytojai (id)
 );
 
 -- Sukuriame "pazymiai" lentelę
 CREATE TABLE pazymiai (
-  id INT PRIMARY KEY,
-  pazymys INT NOT NULL,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  pazymys INTEGER NOT NULL,
   pazymio_data DATE NOT NULL,
-  fk_studentas_id INT REFERENCES studentai (id),
-  fk_dalykas_id INT REFERENCES dalykai (id)
+  studentas_id INTEGER REFERENCES studentai (id),
+  dalykas_id INTEGER REFERENCES dalykai (id)
 );
 
 -- Sukuriame "dalykai" lentelę
 CREATE TABLE dalykai (
-  id INT PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   pavadinimas VARCHAR(255) NOT NULL
 );
 ```

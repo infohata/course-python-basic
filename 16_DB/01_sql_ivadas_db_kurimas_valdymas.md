@@ -44,7 +44,7 @@ SQL duomenų tipai gali šiek tiek skirtis tarp skirtingų duomenų bazių siste
 
 - TINYINT: Mažas sveikasis skaičius.
 - SMALLINT: Vidutinio dydžio sveikasis skaičius.
-- INTEGER arba INT: Didelis sveikasis skaičius.
+- INTEGER: Didelis sveikasis skaičius. (INT irgi yra bet nenaudotinas)
 - BIGINT: Labai didelis sveikasis skaičius.
 
 ### Skaičiai su kableliu
