@@ -8,7 +8,7 @@ SELECT schedule.id, weekday, start_time, codename, name, last_name
     JOIN teacher ON teacher_id = teacher.id
     JOIN classroom ON classroom_id = classroom.id
     -- WHERE classroom.codename = "code01";
-    WHERE teacher_id = 2
+    -- WHERE teacher_id = 2
     ORDER BY weekday, start_time;
 
 SELECT student.id AS std_id, first_name, last_name, 
