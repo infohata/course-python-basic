@@ -17,6 +17,9 @@
 		},
 		{
 			"path": "../../Python-pamokos.wiki"
+		},
+		{
+			"path": "../../../ca-docker"
 		}
 	],
 	"settings": {}
