@@ -9,7 +9,7 @@ SELECT schedule.id, weekday, start_time, codename, name, last_name
     JOIN classroom ON classroom_id = classroom.id
     -- WHERE classroom.codename = "code01";
     -- WHERE teacher_id = 2
-    ORDER BY weekday, start_time;
+    ORDER BY codename, weekday, start_time;
 
 SELECT student.id AS std_id, first_name, last_name, 
     classroom.id AS class_id, codename FROM student
@@ -36,6 +36,6 @@ SELECT AVG(grade), subject.name, teacher.last_name
 FROM grade 
 JOIN subject ON grade.subject_id = subject.id
 JOIN teacher ON grade.teacher_id = teacher.id
--- JOIN student ON grade.student_id = student.id
--- WHERE student.last_name = "Simaitis"
-GROUP BY grade.subject_id;
+JOIN student ON grade.student_id = student.id
+WHERE student.last_name = "Simaitis"
+GROUP BY grade.teacher_id;
